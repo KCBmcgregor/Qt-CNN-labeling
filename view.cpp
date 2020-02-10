@@ -13,3 +13,5 @@ View::~View()
     delete ui;
 }
 
+
+

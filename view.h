@@ -15,6 +15,9 @@ public:
     View(QWidget *parent = nullptr);
     ~View();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::View *ui;
 };
