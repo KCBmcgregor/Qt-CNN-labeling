@@ -1,6 +1,8 @@
 #include "model.h"
 
-Model::Model()
+
+Model::Model(Control *cont)
 {
+    control = cont;
 
 }
