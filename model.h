@@ -11,16 +11,17 @@
 class Model
 {
     Control *control;
-
+    std::vector<std::string> imageNames;
     std::map<std::string,ImageData> imageData;
     std::vector<std::string> classifierNames;
+
 public:
     Model(Control *cont = nullptr);
 
+    std::vector<std::string> getImageNames() {return imageNames;}
+    std::vector<std::string> getClassifierNames() {return classifierNames;}
 
-    std::vector<std::string> imageNames;
-    std::vector<std::string> getImageNames() {return this->imageNames;}
-    std::vector<std::string> getClassifierNames() {return imageNames;}
+    std::string loadDataset(std::string folderPath);
 
     ~Model();
 };

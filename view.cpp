@@ -1,24 +1,12 @@
 #include "view.h"
 #include "ui_view.h"
 
-
-#include <QFileDialog>
-
-View::View(Control *cont, QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::View)
+View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
     control = cont;
     ui->setupUi(this);
-
-
-
 }
 
-View::~View()
-{
-    delete ui;
-}
 
 void View::renderLists()
 {
@@ -45,3 +33,7 @@ void View::on_shapeDrawButton_clicked()
 }
 
 
+View::~View()
+{
+    delete ui;
+}

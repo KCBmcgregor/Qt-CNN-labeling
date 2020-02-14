@@ -39,10 +39,21 @@ QStringList Control::vectorToQStringList(std::vector<std::string> v)
     return returnList;
 }
 
+std::vector<std::string> Control::qStringListToVector(QStringList list)
+{
+    std::vector<std::string> returnVector;
+    foreach(QString QStringItem, list) {
+        std::string item = QStringItem.toStdString();
+        returnVector.push_back(item);
+    }
+    return returnVector;
+}
+
 QString Control::requestFolderPath()
 {
     QString QStringFolderPath = QFileDialog::getExistingDirectory(view, "Select a dataset folder", "C://");
     folderPath = QStringFolderPath.toStdString();
+    model->loadDataset(folderPath);
     view->renderLists();
     return QStringFolderPath;
 }
