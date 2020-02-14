@@ -13,13 +13,13 @@ class View : public QMainWindow
     Q_OBJECT
 
 public:
-    View(Control * = nullptr,QWidget *parent = nullptr);
+    View(Control *cont = nullptr,QWidget *parent = nullptr);
     ~View();
 
 private slots:
-    void on_pushButton_clicked();
+    void on_selectFolderButton_clicked();
 
-    void on_pushButton_6_clicked();
+    void on_shapeDrawButton_clicked();
 
 private:
     Ui::View *ui;

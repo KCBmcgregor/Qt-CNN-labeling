@@ -7,7 +7,7 @@ class Model
 {
     Control *control;
 public:
-    Model(Control *cont);
+    Model(Control *cont = nullptr);
 };
 
 #endif // MODEL_H

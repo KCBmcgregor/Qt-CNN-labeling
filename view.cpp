@@ -18,7 +18,7 @@ View::~View()
     delete ui;
 }
 
-void View::on_pushButton_clicked()
+void View::on_selectFolderButton_clicked()
 {
     QString folderPath = QFileDialog::getExistingDirectory(this, "Select a dataset folder", "C://");
     std::string folderPathStr = folderPath.toStdString();
@@ -26,7 +26,7 @@ void View::on_pushButton_clicked()
     ui->folderPathLabel->setText(folderPath);
 }
 
-void View::on_pushButton_6_clicked()
+void View::on_shapeDrawButton_clicked()
 {
     QString folderPathQString = QString::fromStdString(control->folderPath);
     ui->imageNameLabel->setText(folderPathQString);
