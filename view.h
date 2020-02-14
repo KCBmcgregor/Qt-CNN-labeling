@@ -16,6 +16,8 @@ public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
     ~View();
 
+    void renderLists();
+
 private slots:
     void on_selectFolderButton_clicked();
 

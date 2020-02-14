@@ -1,6 +1,6 @@
 #include "view.h"
 #include "ui_view.h"
-#include "control.h"
+
 
 #include <QFileDialog>
 
@@ -11,6 +11,8 @@ View::View(Control *cont, QWidget *parent)
     control = cont;
     ui->setupUi(this);
 
+
+
 }
 
 View::~View()
@@ -18,16 +20,28 @@ View::~View()
     delete ui;
 }
 
+void View::renderLists()
+{
+    QStringList imageNames = control->requestImageNames();
+    foreach (QString name, imageNames) {
+        ui->imageNamesList->addItem(name);
+    }
+    QStringList classifierNames = control->requestClassifierNames();
+    foreach (QString name, classifierNames) {
+        ui->classifierList->addItem(name);
+    }
+}
+
 void View::on_selectFolderButton_clicked()
 {
-    QString folderPath = QFileDialog::getExistingDirectory(this, "Select a dataset folder", "C://");
-    std::string folderPathStr = folderPath.toStdString();
-    control->setFolderPath(folderPathStr);
-    ui->folderPathLabel->setText(folderPath);
+    QString path = control->requestFolderPath();
+    ui->folderPathLabel->setText(path);
 }
 
 void View::on_shapeDrawButton_clicked()
 {
-    QString folderPathQString = QString::fromStdString(control->folderPath);
+    QString folderPathQString = QString::fromStdString(control->getFolderPath());
     ui->imageNameLabel->setText(folderPathQString);
 }
+
+

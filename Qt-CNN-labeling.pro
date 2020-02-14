@@ -17,11 +17,13 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     control.cpp \
+    imagedata.cpp \
     model.cpp \
     view.cpp
 
 HEADERS += \
     control.h \
+    imagedata.h \
     model.h \
     view.h
 

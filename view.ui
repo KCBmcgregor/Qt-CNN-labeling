@@ -123,7 +123,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QListView" name="classifiersList">
+           <widget class="QListWidget" name="classifierList">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Ignored" vsizetype="Expanding">
               <horstretch>0</horstretch>
