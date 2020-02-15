@@ -24,6 +24,7 @@ public:
     QStringList requestClassifierNames();
     QString requestFolderPath();
     QString requestFilePath();
+    QPixmap requestImage(const QString imageName);
 
     void setConections(Model *m, View *v) {model = m; view = v;};
 

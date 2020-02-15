@@ -14,7 +14,6 @@ class Model
     std::vector<std::string> imageNames;
     std::map<std::string,ImageData> imageData;
     std::vector<std::string> classifierNames;
-
 public:
     Model(Control *cont = nullptr);
 
@@ -23,6 +22,7 @@ public:
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
+    QPixmap loadImage(const QString imagePath);
 
     ~Model();
 };

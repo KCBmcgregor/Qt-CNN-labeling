@@ -51,6 +51,12 @@ std::string Model::loadClassifers(std::string filePath)
     return filePath;
 }
 
+QPixmap Model::loadImage(const QString imagePath)
+{
+    QPixmap image(imagePath);
+    return image;
+}
+
 
 Model::~Model()
 {

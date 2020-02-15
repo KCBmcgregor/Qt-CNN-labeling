@@ -69,6 +69,15 @@ QString Control::requestFilePath()
     return QStringFolderPath;
 }
 
+QPixmap Control::requestImage(const QString imageName)
+{
+    QString qFolderPath = QString::fromStdString(folderPath);
+    QString imagePath = qFolderPath + "/" + imageName;
+    QPixmap image = model->loadImage(imagePath);
+
+    return image;
+}
+
 
 
 

@@ -45,7 +45,14 @@ View::~View()
 
 void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 {
-    ui->imageNameLabel->setText(current->text());
+    QString selectedImageName = current->text();
+    ui->imageNameLabel->setText(selectedImageName);
+    QPixmap image = control->requestImage(selectedImageName);
+    int w = (ui->imageDiplayLabel->width());
+    int h = (ui->imageDiplayLabel->height());
+    image.scaled(w,h,Qt::KeepAspectRatio);
+    ui->imageDiplayLabel->setPixmap(image);
+
 }
 
 
