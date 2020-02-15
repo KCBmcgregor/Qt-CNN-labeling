@@ -4,6 +4,7 @@
 #include <string>
 #include <map>
 #include <vector>
+
 struct Point
 {
     int x;
@@ -20,7 +21,6 @@ public:
     Shape();
 
 };
-
 
 class ImageData
 {

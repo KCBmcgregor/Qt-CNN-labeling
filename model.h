@@ -14,6 +14,7 @@ class Model
     std::vector<std::string> imageNames;
     std::map<std::string,ImageData> imageData;
     std::vector<std::string> classifierNames;
+
 public:
     Model(Control *cont = nullptr);
 

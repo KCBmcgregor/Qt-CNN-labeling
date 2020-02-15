@@ -13,23 +13,22 @@ class View : public QMainWindow
 {
     Q_OBJECT
 
-public:
-    View(Control *cont = nullptr,QWidget *parent = nullptr);
-    ~View();
-
-    void renderLists();
-
-private slots:
-    void on_selectFolderButton_clicked();
-
-    void on_shapeDrawButton_clicked();
-
-    void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
-
-    void on_selectFileButton_clicked();
-
 private:
     Ui::View *ui;
     Control *control;
+
+public:
+    View(Control *cont = nullptr,QWidget *parent = nullptr);
+
+    void renderLists();
+
+    ~View();
+
+private slots:
+    void on_selectFolderButton_clicked();
+    void on_selectFileButton_clicked();
+
+    void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
 };
+
 #endif // VIEW_H

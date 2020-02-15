@@ -7,11 +7,8 @@
 Model::Model(Control *cont)
 {
     control = cont;
-
     imageNames = {};
-
     imageData = {};
-
     classifierNames = {};
 
 }

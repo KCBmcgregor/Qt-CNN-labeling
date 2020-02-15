@@ -26,8 +26,6 @@ public:
     QString requestFilePath();
     QPixmap requestImage(const QString imageName);
 
-    void setConections(Model *m, View *v) {model = m; view = v;};
-
     QStringList vectorToQStringList(std::vector<std::string> v);
     std::vector<std::string> qStringListToVector(QStringList list);
 

@@ -30,26 +30,6 @@ QStringList Control::requestClassifierNames()
     return names;
 }
 
-QStringList Control::vectorToQStringList(std::vector<std::string> v)
-{
-    QStringList returnList;
-    for(unsigned i=0; i < v.size(); i++) {
-        QString item = QString::fromStdString(v[i]);
-        returnList.append(item);
-    }
-    return returnList;
-}
-
-std::vector<std::string> Control::qStringListToVector(QStringList list)
-{
-    std::vector<std::string> returnVector;
-    foreach(QString QStringItem, list) {
-        std::string item = QStringItem.toStdString();
-        returnVector.push_back(item);
-    }
-    return returnVector;
-}
-
 QString Control::requestFolderPath()
 {
     QString QStringFolderPath = QFileDialog::getExistingDirectory(view, "Select a dataset folder", "C://");
@@ -74,10 +54,28 @@ QPixmap Control::requestImage(const QString imageName)
     QString qFolderPath = QString::fromStdString(folderPath);
     QString imagePath = qFolderPath + "/" + imageName;
     QPixmap image = model->loadImage(imagePath);
-
     return image;
 }
 
+QStringList Control::vectorToQStringList(std::vector<std::string> v)
+{
+    QStringList returnList;
+    for(unsigned i=0; i < v.size(); i++) {
+        QString item = QString::fromStdString(v[i]);
+        returnList.append(item);
+    }
+    return returnList;
+}
+
+std::vector<std::string> Control::qStringListToVector(QStringList list)
+{
+    std::vector<std::string> returnVector;
+    foreach(QString QStringItem, list) {
+        std::string item = QStringItem.toStdString();
+        returnVector.push_back(item);
+    }
+    return returnVector;
+}
 
 
 
@@ -91,10 +89,8 @@ int main(int argc, char *argv[])
     View view(&control);
     control.view = &view;
 
-
     view.setWindowTitle("CNN Image Labeling");
     view.show();
 
     return app.exec();
-
 }

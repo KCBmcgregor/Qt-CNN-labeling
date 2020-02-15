@@ -31,18 +31,6 @@ void View::on_selectFileButton_clicked()
     ui->classiferPathLabel->setText(path);
 }
 
-void View::on_shapeDrawButton_clicked()
-{
-    QString folderPathQString = QString::fromStdString(control->getFolderPath());
-    ui->imageNameLabel->setText(folderPathQString);
-}
-
-
-View::~View()
-{
-    delete ui;
-}
-
 void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 {
     QString selectedImageName = current->text();
@@ -52,7 +40,10 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     int h = (ui->imageDiplayLabel->height());
     image.scaled(w,h,Qt::KeepAspectRatio);
     ui->imageDiplayLabel->setPixmap(image);
-
 }
 
 
+View::~View()
+{
+    delete ui;
+}
