@@ -37,3 +37,8 @@ View::~View()
 {
     delete ui;
 }
+
+void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
+{
+    ui->imageNameLabel->setText(current->text());
+}

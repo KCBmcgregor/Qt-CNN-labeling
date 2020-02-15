@@ -2,6 +2,7 @@
 #define VIEW_H
 #include "control.h"
 
+#include <QListWidgetItem>
 #include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
@@ -22,6 +23,8 @@ private slots:
     void on_selectFolderButton_clicked();
 
     void on_shapeDrawButton_clicked();
+
+    void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
 
 private:
     Ui::View *ui;
