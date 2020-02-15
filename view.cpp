@@ -25,6 +25,11 @@ void View::on_selectFolderButton_clicked()
     QString path = control->requestFolderPath();
     ui->folderPathLabel->setText(path);
 }
+void View::on_selectFileButton_clicked()
+{
+    QString path = control->requestFilePath();
+    ui->classiferPathLabel->setText(path);
+}
 
 void View::on_shapeDrawButton_clicked()
 {
@@ -42,3 +47,5 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 {
     ui->imageNameLabel->setText(current->text());
 }
+
+

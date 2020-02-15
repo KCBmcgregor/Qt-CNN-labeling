@@ -11,7 +11,7 @@ class Control
 {
 private:
     std::string folderPath;
-
+    std::string classifierFilePath;
 
 public:
     Control();
@@ -23,6 +23,7 @@ public:
     QStringList requestImageNames();
     QStringList requestClassifierNames();
     QString requestFolderPath();
+    QString requestFilePath();
 
     void setConections(Model *m, View *v) {model = m; view = v;};
 

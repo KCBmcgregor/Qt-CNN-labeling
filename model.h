@@ -22,6 +22,7 @@ public:
     std::vector<std::string> getClassifierNames() {return classifierNames;}
 
     std::string loadDataset(std::string folderPath);
+    std::string loadClassifers(std::string filePath);
 
     ~Model();
 };

@@ -26,6 +26,8 @@ private slots:
 
     void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
 
+    void on_selectFileButton_clicked();
+
 private:
     Ui::View *ui;
     Control *control;

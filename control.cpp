@@ -10,7 +10,8 @@
 
 //Control constructor
 Control::Control() {
-    folderPath = "C//:";
+    folderPath = "Please Select Your Dataset Folder >>";
+    classifierFilePath = "Please Select Your Class File >>";
 
 }
 
@@ -54,6 +55,16 @@ QString Control::requestFolderPath()
     QString QStringFolderPath = QFileDialog::getExistingDirectory(view, "Select a dataset folder", "C://");
     folderPath = QStringFolderPath.toStdString();
     model->loadDataset(folderPath);
+    view->renderLists();
+    return QStringFolderPath;
+}
+
+QString Control::requestFilePath()
+{
+    QString filter = "Class Files (*.names)";
+    QString QStringFolderPath = QFileDialog::getOpenFileName(view, "Select your class file", "C://",filter);
+    folderPath = QStringFolderPath.toStdString();
+    model->loadClassifers(folderPath);
     view->renderLists();
     return QStringFolderPath;
 }

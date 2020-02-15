@@ -57,7 +57,7 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>C:/</string>
+               <string>Please Select Your Dataset Folder &gt;&gt;</string>
               </property>
              </widget>
             </item>
@@ -140,12 +140,12 @@
                </sizepolicy>
               </property>
               <property name="text">
-               <string>C:/</string>
+               <string>Please Select Your Class File &gt;&gt;</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QPushButton" name="selectFileButton_2">
+             <widget class="QPushButton" name="selectFileButton">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
