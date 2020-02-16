@@ -12,7 +12,6 @@
 Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
     classifierFilePath = "Please Select Your Class File >>";
-
 }
 
 

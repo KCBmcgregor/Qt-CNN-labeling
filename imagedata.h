@@ -31,6 +31,9 @@ class ImageData
 
 public:
     ImageData();
+    int getNoOfShapes() {return noOfShapes;}
+    int getNoOfAnnoation() {return noOfAnnoation;}
+    std::vector<Shape> getShapes() {return Shapes;}
     ~ImageData();
 };
 
