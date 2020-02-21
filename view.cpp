@@ -13,6 +13,9 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 
 void View::renderLists()
 {
+    ui->imageNamesList->clear();
+    ui->classifierList->clear();
+
     QStringList imageNames = control->requestImageNames();
     foreach (QString name, imageNames) {
         ui->imageNamesList->addItem(name);
@@ -36,16 +39,28 @@ void View::on_selectFileButton_clicked()
 
 void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 {
-    QString selectedImageName = current->text();
-    ui->imageNameLabel->setText(selectedImageName);
-    QPixmap image = control->requestImage(selectedImageName);
+    if (current != nullptr)
+    {
+        QString selectedImageName = current->text();
+        ui->imageNameLabel->setText(selectedImageName);
+        QPixmap image = control->requestImage(selectedImageName);
 
-    QGraphicsPixmapItem *oldSceneImage = sceneImage;
-    scene->removeItem(sceneImage);
+        QGraphicsPixmapItem *oldSceneImage = sceneImage;
+        scene->removeItem(sceneImage);
 
-    sceneImage = scene->addPixmap(image);
-    ui->graphicsView->setScene(scene);
-    delete oldSceneImage;
+        sceneImage = scene->addPixmap(image);
+        ui->graphicsView->setScene(scene);
+        delete oldSceneImage;
+    }
+    else
+    {
+        QGraphicsPixmapItem *oldSceneImage = sceneImage;
+        scene->removeItem(sceneImage);
+        ui->graphicsView->setScene(scene);
+        delete oldSceneImage;
+        sceneImage = new QGraphicsPixmapItem();
+    }
+
 }
 
 View::~View()

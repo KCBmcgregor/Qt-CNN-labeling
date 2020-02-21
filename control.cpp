@@ -41,11 +41,11 @@ QString Control::requestFolderPath()
 QString Control::requestFilePath()
 {
     QString filter = "Class Files (*.names)";
-    QString QStringFolderPath = QFileDialog::getOpenFileName(view, "Select your class file", "C://",filter);
-    folderPath = QStringFolderPath.toStdString();
-    model->loadClassifers(folderPath);
+    QString QStringFilePath = QFileDialog::getOpenFileName(view, "Select your class file", "C://",filter);
+    classifierFilePath = QStringFilePath.toStdString();
+    model->loadClassifers(classifierFilePath);
     view->renderLists();
-    return QStringFolderPath;
+    return QStringFilePath;
 }
 
 QPixmap Control::requestImage(const QString imageName)
