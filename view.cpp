@@ -10,8 +10,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     sceneImage = new QGraphicsPixmapItem();
     ui->graphicsView->setScene(scene);
 
-    QPen linePen(Qt::black);
-    linePen.setWidth(5);
 
 
 }
@@ -74,14 +72,10 @@ View::~View()
 
 void View::on_shapeDrawButton_clicked()
 {
-    QPen linePen(Qt::black);
-    linePen.setWidth(5);
+    control->setMode("draw");
+}
 
-    rectangle = scene->addRect(10,10,100,100,linePen);
-    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
-    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
-
-    rectangle = scene->addRect(-10,-10,100,100,linePen);
-    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
-    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
+void View::on_shapesList_currentItemChanged(QListWidgetItem *current)
+{
+    control->setShapeToDraw(current->text().toStdString());
 }

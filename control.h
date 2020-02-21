@@ -23,6 +23,8 @@ private:
     //! State variables for file paths.
     std::string folderPath; /**< string to hold the currently selected dataset folder path */
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
+    std::string mode;
+    int sidesToDraw;
 
 public:
     //! The Contol constructor.
@@ -44,11 +46,14 @@ public:
      */
     std::string getFolderPath() {return folderPath;}
 
+    void setMode(std::string m) {mode = m;}
+    void setSidesToDraw(QString shape);
+
     //! A method taking no arguments and returning a QStringList.
     /*!
      requests a list of the current image names stored in the model
       @return list of the current image names
-    */
+    */   
     QStringList requestImageNames();
 
     //! A method taking no arguments and returning a QStringList.
@@ -82,6 +87,8 @@ public:
 
     */
     QPixmap requestImage(const QString imageName);
+
+
 
     QStringList vectorToQStringList(std::vector<std::string> v);
     /**

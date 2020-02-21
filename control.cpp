@@ -12,8 +12,12 @@
 Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
     classifierFilePath = "Please Select Your Class File >>";
+    mode = "none";
+    sidesToDraw = 0;
 }
-
+void Control::setSidesToDraw(QString shape) {
+    sidesToDraw = shape.mid(0).toInt();
+}
 
 QStringList Control::requestImageNames()
 {
