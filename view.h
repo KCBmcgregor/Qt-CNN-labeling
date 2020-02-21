@@ -19,6 +19,9 @@ private:
     Control *control;
     QGraphicsScene *scene;
     QGraphicsPixmapItem *sceneImage;
+    QGraphicsRectItem *rectangle;
+    QGraphicsPolygonItem *polygon;
+
 public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
 
@@ -31,6 +34,7 @@ private slots:
     void on_selectFileButton_clicked();
 
     void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
+    void on_shapeDrawButton_clicked();
 };
 
 #endif // VIEW_H

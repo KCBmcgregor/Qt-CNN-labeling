@@ -6,8 +6,14 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 {
     control = cont;
     ui->setupUi(this);
-    scene = new QGraphicsScene();
-    sceneImage = new QGraphicsPixmapItem();;
+    scene = new QGraphicsScene(this);
+    sceneImage = new QGraphicsPixmapItem();
+    ui->graphicsView->setScene(scene);
+
+    QPen linePen(Qt::black);
+    linePen.setWidth(5);
+
+
 }
 
 
@@ -49,21 +55,33 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
         scene->removeItem(sceneImage);
 
         sceneImage = scene->addPixmap(image);
-        ui->graphicsView->setScene(scene);
+        ui->graphicsView->centerOn(sceneImage);
         delete oldSceneImage;
     }
     else
     {
         QGraphicsPixmapItem *oldSceneImage = sceneImage;
         scene->removeItem(sceneImage);
-        ui->graphicsView->setScene(scene);
         delete oldSceneImage;
         sceneImage = new QGraphicsPixmapItem();
     }
-
 }
 
 View::~View()
 {
     delete ui;
+}
+
+void View::on_shapeDrawButton_clicked()
+{
+    QPen linePen(Qt::black);
+    linePen.setWidth(5);
+
+    rectangle = scene->addRect(10,10,100,100,linePen);
+    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
+    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
+
+    rectangle = scene->addRect(-10,-10,100,100,linePen);
+    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
+    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
 }
