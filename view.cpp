@@ -1,10 +1,13 @@
 #include "view.h"
 #include "ui_view.h"
+#include <QGraphicsPixmapItem>
 
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
     control = cont;
     ui->setupUi(this);
+    scene = new QGraphicsScene();
+    sceneImage = new QGraphicsPixmapItem();;
 }
 
 
@@ -36,12 +39,14 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     QString selectedImageName = current->text();
     ui->imageNameLabel->setText(selectedImageName);
     QPixmap image = control->requestImage(selectedImageName);
-    int w = (ui->imageDiplayLabel->width());
-    int h = (ui->imageDiplayLabel->height());
-    image.scaled(w,h,Qt::KeepAspectRatio);
-    ui->imageDiplayLabel->setPixmap(image);
-}
 
+    QGraphicsPixmapItem *oldSceneImage = sceneImage;
+    scene->removeItem(sceneImage);
+
+    sceneImage = scene->addPixmap(image);
+    ui->graphicsView->setScene(scene);
+    delete oldSceneImage;
+}
 
 View::~View()
 {

@@ -4,6 +4,7 @@
 
 #include <QListWidgetItem>
 #include <QMainWindow>
+#include <QGraphicsScene>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class View; }
@@ -16,7 +17,8 @@ class View : public QMainWindow
 private:
     Ui::View *ui;
     Control *control;
-
+    QGraphicsScene *scene;
+    QGraphicsPixmapItem *sceneImage;
 public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
 
