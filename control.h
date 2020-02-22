@@ -2,6 +2,7 @@
 #define CONTROL_H
 
 #include <QtCore>
+#include <QGraphicsPixmapItem>
 #include <string>
 
 class Model;
@@ -86,7 +87,7 @@ public:
     /*!
 
     */
-    QPixmap requestImage(const QString imageName);
+    QGraphicsPixmapItem * requestImage(const QString imageName);
 
 
 

@@ -12,7 +12,7 @@ class Model
 {
     Control *control;
     std::vector<std::string> imageNames;
-    std::map<std::string,ImageData> imageData;
+    std::map<std::string, ImageData * > imageData;
     std::vector<std::string> classifierNames;
 
 public:
@@ -21,9 +21,11 @@ public:
     std::vector<std::string> getImageNames() {return imageNames;}
     std::vector<std::string> getClassifierNames() {return classifierNames;}
 
+    QGraphicsPixmapItem * requestImageItem(std::string imageName);
+
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
-    QPixmap loadImage(const QString imagePath);
+    void loadImage(QString imagePath, const QString imageName);
 
     ~Model();
 };

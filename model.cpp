@@ -1,4 +1,5 @@
 #include "model.h"
+#include "imagedata.h"
 
 #include <QFile>
 #include <QString>
@@ -11,6 +12,17 @@ Model::Model(Control *cont)
     imageData = {};
     classifierNames = {};
 
+}
+
+QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
+{
+    if (imageData.find(imageName) == imageData.end()) {
+      return nullptr;
+    }
+    else
+    {
+      return (imageData[imageName]->getImagePt());
+    }
 }
 
 std::string Model::loadDataset(std::string folderPath)
@@ -48,10 +60,12 @@ std::string Model::loadClassifers(std::string filePath)
     return filePath;
 }
 
-QPixmap Model::loadImage(const QString imagePath)
+void Model::loadImage(QString imagePath, const QString imageName)
 {
-    QPixmap image(imagePath);
-    return image;
+    ImageData *newImageData;
+    newImageData = new ImageData(imagePath);
+    std::string index = imageName.toStdString();
+    imageData[index] = newImageData;
 }
 
 

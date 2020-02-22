@@ -47,21 +47,14 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     {
         QString selectedImageName = current->text();
         ui->imageNameLabel->setText(selectedImageName);
-        QPixmap image = control->requestImage(selectedImageName);
-
-        QGraphicsPixmapItem *oldSceneImage = sceneImage;
-        scene->removeItem(sceneImage);
-
-        sceneImage = scene->addPixmap(image);
+        scene->clear(); //this delets the items need a work around
+        QGraphicsPixmapItem *image = control->requestImage(selectedImageName);
+        scene->addItem(image);
         ui->graphicsView->centerOn(sceneImage);
-        delete oldSceneImage;
     }
     else
     {
-        QGraphicsPixmapItem *oldSceneImage = sceneImage;
-        scene->removeItem(sceneImage);
-        delete oldSceneImage;
-        sceneImage = new QGraphicsPixmapItem();
+        scene->clear();
     }
 }
 
@@ -77,5 +70,5 @@ void View::on_shapeDrawButton_clicked()
 
 void View::on_shapesList_currentItemChanged(QListWidgetItem *current)
 {
-    control->setShapeToDraw(current->text().toStdString());
+    control->setSidesToDraw(current->text());
 }

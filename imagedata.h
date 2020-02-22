@@ -4,36 +4,23 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <QGraphicsItem>
 
-struct Point
-{
-    int x;
-    int y;
-};
-
-class Shape
-{
-    std::string shapeType;
-    std::vector<Point> Points;
-    std::string annotation;
-    bool showingAnnotation;
-public:
-    Shape();
-
-};
 
 class ImageData
 {
-    std::string name;
+    QGraphicsPixmapItem *imagePt;
     int noOfShapes;
-    int noOfAnnoation;
-    std::vector<Shape> Shapes;
+    //std::vector<QGraphicsPolygonItem> Shapes;
 
 public:
-    ImageData();
+    ImageData() {;}
+    ImageData(QString imagePath);
+
+    QGraphicsPixmapItem * getImagePt() {return imagePt;}
     int getNoOfShapes() {return noOfShapes;}
-    int getNoOfAnnoation() {return noOfAnnoation;}
-    std::vector<Shape> getShapes() {return Shapes;}
+    //std::vector<QGraphicsPolygonItem> getShapes() {return Shapes;}
+
     ~ImageData();
 };
 

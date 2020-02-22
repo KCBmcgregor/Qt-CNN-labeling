@@ -52,11 +52,16 @@ QString Control::requestFilePath()
     return QStringFilePath;
 }
 
-QPixmap Control::requestImage(const QString imageName)
+QGraphicsPixmapItem * Control::requestImage(const QString imageName)
 {
-    QString qFolderPath = QString::fromStdString(folderPath);
-    QString imagePath = qFolderPath + "/" + imageName;
-    QPixmap image = model->loadImage(imagePath);
+    QGraphicsPixmapItem *image = model->requestImageItem(imageName.toStdString());
+    if (image == nullptr)
+    {
+        QString qFolderPath = QString::fromStdString(folderPath);
+        QString imagePath = qFolderPath + "/" + imageName;
+        model->loadImage(imagePath, imageName);
+        image = model->requestImageItem(imageName.toStdString());
+    }
     return image;
 }
 
