@@ -98,10 +98,12 @@ void Control::pointDrawn()
     if (drawPointsDrawn == sidesToDraw)
     {
        model->requestAddDrawnShape(selectedImageName);
+       drawPointsDrawn = 0;
     }
     else if (drawPointsDrawn != 1)
     {
         model->requestConnectLastDrawnPoints(selectedImageName);
+
     }
 }
 

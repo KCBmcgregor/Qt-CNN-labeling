@@ -26,7 +26,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 
 }
 
-
 void View::renderLists()
 {
     ui->imageNamesList->clear();
