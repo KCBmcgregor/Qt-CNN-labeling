@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1082</width>
+    <width>1273</width>
     <height>1051</height>
    </rect>
   </property>
@@ -75,7 +75,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox_2">
+             <widget class="QComboBox" name="ImageComboBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -102,6 +102,13 @@
                 <string>Date (Des)</string>
                </property>
               </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sortButton">
+              <property name="text">
+               <string>Sort</string>
+              </property>
              </widget>
             </item>
            </layout>
@@ -188,7 +195,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QComboBox" name="comboBox">
+             <widget class="QComboBox" name="classComboBox">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -205,16 +212,13 @@
                 <string>Name (Des)</string>
                </property>
               </item>
-              <item>
-               <property name="text">
-                <string>Date (Asc)</string>
-               </property>
-              </item>
-              <item>
-               <property name="text">
-                <string>Date (Des)</string>
-               </property>
-              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="sortButton2">
+              <property name="text">
+               <string>Sort</string>
+              </property>
              </widget>
             </item>
            </layout>

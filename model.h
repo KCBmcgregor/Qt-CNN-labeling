@@ -14,7 +14,7 @@ class Model
     std::vector<std::string> imageNames;
     std::map<std::string, ImageData * > imageData;
     std::vector<std::string> classifierNames;
-
+    std::vector<QDateTime>dates;
 public:
     Model(Control *cont = nullptr);
 
@@ -33,7 +33,11 @@ public:
 
     void pointDrawn() {control->pointDrawn();}
 
-
+    std::vector<QDateTime> getDates() {return dates;}
+    std::string loadDataset(std::string folderPath);
+    std::string loadClassifers(std::string filePath);
+    std::vector<QDateTime>loadDates(std::vector<std::string> imageNames);
+    QPixmap loadImage(const QString imagePath);
 
     ~Model();
 };

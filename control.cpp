@@ -45,7 +45,7 @@ QString Control::requestFolderPath()
     QString QStringFolderPath = QFileDialog::getExistingDirectory(view, "Select a dataset folder", "C://");
     folderPath = QStringFolderPath.toStdString();
     model->loadDataset(folderPath);
-    view->renderLists();
+    view->renderList1();
     return QStringFolderPath;
 }
 
@@ -55,7 +55,7 @@ QString Control::requestFilePath()
     QString QStringFilePath = QFileDialog::getOpenFileName(view, "Select your class file", "C://",filter);
     classifierFilePath = QStringFilePath.toStdString();
     model->loadClassifers(classifierFilePath);
-    view->renderLists();
+    view->renderList2();
     return QStringFilePath;
 }
 
@@ -92,6 +92,7 @@ std::vector<std::string> Control::qStringListToVector(QStringList list)
     return returnVector;
 }
 
+
 void Control::pointDrawn()
 {
     drawPointsDrawn++;
@@ -105,6 +106,115 @@ void Control::pointDrawn()
         model->requestConnectLastDrawnPoints(selectedImageName);
 
     }
+}
+
+
+QStringList Control::requestSortedNameAscending(int i){
+    std::vector<std::string>namesVector;
+    if(i == 1){
+        namesVector = model->getImageNames();
+    }
+    if(i == 2){
+        namesVector = model->getClassifierNames();
+    }
+    bool swapped = false;
+
+    for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {
+        for (unsigned int j = 0; j < namesVector.size() - 1 - i; ++j) {
+
+            if (namesVector[j] > namesVector[j + 1]) {
+                std::string temp = namesVector[j];
+                namesVector[j] = namesVector[j + 1];
+                namesVector[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+        swapped = false;
+    }
+    QStringList sortedNames = vectorToQStringList(namesVector);
+    return sortedNames;
+}
+
+QStringList Control::requestSortedNameDescending(int i){
+    std::vector<std::string>namesVector;
+    if(i == 1){
+        namesVector = model->getImageNames();
+    }
+    if(i == 2){
+        namesVector = model->getClassifierNames();
+    }
+    bool swapped = false;
+
+    for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {
+        for (unsigned int j = 0; j < namesVector.size() - 1 - i; ++j) {
+
+            if (namesVector[j] < namesVector[j + 1]) {
+                std::string temp = namesVector[j];
+                namesVector[j] = namesVector[j + 1];
+                namesVector[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+        swapped = false;
+    }
+    QStringList sortedNames = vectorToQStringList(namesVector);
+    return sortedNames;
+}
+
+
+QStringList Control::requestSortedDateAscending(){
+    bool swapped = false;
+    std::vector<QDateTime>datesVector = model->getDates();
+    std::vector<std::string>namesVector =  model->getImageNames();
+
+    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
+        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
+
+            if (datesVector[j] > datesVector[j + 1]) {
+                std::string temp = namesVector[j];
+                namesVector[j] = namesVector[j + 1];
+                namesVector[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+        swapped = false;
+    }
+    QStringList sortedNames = vectorToQStringList(namesVector);
+    return sortedNames;
+}
+
+
+QStringList Control::requestSortedDateDescending(){
+    bool swapped = false;
+    std::vector<QDateTime>datesVector = model->getDates();
+    std::vector<std::string>namesVector =  model->getImageNames();
+
+    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
+        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
+
+            if (datesVector[j] < datesVector[j + 1]) {
+                std::string temp = namesVector[j];
+                namesVector[j] = namesVector[j + 1];
+                namesVector[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+        swapped = false;
+    }
+    QStringList sortedNames = vectorToQStringList(namesVector);
+    return sortedNames;
 }
 
 
