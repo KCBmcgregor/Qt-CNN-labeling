@@ -82,8 +82,8 @@ std::string Model::loadClassifers(std::string filePath)
 }
 
 
-void Model::loadImage(QString imagePath, const QString imageName)
-std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames){
+std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames)
+{
     std::vector<QDateTime> dates;
     QFileInfo fileInfo;
     QStringList newImageNames = control->vectorToQStringList(imageNames);
@@ -96,8 +96,7 @@ std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames){
     return dates;
 }
 
-QPixmap Model::loadImage(const QString imagePath)
-
+void Model::loadImage(QString imagePath, const QString imageName)
 {
     ImageData *newImageData;
     newImageData = new ImageData(imagePath, this);

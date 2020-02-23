@@ -20,6 +20,7 @@ public:
 
     std::vector<std::string> getImageNames() {return imageNames;}
     std::vector<std::string> getClassifierNames() {return classifierNames;}
+    std::vector<QDateTime> getDates() {return dates;}
 
     QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
@@ -30,14 +31,15 @@ public:
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
     void loadImage(QString imagePath, const QString imageName);
+    std::vector<QDateTime>loadDates(std::vector<std::string> imageNames);
+    QPixmap loadImage(const QString imagePath);
 
     void pointDrawn() {control->pointDrawn();}
 
-    std::vector<QDateTime> getDates() {return dates;}
-    std::string loadDataset(std::string folderPath);
-    std::string loadClassifers(std::string filePath);
-    std::vector<QDateTime>loadDates(std::vector<std::string> imageNames);
-    QPixmap loadImage(const QString imagePath);
+
+
+
+
 
     ~Model();
 };
