@@ -2,6 +2,7 @@
 #define CONTROL_H
 
 #include <QtCore>
+#include <QGraphicsPixmapItem>
 #include <string>
 
 class Model;
@@ -23,6 +24,13 @@ private:
     //! State variables for file paths.
     std::string folderPath; /**< string to hold the currently selected dataset folder path */
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
+    std::string selectedImageName;
+    std::string mode;
+    int sidesToDraw;
+
+    int drawPointsDrawn;
+    int drawSidesDrawn;
+
 
 public:
     //! The Contol constructor.
@@ -43,16 +51,25 @@ public:
      @return std::string
      */
     std::string getFolderPath() {return folderPath;}
+    std::string getMode() {return mode;}
+    int getSidesToDraw() {return sidesToDraw;}
+
+    void setSelectedImageName(std::string iN) {selectedImageName = iN;}
+    void setMode(std::string m) {mode = m;}
+    void setSidesToDraw(QString shape);
+
+    QMap<std::string,QPen> requestPens();
 
     //! A method taking no arguments and returning a QStringList.
     /*!
      requests a list of the current image names stored in the model
-      @return list of the current image names
+      @return list of the current image names  
     */
 
     std::vector<QDateTime> requestDates();
     //!takes no arguments and returns a vector of type QDateTime.
     //!requests the file modification dates.
+
 
     QStringList requestImageNames();
 
@@ -86,7 +103,7 @@ public:
     /*!
 
     */
-    QPixmap requestImage(const QString imageName);
+    QGraphicsPixmapItem * requestImage(const QString imageName);
 
     QStringList requestSortedNameAscending(int i);
     //! Sorts either the image or the class names in ascending order.
@@ -109,6 +126,8 @@ public:
      * @return std::vector<std::string>
      */
     std::vector<std::string> qStringListToVector(QStringList list);
+
+    void pointDrawn();
 
 };
 

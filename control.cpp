@@ -12,8 +12,19 @@
 Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
     classifierFilePath = "Please Select Your Class File >>";
+    mode = "none";
+    sidesToDraw = 3;
+    drawPointsDrawn = 0;
+    drawSidesDrawn = 0;
+}
+void Control::setSidesToDraw(QString shape) {
+    sidesToDraw = shape.at(0).digitValue();
 }
 
+QMap<std::string, QPen> Control::requestPens()
+{
+    return view->getPens();
+}
 
 QStringList Control::requestImageNames()
 {
@@ -48,11 +59,16 @@ QString Control::requestFilePath()
     return QStringFilePath;
 }
 
-QPixmap Control::requestImage(const QString imageName)
+QGraphicsPixmapItem * Control::requestImage(const QString imageName)
 {
-    QString qFolderPath = QString::fromStdString(folderPath);
-    QString imagePath = qFolderPath + "/" + imageName;
-    QPixmap image = model->loadImage(imagePath);
+    QGraphicsPixmapItem *image = model->requestImageItem(imageName.toStdString());
+    if (image == nullptr)
+    {
+        QString qFolderPath = QString::fromStdString(folderPath);
+        QString imagePath = qFolderPath + "/" + imageName;
+        model->loadImage(imagePath, imageName);
+        image = model->requestImageItem(imageName.toStdString());
+    }
     return image;
 }
 
@@ -75,6 +91,23 @@ std::vector<std::string> Control::qStringListToVector(QStringList list)
     }
     return returnVector;
 }
+
+
+void Control::pointDrawn()
+{
+    drawPointsDrawn++;
+    if (drawPointsDrawn == sidesToDraw)
+    {
+       model->requestAddDrawnShape(selectedImageName);
+       drawPointsDrawn = 0;
+    }
+    else if (drawPointsDrawn != 1)
+    {
+        model->requestConnectLastDrawnPoints(selectedImageName);
+
+    }
+}
+
 
 QStringList Control::requestSortedNameAscending(int i){
     std::vector<std::string>namesVector;
@@ -183,6 +216,7 @@ QStringList Control::requestSortedDateDescending(){
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
+
 
 
 int main(int argc, char *argv[])

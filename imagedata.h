@@ -4,36 +4,60 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <QGraphicsItem>
+#include <view.h>
 
-struct Point
-{
-    int x;
-    int y;
-};
 
-class Shape
+
+class Model;
+class ImageData;
+
+class Image :public QGraphicsPixmapItem
 {
-    std::string shapeType;
-    std::vector<Point> Points;
-    std::string annotation;
-    bool showingAnnotation;
+    Model *model;
+    ImageData *imageData;
 public:
-    Shape();
+    bool pressed = false;
+    Image(QString path, Model *model, ImageData *imageData);
+    using QGraphicsPixmapItem::boundingRect;
+    using QGraphicsPixmapItem::paint;
 
+    QPointF mousePos;
+
+protected:
+    void mousePressEvent(QGraphicsSceneMouseEvent *event);
+    void mouseMoveEvent(QGraphicsSceneMouseEvent *event);
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
 };
 
 class ImageData
 {
-    std::string name;
+    Image *imagePt;
     int noOfShapes;
-    int noOfAnnoation;
-    std::vector<Shape> Shapes;
+    std::vector<QGraphicsPolygonItem * > shapes;
+    std::vector<QGraphicsLineItem * > lines;
+    std::vector<QGraphicsEllipseItem * > points;
+    Model *model;
+    QMap<std::string, QPen> pens;
+
 
 public:
-    ImageData();
+    ImageData() {;}
+    ImageData(QString imagePath, Model *model);
+
+    QGraphicsPixmapItem * getImagePt() {return imagePt;}
     int getNoOfShapes() {return noOfShapes;}
-    int getNoOfAnnoation() {return noOfAnnoation;}
-    std::vector<Shape> getShapes() {return Shapes;}
+    std::vector<QGraphicsPolygonItem * > getShapes() {return shapes;}
+
+    bool addPoint(Image *parent, QPointF mousePos);
+    bool addLine(Image *parent, QPointF point1, QPointF point2);
+    bool addShape(Image *parent, QPolygonF shapePoints);
+
+    bool addDrawnShape();
+
+    bool connectLastDrawnPoints();
+
+
     ~ImageData();
 };
 

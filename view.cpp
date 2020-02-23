@@ -7,15 +7,24 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     control = cont;
     ui->setupUi(this);
     scene = new QGraphicsScene(this);
-    sceneImage = new QGraphicsPixmapItem();
+    image = new QGraphicsPixmapItem();
     ui->graphicsView->setScene(scene);
+
+
+    QPen pointPen(Qt::red);
+    pointPen.setWidth(10);
+    pens["pointPen"] = pointPen;
 
     QPen linePen(Qt::black);
     linePen.setWidth(5);
+    pens["linePen"] = linePen;
+
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(10);
+    pens["shapePen"] = shapePen;
 
 
 }
-
 
 void View::renderList1()
 {
@@ -100,21 +109,15 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     {
         QString selectedImageName = current->text();
         ui->imageNameLabel->setText(selectedImageName);
-        QPixmap image = control->requestImage(selectedImageName);
-
-        QGraphicsPixmapItem *oldSceneImage = sceneImage;
-        scene->removeItem(sceneImage);
-
-        sceneImage = scene->addPixmap(image);
-        ui->graphicsView->centerOn(sceneImage);
-        delete oldSceneImage;
+        scene->removeItem(image);
+        control->setSelectedImageName(selectedImageName.toStdString());
+        image = control->requestImage(selectedImageName);
+        scene->addItem(image);
+        ui->graphicsView->centerOn(image);
     }
     else
     {
-        QGraphicsPixmapItem *oldSceneImage = sceneImage;
-        scene->removeItem(sceneImage);
-        delete oldSceneImage;
-        sceneImage = new QGraphicsPixmapItem();
+        scene->removeItem(image);
     }
 }
 
@@ -125,14 +128,20 @@ View::~View()
 
 void View::on_shapeDrawButton_clicked()
 {
-    QPen linePen(Qt::black);
-    linePen.setWidth(5);
+    control->setMode("draw");
+}
 
-    rectangle = scene->addRect(10,10,100,100,linePen);
-    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
-    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
+void View::on_shapesList_currentItemChanged(QListWidgetItem *current)
+{
+    control->setSidesToDraw(current->text());
+}
 
-    rectangle = scene->addRect(-10,-10,100,100,linePen);
-    rectangle->setFlag(QGraphicsItem::ItemIsMovable);
-    rectangle->setFlag(QGraphicsItem::ItemIsSelectable);
+void View::on_zoomInButton_clicked()
+{
+    ui->graphicsView->scale(1.2,1.2);
+}
+
+void View::on_zoomOutButton_clicked()
+{
+    ui->graphicsView->scale(0.8,0.8);
 }

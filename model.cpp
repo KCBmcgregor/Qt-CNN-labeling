@@ -1,8 +1,9 @@
 #include "model.h"
+#include "imagedata.h"
 
 #include <QFile>
 #include <QString>
-#include <QFileDialog>
+#include <QMainWindow>
 
 Model::Model(Control *cont)
 {
@@ -11,6 +12,38 @@ Model::Model(Control *cont)
     imageData = {};
     classifierNames = {};
 
+}
+
+QMap<std::string, QPen> Model::requestPens()
+{
+    return control->requestPens();
+}
+
+QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
+{
+    if (imageData.find(imageName) == imageData.end()) {
+      return nullptr;
+    }
+    else
+    {
+      return (imageData[imageName]->getImagePt());
+    }
+}
+
+std::string Model::requestMode()
+{
+    std::string mode = control->getMode();
+    return mode;
+}
+
+void Model::requestConnectLastDrawnPoints(std::string imageName)
+{
+    imageData[imageName]->connectLastDrawnPoints();
+}
+
+void Model::requestAddDrawnShape(std::string imageName)
+{
+    imageData[imageName]->addDrawnShape();
 }
 
 std::string Model::loadDataset(std::string folderPath)
@@ -48,6 +81,8 @@ std::string Model::loadClassifers(std::string filePath)
     return filePath;
 }
 
+
+void Model::loadImage(QString imagePath, const QString imageName)
 std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames){
     std::vector<QDateTime> dates;
     QFileInfo fileInfo;
@@ -62,10 +97,14 @@ std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames){
 }
 
 QPixmap Model::loadImage(const QString imagePath)
+
 {
-    QPixmap image(imagePath);
-    return image;
+    ImageData *newImageData;
+    newImageData = new ImageData(imagePath, this);
+    std::string index = imageName.toStdString();
+    imageData[index] = newImageData;
 }
+
 
 
 Model::~Model()
