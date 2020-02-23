@@ -10,15 +10,18 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     image = new QGraphicsPixmapItem();
     ui->graphicsView->setScene(scene);
 
+
     QPen pointPen(Qt::red);
-    pointPen.setWidth(6);
+    pointPen.setWidth(10);
     pens["pointPen"] = pointPen;
 
+    QPen linePen(Qt::black);
+    linePen.setWidth(5);
+    pens["linePen"] = linePen;
 
-
-    QPen highlightPen(Qt::yellow);
-    highlightPen.setWidth(10);
-
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(10);
+    pens["shapePen"] = shapePen;
 
 
 }
@@ -57,6 +60,7 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
         QString selectedImageName = current->text();
         ui->imageNameLabel->setText(selectedImageName);
         scene->removeItem(image);
+        control->setSelectedImageName(selectedImageName.toStdString());
         image = control->requestImage(selectedImageName);
         scene->addItem(image);
         ui->graphicsView->centerOn(image);

@@ -41,9 +41,6 @@ class ImageData
     QMap<std::string, QPen> pens;
 
 
-
-
-
 public:
     ImageData() {;}
     ImageData(QString imagePath, Model *model);
@@ -53,9 +50,12 @@ public:
     std::vector<QGraphicsPolygonItem * > getShapes() {return shapes;}
 
     bool addPoint(Image *parent, QPointF mousePos);
-    bool addLine();
+    bool addLine(Image *parent, QPointF point1, QPointF point2);
+    bool addShape(Image *parent, QPolygonF shapePoints);
 
-    bool addShape();
+    bool addDrawnShape();
+
+    bool connectLastDrawnPoints();
 
 
     ~ImageData();

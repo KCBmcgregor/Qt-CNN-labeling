@@ -13,10 +13,12 @@ Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
     classifierFilePath = "Please Select Your Class File >>";
     mode = "none";
-    sidesToDraw = 0;
+    sidesToDraw = 3;
+    drawPointsDrawn = 0;
+    drawSidesDrawn = 0;
 }
 void Control::setSidesToDraw(QString shape) {
-    sidesToDraw = shape.mid(0).toInt();
+    sidesToDraw = shape.at(0).digitValue();
 }
 
 QMap<std::string, QPen> Control::requestPens()
@@ -88,6 +90,19 @@ std::vector<std::string> Control::qStringListToVector(QStringList list)
         returnVector.push_back(item);
     }
     return returnVector;
+}
+
+void Control::pointDrawn()
+{
+    drawPointsDrawn++;
+    if (drawPointsDrawn == sidesToDraw)
+    {
+       model->requestAddDrawnShape(selectedImageName);
+    }
+    else if (drawPointsDrawn != 1)
+    {
+        model->requestConnectLastDrawnPoints(selectedImageName);
+    }
 }
 
 

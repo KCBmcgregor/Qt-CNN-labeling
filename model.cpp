@@ -36,6 +36,16 @@ std::string Model::requestMode()
     return mode;
 }
 
+void Model::requestConnectLastDrawnPoints(std::string imageName)
+{
+    imageData[imageName]->connectLastDrawnPoints();
+}
+
+void Model::requestAddDrawnShape(std::string imageName)
+{
+    imageData[imageName]->addDrawnShape();
+}
+
 std::string Model::loadDataset(std::string folderPath)
 {
     const QStringList filter = {"*.jpg","*.JPG","*.png"};
@@ -78,6 +88,8 @@ void Model::loadImage(QString imagePath, const QString imageName)
     std::string index = imageName.toStdString();
     imageData[index] = newImageData;
 }
+
+
 
 
 Model::~Model()

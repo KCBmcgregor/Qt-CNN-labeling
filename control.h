@@ -24,8 +24,13 @@ private:
     //! State variables for file paths.
     std::string folderPath; /**< string to hold the currently selected dataset folder path */
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
+    std::string selectedImageName;
     std::string mode;
     int sidesToDraw;
+
+    int drawPointsDrawn;
+    int drawSidesDrawn;
+
 
 public:
     //! The Contol constructor.
@@ -49,6 +54,7 @@ public:
     std::string getMode() {return mode;}
     int getSidesToDraw() {return sidesToDraw;}
 
+    void setSelectedImageName(std::string iN) {selectedImageName = iN;}
     void setMode(std::string m) {mode = m;}
     void setSidesToDraw(QString shape);
 
@@ -103,6 +109,8 @@ public:
      * @return std::vector<std::string>
      */
     std::vector<std::string> qStringListToVector(QStringList list);
+
+    void pointDrawn();
 
 };
 

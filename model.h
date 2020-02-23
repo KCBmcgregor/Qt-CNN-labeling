@@ -24,10 +24,16 @@ public:
     QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
     std::string requestMode();
+    void requestConnectLastDrawnPoints(std::string imageName);
+    void requestAddDrawnShape(std::string imageName);
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
     void loadImage(QString imagePath, const QString imageName);
+
+    void pointDrawn() {control->pointDrawn();}
+
+
 
     ~Model();
 };
