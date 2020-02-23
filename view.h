@@ -25,13 +25,16 @@ private:
 public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
 
-    void renderLists();
+    void renderList1();
+    void renderList2();
 
     ~View();
 
 private slots:
     void on_selectFolderButton_clicked();
     void on_selectFileButton_clicked();
+    void on_sortButton_clicked();
+    void on_sortButton2_clicked();
 
     void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
     void on_shapeDrawButton_clicked();

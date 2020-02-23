@@ -49,6 +49,11 @@ public:
      requests a list of the current image names stored in the model
       @return list of the current image names
     */
+
+    std::vector<QDateTime> requestDates();
+    //!takes no arguments and returns a vector of type QDateTime.
+    //!requests the file modification dates.
+
     QStringList requestImageNames();
 
     //! A method taking no arguments and returning a QStringList.
@@ -82,6 +87,19 @@ public:
 
     */
     QPixmap requestImage(const QString imageName);
+
+    QStringList requestSortedNameAscending(int i);
+    //! Sorts either the image or the class names in ascending order.
+    //! The int i parameter is used to determine which one is sorted(class or image).
+
+    QStringList requestSortedNameDescending(int i);
+    //! Same as requestSortedNameAscending, but descending instead.
+
+    QStringList requestSortedDateAscending();
+    //! Sorts the image file modified date ascending.
+
+    QStringList requestSortedDateDescending();
+    //! Sorts the image file modified date descending.
 
     QStringList vectorToQStringList(std::vector<std::string> v);
     /**

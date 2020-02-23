@@ -17,7 +17,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 }
 
 
-void View::renderList1()
+void View::renderLists()
 {
     ui->imageNamesList->clear();
     ui->classifierList->clear();
@@ -26,10 +26,6 @@ void View::renderList1()
     foreach (QString name, imageNames) {
         ui->imageNamesList->addItem(name);
     }
-}
-
-void View::renderList2()
-{
     QStringList classifierNames = control->requestClassifierNames();
     foreach (QString name, classifierNames) {
         ui->classifierList->addItem(name);
@@ -46,53 +42,6 @@ void View::on_selectFileButton_clicked()
     QString path = control->requestFilePath();
     ui->classiferPathLabel->setText(path);
 }
-
-void View::on_sortButton_clicked(){
-    ui->imageNamesList->clear();
-    if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->requestSortedNameAscending(1);
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-     }
-
-     if(ui->ImageComboBox->currentText() =="Name (Des)"){
-        QStringList imageNames = control->requestSortedNameDescending(1);
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-    }
-     if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->requestSortedDateAscending();
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-    }
-     if(ui->ImageComboBox->currentText() =="Date (Des)"){
-        QStringList imageNames = control->requestSortedDateDescending();
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-    }
-}
-
-void View::on_sortButton2_clicked(){
-    ui->classifierList->clear();
-    if(ui->classComboBox->currentText()=="Name (Asc)"){
-        QStringList classifierNames = control->requestSortedNameAscending(2);
-        foreach (QString name, classifierNames) {
-            ui->classifierList->addItem(name);
-        }
-    }
-
-    if(ui->classComboBox->currentText()=="Name (Des)"){
-        QStringList classifierNames = control->requestSortedNameDescending(2);
-        foreach (QString name, classifierNames) {
-            ui->classifierList->addItem(name);
-        }
-    }
-}
-
 
 void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 {
