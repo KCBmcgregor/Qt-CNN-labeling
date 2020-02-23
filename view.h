@@ -5,6 +5,7 @@
 #include <QListWidgetItem>
 #include <QMainWindow>
 #include <QGraphicsScene>
+#include <QPen>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class View; }
@@ -18,10 +19,14 @@ private:
     Ui::View *ui;
     Control *control;
     QGraphicsScene *scene;
-    QGraphicsPixmapItem *sceneImage;
+    QGraphicsPixmapItem *image;
+    QMap<std::string,QPen> pens;
+
 
 public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
+
+    QMap<std::string,QPen> getPens() {return pens;}
 
     void renderLists();
 
@@ -34,6 +39,8 @@ private slots:
     void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
     void on_shapeDrawButton_clicked();
     void on_shapesList_currentItemChanged(QListWidgetItem *current);
+    void on_zoomInButton_clicked();
+    void on_zoomOutButton_clicked();
 };
 
 #endif // VIEW_H

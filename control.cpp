@@ -19,6 +19,11 @@ void Control::setSidesToDraw(QString shape) {
     sidesToDraw = shape.mid(0).toInt();
 }
 
+QMap<std::string, QPen> Control::requestPens()
+{
+    return view->getPens();
+}
+
 QStringList Control::requestImageNames()
 {
     std::vector<std::string> namesVector = model->getImageNames();

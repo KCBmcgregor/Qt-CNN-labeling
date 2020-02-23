@@ -46,9 +46,13 @@ public:
      @return std::string
      */
     std::string getFolderPath() {return folderPath;}
+    std::string getMode() {return mode;}
+    int getSidesToDraw() {return sidesToDraw;}
 
     void setMode(std::string m) {mode = m;}
     void setSidesToDraw(QString shape);
+
+    QMap<std::string,QPen> requestPens();
 
     //! A method taking no arguments and returning a QStringList.
     /*!

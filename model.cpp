@@ -3,7 +3,7 @@
 
 #include <QFile>
 #include <QString>
-#include <QFileDialog>
+#include <QMainWindow>
 
 Model::Model(Control *cont)
 {
@@ -12,6 +12,11 @@ Model::Model(Control *cont)
     imageData = {};
     classifierNames = {};
 
+}
+
+QMap<std::string, QPen> Model::requestPens()
+{
+    return control->requestPens();
 }
 
 QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
@@ -23,6 +28,12 @@ QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
     {
       return (imageData[imageName]->getImagePt());
     }
+}
+
+std::string Model::requestMode()
+{
+    std::string mode = control->getMode();
+    return mode;
 }
 
 std::string Model::loadDataset(std::string folderPath)
@@ -63,7 +74,7 @@ std::string Model::loadClassifers(std::string filePath)
 void Model::loadImage(QString imagePath, const QString imageName)
 {
     ImageData *newImageData;
-    newImageData = new ImageData(imagePath);
+    newImageData = new ImageData(imagePath, this);
     std::string index = imageName.toStdString();
     imageData[index] = newImageData;
 }

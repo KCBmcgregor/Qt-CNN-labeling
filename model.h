@@ -21,7 +21,9 @@ public:
     std::vector<std::string> getImageNames() {return imageNames;}
     std::vector<std::string> getClassifierNames() {return classifierNames;}
 
+    QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
+    std::string requestMode();
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
