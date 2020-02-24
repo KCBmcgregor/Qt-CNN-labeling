@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1273</width>
+    <width>1346</width>
     <height>1051</height>
    </rect>
   </property>
@@ -378,19 +378,6 @@
           </property>
           <property name="text">
            <string>Select</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QPushButton" name="shapeDrageButton">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string>Drag</string>
           </property>
          </widget>
         </item>

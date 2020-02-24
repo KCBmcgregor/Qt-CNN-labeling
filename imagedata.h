@@ -55,6 +55,8 @@ public:
 
     bool addDrawnShape();
 
+    //bool moveVertex(Image *parent, QPolygonF shapePoints, QPointF mousePos);
+
     bool connectLastDrawnPoints();
 
 

@@ -1,5 +1,6 @@
 #include "imagedata.h"
 #include <QGraphicsTextItem>
+#include <QPainterPath>
 #include <QtGui>
 #include <QGraphicsSceneMouseEvent>
 #include <model.h>
@@ -36,9 +37,12 @@ bool ImageData::addLine(Image *parent, QPointF point1, QPointF point2)
     return true;
 }
 
+
+
 bool ImageData::addShape(Image *parent, QPolygonF shapePoints)
 {
     QGraphicsPolygonItem *shape = new QGraphicsPolygonItem(shapePoints, parent);
+    shape->setFlag(QGraphicsPolygonItem::ItemIsMovable);
 
     shape->setPen(pens["shapePen"]);
     shapes.push_back(shape);
