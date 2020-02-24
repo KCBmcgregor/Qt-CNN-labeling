@@ -1,11 +1,13 @@
 #ifndef VIEW_H
 #define VIEW_H
 #include "control.h"
-
+#include "imagedata.h"
 #include <QListWidgetItem>
 #include <QMainWindow>
 #include <QGraphicsScene>
 #include <QPen>
+
+class ImageData;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class View; }
@@ -47,6 +49,7 @@ private slots:
     void on_shapesList_currentItemChanged(QListWidgetItem *current);
     void on_zoomInButton_clicked();
     void on_zoomOutButton_clicked();
+    void on_copyPasteButton_clicked();
 };
 
 #endif // VIEW_H

@@ -35,6 +35,11 @@ std::string Model::requestMode()
     std::string mode = control->getMode();
     return mode;
 }
+std::string Model::requestMode2()
+{
+    std::string mode2 = control->getMode2();
+    return mode2;
+}
 
 void Model::requestConnectLastDrawnPoints(std::string imageName)
 {

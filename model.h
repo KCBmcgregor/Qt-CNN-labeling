@@ -25,6 +25,7 @@ public:
     QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
     std::string requestMode();
+    std::string requestMode2();
     void requestConnectLastDrawnPoints(std::string imageName);
     void requestAddDrawnShape(std::string imageName);
 

@@ -38,11 +38,18 @@ bool ImageData::addLine(Image *parent, QPointF point1, QPointF point2)
 }
 
 
+/*bool ImageData::copyPaste(){
+    addDrawnShape();
+    return true;
+}*/
 
 bool ImageData::addShape(Image *parent, QPolygonF shapePoints)
 {
     QGraphicsPolygonItem *shape = new QGraphicsPolygonItem(shapePoints, parent);
     shape->setFlag(QGraphicsPolygonItem::ItemIsMovable);
+    shape->setFlag(QGraphicsPolygonItem::ItemIsSelectable);
+    //shape->setFlag(QGraphicsPolygonItem::ItemSendsGeometryChanges);
+    //shape->setFlag(QGraphicsPolygonItem::ItemIsFocusable);
 
     shape->setPen(pens["shapePen"]);
     shapes.push_back(shape);
@@ -51,6 +58,7 @@ bool ImageData::addShape(Image *parent, QPolygonF shapePoints)
 
 bool ImageData::addDrawnShape()
 {
+    std::string mode2 = model->requestMode2();
     QPolygonF shapePoints = {};
     for(unsigned i=0; i < points.size(); i++) {
         QPointF nextPoint = points[i]->pos();
@@ -58,6 +66,13 @@ bool ImageData::addDrawnShape()
     }
 
     addShape(imagePt, shapePoints);
+
+    if (mode2=="copy"){
+        addShape(imagePt, shapePoints);
+    }
+
+
+
 
     for(unsigned i=0; i < points.size(); i++) {
         points[i]->setParentItem(NULL);
@@ -72,6 +87,8 @@ bool ImageData::addDrawnShape()
 
     return true;
 }
+
+
 
 bool ImageData::connectLastDrawnPoints()
 {
@@ -111,9 +128,13 @@ void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
             model->pointDrawn();
         }
     }
+
     update();
     QGraphicsPixmapItem::mousePressEvent(event);
 }
+
+
+
 
 void Image::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
 {

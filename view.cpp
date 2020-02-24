@@ -10,6 +10,13 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     image = new QGraphicsPixmapItem();
     ui->graphicsView->setScene(scene);
 
+    ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+
+    ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->shapeUnassignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
@@ -128,7 +135,42 @@ View::~View()
 
 void View::on_shapeDrawButton_clicked()
 {
-    control->setMode("draw");
+
+    if (control->getMode()=="draw")
+    {
+        if(control->getMode2()=="copy")
+        {
+            control->setMode2("");
+            ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+        }
+        control->setMode("");
+        ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    }
+    else
+    {
+        control->setMode("draw");
+        ui->shapeDrawButton->setStyleSheet("background-color:#A3C1DA;\nborder:1px solid black;");
+
+    }
+
+}
+void View::on_copyPasteButton_clicked()
+{
+    if (control->getMode2()=="copy"){
+        control->setMode2("");
+        ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    }
+    else
+    {
+        if(control->getMode()=="draw")
+        {
+            control->setMode2("copy");
+            ui->copyPasteButton->setStyleSheet("background-color:#A3C1DA;\nborder:1px solid black;");
+        }
+
+
+    }
+
 }
 
 void View::on_shapesList_currentItemChanged(QListWidgetItem *current)

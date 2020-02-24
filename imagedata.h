@@ -54,6 +54,7 @@ public:
     bool addShape(Image *parent, QPolygonF shapePoints);
 
     bool addDrawnShape();
+    bool copyPaste();
 
     //bool moveVertex(Image *parent, QPolygonF shapePoints, QPointF mousePos);
 
