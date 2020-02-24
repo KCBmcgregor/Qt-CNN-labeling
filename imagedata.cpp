@@ -78,11 +78,12 @@ bool ImageData::addDrawnShape()
         points[i]->setParentItem(NULL);
         delete points[i];
     }
+    points = {};
     for(unsigned i=0; i < lines.size(); i++) {
         lines[i]->setParentItem(NULL);
         delete lines[i];
     }
-
+    lines = {};
 
 
     return true;
