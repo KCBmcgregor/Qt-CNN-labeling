@@ -1,6 +1,7 @@
 #include "view.h"
 #include "ui_view.h"
 #include <QGraphicsPixmapItem>
+#include <QFileDialog>
 
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
@@ -13,7 +14,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->shapeUnassignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
@@ -186,4 +187,14 @@ void View::on_zoomInButton_clicked()
 void View::on_zoomOutButton_clicked()
 {
     ui->graphicsView->scale(0.8,0.8);
+}
+
+void View::on_saveButton_clicked()
+{
+    QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
+        if (!fileName.isNull())
+        {
+            QPixmap pixMap = this->ui->graphicsView->grab();
+            pixMap.save(fileName);
+        }
 }
