@@ -2,17 +2,19 @@
 #define MODEL_H
 
 #include "control.h"
-#include "imagedata.h"
+
 
 #include <QStringListModel>
 
 #include <map>
 
+class Image;
+
 class Model
 {
     Control *control;
     std::vector<std::string> imageNames;
-    std::map<std::string, ImageData * > imageData;
+    std::map<std::string, Image * > images;
     std::vector<std::string> classifierNames;
     std::vector<QDateTime>dates;
 public:

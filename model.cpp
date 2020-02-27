@@ -1,5 +1,5 @@
 #include "model.h"
-#include "imagedata.h"
+#include "image.h"
 
 #include <QFile>
 #include <QString>
@@ -9,7 +9,7 @@ Model::Model(Control *cont)
 {
     control = cont;
     imageNames = {};
-    imageData = {};
+    images = {};
     classifierNames = {};
 
 }
@@ -21,12 +21,12 @@ QMap<std::string, QPen> Model::requestPens()
 
 QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
 {
-    if (imageData.find(imageName) == imageData.end()) {
+    if (images.find(imageName) == images.end()) {
       return nullptr;
     }
     else
     {
-      return (imageData[imageName]->getImagePt());
+      return (images[imageName]);
     }
 }
 
@@ -43,12 +43,12 @@ std::string Model::requestMode2()
 
 void Model::requestConnectLastDrawnPoints(std::string imageName)
 {
-    imageData[imageName]->connectLastDrawnPoints();
+    images[imageName]->connectLastDrawnPoints();
 }
 
 void Model::requestAddDrawnShape(std::string imageName)
 {
-    imageData[imageName]->addDrawnShape();
+    images[imageName]->addDrawnShape();
 }
 
 std::string Model::loadDataset(std::string folderPath)
@@ -103,12 +103,11 @@ std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames)
 
 void Model::loadImage(QString imagePath, const QString imageName)
 {
-    ImageData *newImageData;
-    newImageData = new ImageData(imagePath, this);
+    Image *newImage;
+    newImage = new Image(imagePath, this);
     std::string index = imageName.toStdString();
-    imageData[index] = newImageData;
+    images[index] = newImage;
 }
-
 
 
 Model::~Model()

@@ -1,7 +1,7 @@
 #ifndef VIEW_H
 #define VIEW_H
 #include "control.h"
-#include "imagedata.h"
+//#include "imagedata.h"
 #include <QListWidgetItem>
 #include <QMainWindow>
 #include <QGraphicsScene>

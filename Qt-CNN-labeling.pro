@@ -17,14 +17,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     control.cpp \
-    imagedata.cpp \
+    image.cpp \
     model.cpp \
+    polygonitem.cpp \
     view.cpp
 
 HEADERS += \
     control.h \
-    imagedata.h \
+    image.h \
     model.h \
+    polygonitem.h \
     view.h
 
 FORMS += \
