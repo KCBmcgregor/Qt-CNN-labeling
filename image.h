@@ -31,6 +31,7 @@ public:
     bool addPoint(QPointF mousePos);
     bool addLine(QPointF point1, QPointF point2);
     bool addShape(QPolygonF shapePoints);
+    bool deleteShape(PolygonItem *shapeToDelete);
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
@@ -44,6 +45,7 @@ public:
 
 public slots:
     void copyPasteSelectedShapes();
+    void deleteSelectedShapes();
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

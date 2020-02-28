@@ -62,6 +62,21 @@ bool Image::addShape(QPolygonF shapePoints)
     return true;
 }
 
+bool Image::deleteShape(PolygonItem *shapeToDelete)
+{
+    for(unsigned i=0; i < shapes.size(); i++)
+    {
+        if (shapes[i] == shapeToDelete)
+        {
+            delete shapes[i];
+            shapes.erase(shapes.begin() + i);
+            break;
+        }
+
+    }
+
+}
+
 void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes) //if resize button on shrink or grow resize function will execute
 {                                                                     //for every shape selected the current one is deleted and then redrawn with its new size.
     std::string mode3 = model->requestMode3();
@@ -83,7 +98,6 @@ void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes) //if resiz
         }
     }
 }
-
 
 bool Image::addDrawnShape()
 {
@@ -118,14 +132,18 @@ bool Image::addDrawnShape()
 void Image::copyPasteShapes(std::vector<PolygonItem *> shapesToCopyPaste)
 {
     qreal pasteOffset = 50;
+    QPointF pos;
     QPolygonF shapePoints;
 
     for(unsigned i=0; i < shapesToCopyPaste.size(); i++)
     {
         shapesToCopyPaste[i]->setSelected(false);
         shapePoints = shapesToCopyPaste[i]->polygon();
+        pos = shapesToCopyPaste[i]->pos();
+        pos.setX(pos.x() + pasteOffset);
+        pos.setY(pos.y() + pasteOffset);
         addShape(shapePoints);
-        shapes.back()->moveBy(pasteOffset,pasteOffset);
+        shapes.back()->setPos(pos);
         shapes.back()->setSelected(true);
     }
 }
@@ -134,7 +152,16 @@ void Image::copyPasteSelectedShapes()
 {
     copyPasteShapes(findSelectedShapes());
 }
-// // // // //
+
+void Image::deleteSelectedShapes()
+{
+    std::vector<PolygonItem * > shapesToDelete = findSelectedShapes();
+    for(unsigned i=0; i < shapesToDelete.size(); i++)
+    {
+        deleteShape(shapesToDelete[i]);
+    }
+}
+
 std::vector<PolygonItem * > Image::findSelectedShapes()
 {
     std::vector<PolygonItem * > selectedShapes = {};
