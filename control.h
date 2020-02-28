@@ -27,15 +27,19 @@ private:
     std::string selectedImageName;
     std::string mode;
     std::string mode2;
-    std::string mode3;
-    int sidesToDraw;
+    std::string mode3; /*!< TODO: describe */
+    int sidesToDraw; /*!< TODO: describe */
 
-    int drawPointsDrawn;
-    int drawSidesDrawn;
+    int drawPointsDrawn; /*!< TODO: describe */
+    int drawSidesDrawn; /*!< TODO: describe */
 
 
 public:
     //! The Contol constructor.
+    /*!
+     \brief
+
+    */
     Control();
 
     //! Public pointers to the Model & View objects.
@@ -55,15 +59,55 @@ public:
     std::string getFolderPath() {return folderPath;}
     std::string getMode() {return mode;}
     std::string getMode2() {return mode2;}
+    /*!
+     \brief
+
+     \return std::string
+    */
     std::string getMode3() {return mode3;}
+    /*!
+     \brief
+
+     \return int
+    */
     int getSidesToDraw() {return sidesToDraw;}
 
+    /*!
+     \brief
+
+     \param iN
+    */
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
+    /*!
+     \brief
+
+     \param m
+    */
     void setMode(std::string m) {mode = m;}
+    /*!
+     \brief
+
+     \param m
+    */
     void setMode2(std::string m) {mode2 = m;}
+    /*!
+     \brief
+
+     \param m
+    */
     void setMode3(std::string m) {mode3 = m;}
+    /*!
+     \brief
+
+     \param shape
+    */
     void setSidesToDraw(QString shape);
 
+    /*!
+     \brief
+
+     \return QMap<std::string, QPen>
+    */
     QMap<std::string,QPen> requestPens();
 
     //! A method taking no arguments and returning a QStringList.
@@ -77,6 +121,11 @@ public:
     //!requests the file modification dates.
 
 
+    /*!
+     \brief
+
+     \return QStringList
+    */
     QStringList requestImageNames();
 
     //! A method taking no arguments and returning a QStringList.
@@ -115,15 +164,37 @@ public:
     //! Sorts either the image or the class names in ascending order.
     //! The int i parameter is used to determine which one is sorted(class or image).
 
+    /*!
+     \brief
+
+     \param i
+     \return QStringList
+    */
     QStringList requestSortedNameDescending(int i);
     //! Same as requestSortedNameAscending, but descending instead.
 
+    /*!
+     \brief
+
+     \return QStringList
+    */
     QStringList requestSortedDateAscending();
     //! Sorts the image file modified date ascending.
 
+    /*!
+     \brief
+
+     \return QStringList
+    */
     QStringList requestSortedDateDescending();
     //! Sorts the image file modified date descending.
 
+    /*!
+     \brief
+
+     \param v
+     \return QStringList
+    */
     QStringList vectorToQStringList(std::vector<std::string> v);
     /**
      * @brief
