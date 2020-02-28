@@ -27,6 +27,7 @@ private:
     std::string selectedImageName;
     std::string mode;
     std::string mode2;
+    std::string mode3;
     int sidesToDraw;
 
     int drawPointsDrawn;
@@ -54,11 +55,13 @@ public:
     std::string getFolderPath() {return folderPath;}
     std::string getMode() {return mode;}
     std::string getMode2() {return mode2;}
+    std::string getMode3() {return mode3;}
     int getSidesToDraw() {return sidesToDraw;}
 
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
     void setMode(std::string m) {mode = m;}
     void setMode2(std::string m) {mode2 = m;}
+    void setMode3(std::string m) {mode3 = m;}
     void setSidesToDraw(QString shape);
 
     QMap<std::string,QPen> requestPens();

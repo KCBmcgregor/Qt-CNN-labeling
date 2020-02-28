@@ -16,6 +16,7 @@ Image::Image(QString path, Model *m):QGraphicsPixmapItem(path)
     lines = {};
     shapes = {};
     pens = model->requestPens();
+
 }
 
 bool Image::addPoint(QPointF mousePos)
@@ -41,15 +42,50 @@ bool Image::addLine(QPointF point1, QPointF point2)
 
 bool Image::addShape(QPolygonF shapePoints)
 {
-    PolygonItem *shape = new PolygonItem(shapePoints, this);
+    std::string mode3 = model->requestMode3();
 
+    PolygonItem *shape = new PolygonItem(shapePoints, this);
     shape->setFlag(PolygonItem::ItemIsMovable);
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
 
+    if(mode3=="grow"){
+    shape->setTransformOriginPoint(shapePoints[0]);
+    shape->setScale(1.2);
+    }
+
+    if(mode3=="shrink"){
+    shape->setTransformOriginPoint(shapePoints[0]);
+    shape->setScale(0.8);
+    }
+
     shapes.push_back(shape);
     return true;
 }
+
+void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes) //if resize button on shrink or grow resize function will execute
+{                                                                     //for every shape selected the current one is deleted and then redrawn with its new size.
+    std::string mode3 = model->requestMode3();
+    if(mode3 =="grow" || mode3 == "shrink")
+    {
+        QPolygonF shapePoints;
+        for(unsigned i=0; i < selectedShapes.size(); i++)
+        {
+            shapePoints = selectedShapes[i]->polygon();
+            foreach(PolygonItem *shape, selectedShapes)
+            {
+                shape->setSelected(false);
+                prepareGeometryChange();
+                //scene()->removeItem(shape);
+                delete shape;
+                addShape(shapePoints);
+                update();
+            }
+        }
+    }
+
+}
+
 
 bool Image::addDrawnShape()
 {
@@ -100,7 +136,7 @@ void Image::copyPasteSelectedShapes()
 {
     copyPasteShapes(findSelectedShapes());
 }
-
+// // // // //
 std::vector<PolygonItem * > Image::findSelectedShapes()
 {
     std::vector<PolygonItem * > selectedShapes = {};

@@ -369,7 +369,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="shapeSelectButton">
+         <widget class="QPushButton" name="resizeButton">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -377,7 +377,7 @@
            </sizepolicy>
           </property>
           <property name="text">
-           <string>Select</string>
+           <string>Resize</string>
           </property>
          </widget>
         </item>

@@ -22,5 +22,8 @@ void PolygonItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
         {
             rightClickMenu.exec((event->screenPos()));
         }
-    QGraphicsPolygonItem::mousePressEvent(event);
+    QGraphicsPolygonItem::mousePressEvent(event);    
 }
+
+
+

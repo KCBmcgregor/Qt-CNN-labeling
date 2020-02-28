@@ -28,6 +28,7 @@ public:
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
     std::string requestMode();
     std::string requestMode2();
+    std::string requestMode3();
     void requestConnectLastDrawnPoints(std::string imageName);
     void requestAddDrawnShape(std::string imageName);
 

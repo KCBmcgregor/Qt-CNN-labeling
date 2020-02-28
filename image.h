@@ -14,12 +14,12 @@ class Model;
 class Image : public QGraphicsPixmapItem
 {
     QPointF mousePos;
-
     std::vector<PolygonItem * > shapes;
     std::vector<QGraphicsLineItem * > lines;
     std::vector<QGraphicsEllipseItem * > points;
     Model *model;
     QMap<std::string, QPen> pens;
+
 
 
 public:
@@ -36,6 +36,7 @@ public:
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
+    void shapeToResize(std::vector<PolygonItem * > selectedShapes);
     void copyPasteSelectedShapes();
     std::vector<PolygonItem * > findSelectedShapes();
 
@@ -47,6 +48,7 @@ public:
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+
 
 };
 

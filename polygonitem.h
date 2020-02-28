@@ -7,6 +7,7 @@
 #include <QGraphicsItem>
 #include <QMenu>
 #include <view.h>
+#include <QPainter>
 
 class Image;
 
@@ -24,7 +25,7 @@ public:
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
-
+    bool Pressed;
 
 
 signals:
