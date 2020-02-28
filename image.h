@@ -1,6 +1,7 @@
 #ifndef IMAGE_H
 #define IMAGE_H
 
+#include <QObject>
 #include <string>
 #include <map>
 #include <vector>
@@ -9,10 +10,10 @@
 #include <view.h>
 #include <polygonitem.h>
 
-class Model;
-
-class Image : public QGraphicsPixmapItem
+class Image : public QObject, public QGraphicsPixmapItem
 {
+    Q_OBJECT
+
     QPointF mousePos;
 
     std::vector<PolygonItem * > shapes;
@@ -21,10 +22,8 @@ class Image : public QGraphicsPixmapItem
     Model *model;
     QMap<std::string, QPen> pens;
 
-
 public:
-    Image() {;}
-    Image(QString imagePath, Model *model);
+    explicit Image(QString imagePath, Model *model, QObject *parent = nullptr);
     using QGraphicsPixmapItem::boundingRect;
     using QGraphicsPixmapItem::paint;
 
@@ -36,18 +35,17 @@ public:
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
-    void copyPasteSelectedShapes();
     std::vector<PolygonItem * > findSelectedShapes();
 
     bool connectLastDrawnPoints();
 
     //bool moveVertex(Image *parent, QPolygonF shapePoints, QPointF mousePos);
 
-    ~Image();
+public slots:
+    void copyPasteSelectedShapes();
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
-
 };
 
 #endif // IMAGE_H

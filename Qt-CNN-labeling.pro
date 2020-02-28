@@ -24,9 +24,9 @@ SOURCES += \
 
 HEADERS += \
     control.h \
-    image.h \
+    image.h\
     model.h \
-    polygonitem.h \
+    polygonitem.h\
     view.h
 
 FORMS += \

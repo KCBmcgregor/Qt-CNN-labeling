@@ -8,8 +8,7 @@
 #include <model.h>
 
 
-
-Image::Image(QString path, Model *m):QGraphicsPixmapItem(path)
+Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
 {
     model = m;
     points = {};
@@ -144,10 +143,3 @@ void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
     QGraphicsPixmapItem::mousePressEvent(event);
 }
 
-
-
-
-Image::~Image()
-{
-    delete this;
-}

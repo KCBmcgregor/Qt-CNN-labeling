@@ -2,19 +2,13 @@
 #include "image.h"
 #include <QGraphicsSceneMouseEvent>
 
-
-PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *parent)
-    : QGraphicsPolygonItem(polygonPoints, parent)
+PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *parentImage, QObject *parent)
+    : QObject(parent),
+      QGraphicsPolygonItem(polygonPoints, parentImage)
 {
-    //rightClickMenu.addAction("Copy", this, SLOT(requestCopyPasteSelectedShapes()));
-    //rightClickMenu.addAction("Delete", this, SLOT());
-    //rightClickMenu.addAction("Edit", this, SLOT());
+    rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
 }
 
-void PolygonItem::requestCopyPasteSelectedShapes()
-{
-    ;
-}
 
 void PolygonItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
