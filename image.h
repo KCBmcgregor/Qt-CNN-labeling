@@ -11,7 +11,7 @@
 #include <polygonitem.h>
 
 /*!
- \brief
+ \hello im am a breife image discription
 
 */
 class Image : public QObject, public QGraphicsPixmapItem

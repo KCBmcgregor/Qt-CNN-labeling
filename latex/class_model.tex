@@ -1,0 +1,231 @@
+\hypertarget{class_model}{}\doxysection{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model_a76253cd48a1a405a8670fc6ae780cdd5}{Model}} (\mbox{\hyperlink{class_control}{Control}} $\ast$cont=nullptr)
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_model_aa32e2104f8758a4c418714518fb16a5f}{get\+Image\+Names}} ()
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_model_a6ecdfdd8682eebb595d82d87ec708336}{get\+Classifier\+Names}} ()
+\item 
+std\+::vector$<$ Q\+Date\+Time $>$ \mbox{\hyperlink{class_model_a86572a8092b741c87c5f72d7261f82b7}{get\+Dates}} ()
+\item 
+Q\+Map$<$ std\+::string, Q\+Pen $>$ \mbox{\hyperlink{class_model_a70a901640fe2571713ea90290dd87365}{request\+Pens}} ()
+\item 
+Q\+Graphics\+Pixmap\+Item $\ast$ \mbox{\hyperlink{class_model_a68204046287429723d81cf771efe347f}{request\+Image\+Item}} (std\+::string image\+Name)
+\item 
+std\+::string \mbox{\hyperlink{class_model_af8e25f4bea1459bdf1e50f00803617a1}{request\+Mode}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_model_af471c5cc960544a12d90e4e43b5fb6e1}{request\+Mode2}} ()
+\item 
+std\+::string \mbox{\hyperlink{class_model_ad3949a0908fc6090366c3732a524fa55}{request\+Mode3}} ()
+\item 
+void \mbox{\hyperlink{class_model_aff2141f409a61232c27e8aef5b5fe29d}{request\+Connect\+Last\+Drawn\+Points}} (std\+::string image\+Name)
+\item 
+void \mbox{\hyperlink{class_model_a489ddaa333368917165d68d61b8c0d31}{request\+Add\+Drawn\+Shape}} (std\+::string image\+Name)
+\item 
+std\+::string \mbox{\hyperlink{class_model_aac38ffcdf1dc94485461aefe37d6b118}{load\+Dataset}} (std\+::string folder\+Path)
+\item 
+std\+::string \mbox{\hyperlink{class_model_a9deb0a62b018ac2387d58c72b2d6fa6d}{load\+Classifers}} (std\+::string file\+Path)
+\item 
+void \mbox{\hyperlink{class_model_ac6de363c9026e83365960d209c91ad17}{load\+Image}} (Q\+String image\+Path, const Q\+String image\+Name)
+\item 
+std\+::vector$<$ Q\+Date\+Time $>$ \mbox{\hyperlink{class_model_ae74735960a8d915b292e9dcd46082e88}{load\+Dates}} (std\+::vector$<$ std\+::string $>$ image\+Names)
+\item 
+Q\+Pixmap \mbox{\hyperlink{class_model_a4fb03aa40a6f8eab2d7a6293776cb431}{load\+Image}} (const Q\+String image\+Path)
+\item 
+\mbox{\Hypertarget{class_model_ae0fb846cb6edd709a845242c080d9eb4}\label{class_model_ae0fb846cb6edd709a845242c080d9eb4}} 
+void {\bfseries point\+Drawn} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_model_a76253cd48a1a405a8670fc6ae780cdd5}\label{class_model_a76253cd48a1a405a8670fc6ae780cdd5}} 
+\index{Model@{Model}!Model@{Model}}
+\index{Model@{Model}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{Model()}{Model()}}
+{\footnotesize\ttfamily Model\+::\+Model (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_control}{Control}} $\ast$}]{cont = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cont} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_a6ecdfdd8682eebb595d82d87ec708336}\label{class_model_a6ecdfdd8682eebb595d82d87ec708336}} 
+\index{Model@{Model}!getClassifierNames@{getClassifierNames}}
+\index{getClassifierNames@{getClassifierNames}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{getClassifierNames()}{getClassifierNames()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Model\+::get\+Classifier\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a86572a8092b741c87c5f72d7261f82b7}\label{class_model_a86572a8092b741c87c5f72d7261f82b7}} 
+\index{Model@{Model}!getDates@{getDates}}
+\index{getDates@{getDates}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{getDates()}{getDates()}}
+{\footnotesize\ttfamily std\+::vector$<$Q\+Date\+Time$>$ Model\+::get\+Dates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Q\+Date\+Time$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_aa32e2104f8758a4c418714518fb16a5f}\label{class_model_aa32e2104f8758a4c418714518fb16a5f}} 
+\index{Model@{Model}!getImageNames@{getImageNames}}
+\index{getImageNames@{getImageNames}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{getImageNames()}{getImageNames()}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Model\+::get\+Image\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a9deb0a62b018ac2387d58c72b2d6fa6d}\label{class_model_a9deb0a62b018ac2387d58c72b2d6fa6d}} 
+\index{Model@{Model}!loadClassifers@{loadClassifers}}
+\index{loadClassifers@{loadClassifers}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadClassifers()}{loadClassifers()}}
+{\footnotesize\ttfamily std\+::string Model\+::load\+Classifers (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_aac38ffcdf1dc94485461aefe37d6b118}\label{class_model_aac38ffcdf1dc94485461aefe37d6b118}} 
+\index{Model@{Model}!loadDataset@{loadDataset}}
+\index{loadDataset@{loadDataset}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadDataset()}{loadDataset()}}
+{\footnotesize\ttfamily std\+::string Model\+::load\+Dataset (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em folder\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_ae74735960a8d915b292e9dcd46082e88}\label{class_model_ae74735960a8d915b292e9dcd46082e88}} 
+\index{Model@{Model}!loadDates@{loadDates}}
+\index{loadDates@{loadDates}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadDates()}{loadDates()}}
+{\footnotesize\ttfamily std\+::vector$<$ Q\+Date\+Time $>$ Model\+::load\+Dates (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{image\+Names }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Names} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Q\+Date\+Time$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a4fb03aa40a6f8eab2d7a6293776cb431}\label{class_model_a4fb03aa40a6f8eab2d7a6293776cb431}} 
+\index{Model@{Model}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Q\+Pixmap Model\+::load\+Image (\begin{DoxyParamCaption}\item[{const Q\+String}]{image\+Path }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Pixmap 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_ac6de363c9026e83365960d209c91ad17}\label{class_model_ac6de363c9026e83365960d209c91ad17}} 
+\index{Model@{Model}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadImage()}{loadImage()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Model\+::load\+Image (\begin{DoxyParamCaption}\item[{Q\+String}]{image\+Path,  }\item[{const Q\+String}]{image\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & \\
+\hline
+{\em image\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_a489ddaa333368917165d68d61b8c0d31}\label{class_model_a489ddaa333368917165d68d61b8c0d31}} 
+\index{Model@{Model}!requestAddDrawnShape@{requestAddDrawnShape}}
+\index{requestAddDrawnShape@{requestAddDrawnShape}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestAddDrawnShape()}{requestAddDrawnShape()}}
+{\footnotesize\ttfamily void Model\+::request\+Add\+Drawn\+Shape (\begin{DoxyParamCaption}\item[{std\+::string}]{image\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_aff2141f409a61232c27e8aef5b5fe29d}\label{class_model_aff2141f409a61232c27e8aef5b5fe29d}} 
+\index{Model@{Model}!requestConnectLastDrawnPoints@{requestConnectLastDrawnPoints}}
+\index{requestConnectLastDrawnPoints@{requestConnectLastDrawnPoints}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestConnectLastDrawnPoints()}{requestConnectLastDrawnPoints()}}
+{\footnotesize\ttfamily void Model\+::request\+Connect\+Last\+Drawn\+Points (\begin{DoxyParamCaption}\item[{std\+::string}]{image\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_model_a68204046287429723d81cf771efe347f}\label{class_model_a68204046287429723d81cf771efe347f}} 
+\index{Model@{Model}!requestImageItem@{requestImageItem}}
+\index{requestImageItem@{requestImageItem}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestImageItem()}{requestImageItem()}}
+{\footnotesize\ttfamily Q\+Graphics\+Pixmap\+Item $\ast$ Model\+::request\+Image\+Item (\begin{DoxyParamCaption}\item[{std\+::string}]{image\+Name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Q\+Graphics\+Pixmap\+Item 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_af8e25f4bea1459bdf1e50f00803617a1}\label{class_model_af8e25f4bea1459bdf1e50f00803617a1}} 
+\index{Model@{Model}!requestMode@{requestMode}}
+\index{requestMode@{requestMode}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestMode()}{requestMode()}}
+{\footnotesize\ttfamily std\+::string Model\+::request\+Mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_af471c5cc960544a12d90e4e43b5fb6e1}\label{class_model_af471c5cc960544a12d90e4e43b5fb6e1}} 
+\index{Model@{Model}!requestMode2@{requestMode2}}
+\index{requestMode2@{requestMode2}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestMode2()}{requestMode2()}}
+{\footnotesize\ttfamily std\+::string Model\+::request\+Mode2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_ad3949a0908fc6090366c3732a524fa55}\label{class_model_ad3949a0908fc6090366c3732a524fa55}} 
+\index{Model@{Model}!requestMode3@{requestMode3}}
+\index{requestMode3@{requestMode3}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestMode3()}{requestMode3()}}
+{\footnotesize\ttfamily std\+::string Model\+::request\+Mode3 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+std\+::string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_model_a70a901640fe2571713ea90290dd87365}\label{class_model_a70a901640fe2571713ea90290dd87365}} 
+\index{Model@{Model}!requestPens@{requestPens}}
+\index{requestPens@{requestPens}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{requestPens()}{requestPens()}}
+{\footnotesize\ttfamily Q\+Map$<$ std\+::string, Q\+Pen $>$ Model\+::request\+Pens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+Q\+Map$<$std\+::string, Q\+Pen$>$ 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model.\+h\item 
+model.\+cpp\end{DoxyCompactItemize}

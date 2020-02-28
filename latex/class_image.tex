@@ -1,0 +1,208 @@
+\hypertarget{class_image}{}\doxysection{Image Class Reference}
+\label{class_image}\index{Image@{Image}}
+
+
+{\ttfamily \#include $<$image.\+h$>$}
+
+Inheritance diagram for Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_image_ab2e81a3b6290f75d84acf8ebe99efa2f}\label{class_image_ab2e81a3b6290f75d84acf8ebe99efa2f}} 
+void {\bfseries copy\+Paste\+Selected\+Shapes} ()
+\item 
+\mbox{\Hypertarget{class_image_a3c44eb971d43365d682b1f46d36d5844}\label{class_image_a3c44eb971d43365d682b1f46d36d5844}} 
+void {\bfseries delete\+Selected\+Shapes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_image_a9064afb06f2989582a6c00990fbf644f}{Image}} (Q\+String image\+Path, \mbox{\hyperlink{class_model}{Model}} $\ast$model, Q\+Object $\ast$parent=nullptr)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}{get\+Shapes}} ()
+\item 
+bool \mbox{\hyperlink{class_image_a745f7088bd9058200bcbdd9a5ebc8091}{add\+Point}} (Q\+PointF mouse\+Pos)
+\item 
+bool \mbox{\hyperlink{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}{add\+Line}} (Q\+PointF point1, Q\+PointF point2)
+\item 
+bool \mbox{\hyperlink{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}{add\+Shape}} (Q\+PolygonF shape\+Points)
+\item 
+bool \mbox{\hyperlink{class_image_aae0382acb83427a559ac64eab43b595e}{delete\+Shape}} (\mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$shape\+To\+Delete)
+\item 
+bool \mbox{\hyperlink{class_image_a685e612995fe1361e7883fa5f1a1af6d}{add\+Drawn\+Shape}} ()
+\item 
+void \mbox{\hyperlink{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}{copy\+Paste\+Shapes}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ shapes)
+\item 
+void \mbox{\hyperlink{class_image_a049c37a34ad53256e0df806919a3d06f}{shape\+To\+Resize}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ selected\+Shapes)
+\item 
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_image_ae7a53ea9ea8cafd957f6af6aa3d0287f}{find\+Selected\+Shapes}} ()
+\item 
+bool \mbox{\hyperlink{class_image_a6947269bade4f3fb0439977d5cd34f13}{connect\+Last\+Drawn\+Points}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_image_a2b65c95efa990430b74667d43dea4490}{mouse\+Press\+Event}} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\textbackslash{}hello im am a breife image discription 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_image_a9064afb06f2989582a6c00990fbf644f}\label{class_image_a9064afb06f2989582a6c00990fbf644f}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{Q\+String}]{image\+Path,  }\item[{\mbox{\hyperlink{class_model}{Model}} $\ast$}]{model,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & \\
+\hline
+{\em model} & \\
+\hline
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_image_a685e612995fe1361e7883fa5f1a1af6d}\label{class_image_a685e612995fe1361e7883fa5f1a1af6d}} 
+\index{Image@{Image}!addDrawnShape@{addDrawnShape}}
+\index{addDrawnShape@{addDrawnShape}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addDrawnShape()}{addDrawnShape()}}
+{\footnotesize\ttfamily bool Image\+::add\+Drawn\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}\label{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}} 
+\index{Image@{Image}!addLine@{addLine}}
+\index{addLine@{addLine}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addLine()}{addLine()}}
+{\footnotesize\ttfamily bool Image\+::add\+Line (\begin{DoxyParamCaption}\item[{Q\+PointF}]{point1,  }\item[{Q\+PointF}]{point2 }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em point1} & \\
+\hline
+{\em point2} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a745f7088bd9058200bcbdd9a5ebc8091}\label{class_image_a745f7088bd9058200bcbdd9a5ebc8091}} 
+\index{Image@{Image}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}}
+{\footnotesize\ttfamily bool Image\+::add\+Point (\begin{DoxyParamCaption}\item[{Q\+PointF}]{mouse\+Pos }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em mouse\+Pos} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}\label{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}} 
+\index{Image@{Image}!addShape@{addShape}}
+\index{addShape@{addShape}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addShape()}{addShape()}}
+{\footnotesize\ttfamily bool Image\+::add\+Shape (\begin{DoxyParamCaption}\item[{Q\+PolygonF}]{shape\+Points }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape\+Points} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a6947269bade4f3fb0439977d5cd34f13}\label{class_image_a6947269bade4f3fb0439977d5cd34f13}} 
+\index{Image@{Image}!connectLastDrawnPoints@{connectLastDrawnPoints}}
+\index{connectLastDrawnPoints@{connectLastDrawnPoints}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{connectLastDrawnPoints()}{connectLastDrawnPoints()}}
+{\footnotesize\ttfamily bool Image\+::connect\+Last\+Drawn\+Points (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}\label{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}} 
+\index{Image@{Image}!copyPasteShapes@{copyPasteShapes}}
+\index{copyPasteShapes@{copyPasteShapes}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{copyPasteShapes()}{copyPasteShapes()}}
+{\footnotesize\ttfamily void Image\+::copy\+Paste\+Shapes (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$}]{shapes }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shapes} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_image_aae0382acb83427a559ac64eab43b595e}\label{class_image_aae0382acb83427a559ac64eab43b595e}} 
+\index{Image@{Image}!deleteShape@{deleteShape}}
+\index{deleteShape@{deleteShape}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{deleteShape()}{deleteShape()}}
+{\footnotesize\ttfamily bool Image\+::delete\+Shape (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$}]{shape\+To\+Delete }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape\+To\+Delete} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_ae7a53ea9ea8cafd957f6af6aa3d0287f}\label{class_image_ae7a53ea9ea8cafd957f6af6aa3d0287f}} 
+\index{Image@{Image}!findSelectedShapes@{findSelectedShapes}}
+\index{findSelectedShapes@{findSelectedShapes}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{findSelectedShapes()}{findSelectedShapes()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ Image\+::find\+Selected\+Shapes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Polygon\+Item $\ast$$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}\label{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}} 
+\index{Image@{Image}!getShapes@{getShapes}}
+\index{getShapes@{getShapes}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getShapes()}{getShapes()}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ Image\+::get\+Shapes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Polygon\+Item $\ast$$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_image_a2b65c95efa990430b74667d43dea4490}\label{class_image_a2b65c95efa990430b74667d43dea4490}} 
+\index{Image@{Image}!mousePressEvent@{mousePressEvent}}
+\index{mousePressEvent@{mousePressEvent}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{mousePressEvent()}{mousePressEvent()}}
+{\footnotesize\ttfamily void Image\+::mouse\+Press\+Event (\begin{DoxyParamCaption}\item[{Q\+Graphics\+Scene\+Mouse\+Event $\ast$}]{event }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+\begin{DoxyParams}{Parameters}
+{\em event} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_image_a049c37a34ad53256e0df806919a3d06f}\label{class_image_a049c37a34ad53256e0df806919a3d06f}} 
+\index{Image@{Image}!shapeToResize@{shapeToResize}}
+\index{shapeToResize@{shapeToResize}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{shapeToResize()}{shapeToResize()}}
+{\footnotesize\ttfamily void Image\+::shape\+To\+Resize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$}]{selected\+Shapes }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em selected\+Shapes} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+image.\+h\item 
+image.\+cpp\end{DoxyCompactItemize}
