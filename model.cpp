@@ -16,7 +16,7 @@ Model::Model(Control *cont)
 
 QMap<std::string, QPen> Model::requestPens()
 {
-    return control->requestPens();
+    return control->requestPens()
 }
 
 QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
