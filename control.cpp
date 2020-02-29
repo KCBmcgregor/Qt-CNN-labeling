@@ -111,7 +111,7 @@ void Control::pointDrawn()
     }
 }
 
-
+                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
 QStringList Control::requestSortedNameAscending(int i){
     std::vector<std::string>namesVector;
     if(i == 1){
@@ -140,7 +140,7 @@ QStringList Control::requestSortedNameAscending(int i){
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
-
+                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
 QStringList Control::requestSortedNameDescending(int i){
     std::vector<std::string>namesVector;
     if(i == 1){
@@ -170,7 +170,7 @@ QStringList Control::requestSortedNameDescending(int i){
     return sortedNames;
 }
 
-
+                                                        //! Sorts images by date in ascending order
 QStringList Control::requestSortedDateAscending(){
     bool swapped = false;
     std::vector<QDateTime>datesVector = model->getDates();
@@ -195,7 +195,7 @@ QStringList Control::requestSortedDateAscending(){
     return sortedNames;
 }
 
-
+                                                         //! Sorts images by date in ascending order
 QStringList Control::requestSortedDateDescending(){
     bool swapped = false;
     std::vector<QDateTime>datesVector = model->getDates();

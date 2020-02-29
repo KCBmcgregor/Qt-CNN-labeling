@@ -26,8 +26,8 @@ private:
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
     std::string selectedImageName;
     std::string mode;
-    std::string mode2;
-    std::string mode3;
+    std::string mode2;             //! Used for copy paste
+    std::string mode3;             //! Used for resizing of shape
     int sidesToDraw;
 
     int drawPointsDrawn;

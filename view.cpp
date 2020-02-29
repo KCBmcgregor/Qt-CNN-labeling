@@ -64,12 +64,12 @@ void View::on_selectFileButton_clicked()
     QString path = control->requestFilePath();
     ui->classiferPathLabel->setText(path);
 }
-
-void View::on_sortButton_clicked(){
+                                        //! When sortButton is clicked it retrieves imageComboBox current item..
+void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm based on that
     ui->imageNamesList->clear();
     if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->requestSortedNameAscending(1);
-        foreach (QString name, imageNames) {
+        QStringList imageNames = control->requestSortedNameAscending(1);  //! 1 is passed as parameter meaning...
+        foreach (QString name, imageNames) {     //! ..The data sorted using the ascending algorithm is image names
             ui->imageNamesList->addItem(name);
         }
      }
@@ -80,7 +80,7 @@ void View::on_sortButton_clicked(){
             ui->imageNamesList->addItem(name);
         }
     }
-     if(ui->ImageComboBox->currentText() =="Name (Asc)"){
+     if(ui->ImageComboBox->currentText() =="Date (Asc)"){              //! Sorting images by their dates
         QStringList imageNames = control->requestSortedDateAscending();
         foreach (QString name, imageNames) {
             ui->imageNamesList->addItem(name);
@@ -93,12 +93,12 @@ void View::on_sortButton_clicked(){
         }
     }
 }
-
-void View::on_sortButton2_clicked(){
+                                        //! When sortButton3 is clicked it retrieves classComboBox current item..
+void View::on_sortButton2_clicked(){   //! ..and chooses the sorting algorithm based on that
     ui->classifierList->clear();
     if(ui->classComboBox->currentText()=="Name (Asc)"){
-        QStringList classifierNames = control->requestSortedNameAscending(2);
-        foreach (QString name, classifierNames) {
+        QStringList classifierNames = control->requestSortedNameAscending(2); //! 2 is passed as parameter meaning...
+        foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
             ui->classifierList->addItem(name);
         }
     }
@@ -134,14 +134,14 @@ View::~View()
 {
     delete ui;
 }
-
-void View::on_shapeDrawButton_clicked()
+               //! The copypaste function is only valid when the user preselects the draw function..
+void View::on_shapeDrawButton_clicked()   //! ..so this function validates this and sets the modes/button styles
 {
 
     if (control->getMode()=="draw")
     {
         if(control->getMode2()=="copy")
-        {
+        {                               //! When draw mode is deselected, if mode2 (copyPaste) is active it's also deselected
             control->setMode2("");
             ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
         }
@@ -156,20 +156,7 @@ void View::on_shapeDrawButton_clicked()
     }
 
 }
-void View::on_resizeButton_clicked()
-{
-    if(control->getMode3()=="shrink"){
-
-        control->setMode3("grow");
-        ui->resizeButton->setStyleSheet("background-color:red;\nborder:1px solid black;");
-        ui->resizeButton->setText("Grow Shape");
-    }
-    else{
-        control->setMode3("shrink");
-        ui->resizeButton->setStyleSheet("background-color:green;\nborder:1px solid black;");
-        ui->resizeButton->setText("Shrink Shape");
-    }
-}
+                              //! Copypaste function sets mode2 to copy so the current shape being drawn is copied
 void View::on_copyPasteButton_clicked()
 {
     if (control->getMode2()=="copy"){
@@ -188,6 +175,22 @@ void View::on_copyPasteButton_clicked()
     }
 
 }
+//! Resize sets mode3 to either grow or shrink, so the shape selected is resized accordingly.
+void View::on_resizeButton_clicked()
+{
+    if(control->getMode3()=="shrink"){
+
+        control->setMode3("grow");
+        ui->resizeButton->setStyleSheet("background-color:red;\nborder:1px solid black;");
+        ui->resizeButton->setText("Grow Shape");
+    }
+    else{
+        control->setMode3("shrink");
+        ui->resizeButton->setStyleSheet("background-color:green;\nborder:1px solid black;");
+        ui->resizeButton->setText("Shrink Shape");
+    }
+}
+
 
 void View::on_shapesList_currentItemChanged(QListWidgetItem *current)
 {
