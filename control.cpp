@@ -113,7 +113,7 @@ void Control::pointDrawn()
 
                 //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
 QStringList Control::requestSortedNameAscending(int i){
-    std::vector<std::string>namesVector;
+    std::vector<std::string>namesVector ;
     if(i == 1){
         namesVector = model->getImageNames();
     }
