@@ -11,36 +11,37 @@
 #include <polygonitem.h>
 
 /*!
- \hello im am a breife image discription
-
+ \brief The image object is a custom QGraphicsPixmapItem
+ for diplaying to the scene along with all its child Items.
 */
 class Image : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
 
-    QPointF mousePos; /*!< TODO: describe */
-    std::vector<PolygonItem * > shapes; /*!< TODO: describe */
-    std::vector<QGraphicsLineItem * > lines; /*!< TODO: describe */
-    std::vector<QGraphicsEllipseItem * > points; /*!< TODO: describe */
-    Model *model; /*!< TODO: describe */
-    QMap<std::string, QPen> pens; /*!< TODO: describe */
+    QPointF mousePos; /*!< Holds the position of the mouse coursor within the image. */
+    std::vector<PolygonItem * > shapes; /*!< Holds the adresses of the shapes (PolygonItems) that are on the image. */
+    std::vector<QGraphicsLineItem * > lines; /*!< Holds the adresses of the lines (QGraphicsLineItem) that are on the image. */
+    std::vector<QGraphicsEllipseItem * > points; /*!< Holds the adresses of the points (QGraphicsEllipseItem) that are on the image. */
+    Model *model; /*!< a pointer to the Model object for calling its methods. */
+    QMap<std::string, QPen> pens; /*!< A QMap holding QPens that are used to draw points, line and shapes. */
 
 public:
     /*!
-     \brief
+     \brief Image object constructor to be instantiated with the new keyword.
 
-     \param imagePath
-     \param model
-     \param parent
+     \param imagePath A file path to a compatible image that will be loaded as the QGraphicsPixmapItem.
+     \param model A pointer to the Model object for refernce.
+     \param parent leave as nullptr.
     */
     explicit Image(QString imagePath, Model *model, QObject *parent = nullptr);
+
     using QGraphicsPixmapItem::boundingRect;
     using QGraphicsPixmapItem::paint;
 
     /*!
-     \brief
+     \brief accsess method
 
-     \return std::vector<PolygonItem *>
+     \return std::vector<PolygonItem *> member variable
     */
     std::vector<PolygonItem * > getShapes() {return shapes;}
 

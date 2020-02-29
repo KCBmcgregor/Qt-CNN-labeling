@@ -74,7 +74,7 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
         }
 
     }
-
+return true;
 }
 
 void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes) //if resize button on shrink or grow resize function will execute
