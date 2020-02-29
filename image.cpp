@@ -90,7 +90,6 @@ void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes)
             {
                 shape->setSelected(false);
                 prepareGeometryChange();
-                //scene()->removeItem(shape);
                 deleteShape(selectedShapes[i]);
                 addShape(shapePoints);
                 update();
