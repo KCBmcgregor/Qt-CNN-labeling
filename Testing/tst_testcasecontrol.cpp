@@ -1,36 +1,80 @@
 #include <QtTest>
+#include<QtTest/QTest>
+#include<QtWidgets/QGraphicsWidget>
+#include<QtCore>
+#include <QtWidgets/QGraphicsPixmapItem>
+
+#include <QtWidgets/QFileDialog>
+
+#include <QtWidgets/QListWidgetItem>
+
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QGraphicsScene>
+#include <QPen>
+#include <QtWidgets/QGraphicsItem>
+#include<QtTestGui>
 
 
-// add necessary includes here
 
-class testCaseControl : public QObject
+
+//class Image;
+
+class Model
 {
-    Q_OBJECT
-
+   // Control *control;
+    std::vector<std::string> imageNames;
+    //std::map<std::string, Image * > images;
+    std::vector<std::string> classifierNames;
+    std::vector<std::string> imageNameDatesAsc;
+    std::vector<std::string> imageNameDatesDec;
 public:
-    testCaseControl();
-    ~testCaseControl();
+   // Model(Control *cont = nullptr);
 
-private slots:
-    void test_case1();
+    std::vector<std::string> getImageNames() {return imageNames;}
+    std::vector<std::string> getClassifierNames() {return classifierNames;}
+    std::vector<std::string> getImageNameDatesAsc() {return imageNameDatesAsc;}
+    std::vector<std::string> getImageNameDatesDec() {return imageNameDatesDec;}
 
+
+    std::string loadClassifers(std::string filePath);
+
+
+  //  void pointDrawn() {control->pointDrawn();}
+
+
+
+
+
+
+    ~Model();
 };
 
-testCaseControl::testCaseControl()
+std::string Model::loadClassifers(std::string filePath)
 {
+    QString qFilePath = QString::fromStdString(filePath);
+    QFile file(qFilePath);
 
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+    {
+
+    }
+    else
+    {
+        classifierNames = {};
+        QTextStream in(&file);
+        QString line;
+        std::string stringLine;
+        while (!(in.atEnd())) {
+            line = in.readLine();
+            stringLine = line.toStdString();
+            classifierNames.push_back(stringLine);
+        }
+    }
+    return filePath;
 }
 
-testCaseControl::~testCaseControl()
-{
 
-}
 
-void testCaseControl::test_case1()
-{
-
-}
-
-QTEST_APPLESS_MAIN(testCaseControl)
+QTEST_APPLESS_MAIN (Model)
 
 #include "tst_testcasecontrol.moc"
