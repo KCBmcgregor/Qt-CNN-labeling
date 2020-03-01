@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['vectortoqstringlist_56',['vectorToQStringList',['../class_control.html#adb4334de8b5f24ff1b5030b4253ed618',1,'Control']]],
-  ['view_57',['View',['../class_view.html',1,'View'],['../class_control.html#a14fa15c3af57cead4194a1318193f2ef',1,'Control::view()']]]
+  ['ui_76',['ui',['../class_view.html#afb895b3468d67f9b69effe7450e91cdb',1,'View']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['mode3_114',['mode3',['../class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6',1,'Control']]],
-  ['model_115',['model',['../class_control.html#a52e7dd5006a3f4b6fae87775a8036fe8',1,'Control']]]
+  ['image_150',['image',['../class_view.html#a57a683a7449408740776fd07084bf656',1,'View']]],
+  ['imagenamedatesasc_151',['imageNameDatesAsc',['../class_model.html#a9d03dd4accf340c91bb8fe0b78f1e173',1,'Model']]],
+  ['images_152',['images',['../class_model.html#a9de869f38826598f78f713bb0542ff92',1,'Model']]]
 ];

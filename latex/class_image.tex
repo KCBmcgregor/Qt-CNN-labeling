@@ -1,5 +1,14 @@
 \hypertarget{class_image}{}\doxysection{Image Class Reference}
 \label{class_image}\index{Image@{Image}}
+
+
+The image object is a custom Q\+Graphics\+Pixmap\+Item for diplaying to the scene along with all its child Items.  
+
+
+
+
+{\ttfamily \#include $<$image.\+h$>$}
+
 Inheritance diagram for Image\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,12 +27,11 @@ void {\bfseries delete\+Selected\+Shapes} ()
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_image_a9064afb06f2989582a6c00990fbf644f}\label{class_image_a9064afb06f2989582a6c00990fbf644f}} 
-{\bfseries Image} (Q\+String image\+Path, \mbox{\hyperlink{class_model}{Model}} $\ast$model, Q\+Object $\ast$parent=nullptr)
-\item 
+\mbox{\hyperlink{class_image_a9064afb06f2989582a6c00990fbf644f}{Image}} (Q\+String image\+Path, \mbox{\hyperlink{class_model}{Model}} $\ast$\mbox{\hyperlink{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}{model}}, Q\+Object $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_image}{Image}} object constructor to be instantiated with the new keyword. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}{get\+Shapes}} ()
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_image_a745f7088bd9058200bcbdd9a5ebc8091}{add\+Point}} (Q\+PointF mouse\+Pos)
+bool \mbox{\hyperlink{class_image_a745f7088bd9058200bcbdd9a5ebc8091}{add\+Point}} (Q\+PointF \mbox{\hyperlink{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}{mouse\+Pos}})
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}{add\+Line}} (Q\+PointF point1, Q\+PointF point2)
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
@@ -33,7 +41,7 @@ bool \mbox{\hyperlink{class_image_aae0382acb83427a559ac64eab43b595e}{delete\+Sha
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_image_a685e612995fe1361e7883fa5f1a1af6d}{add\+Drawn\+Shape}} ()
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}{copy\+Paste\+Shapes}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ shapes)
+void \mbox{\hyperlink{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}{copy\+Paste\+Shapes}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_image_a89902799531faaaf346d1c1cf53684dc}{shapes}})
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_image_a049c37a34ad53256e0df806919a3d06f}{shape\+To\+Resize}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ selected\+Shapes)
 \begin{DoxyCompactList}\small\item\em A public function. \end{DoxyCompactList}\item 
@@ -49,24 +57,43 @@ void \mbox{\hyperlink{class_image_a2b65c95efa990430b74667d43dea4490}{mouse\+Pres
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}\label{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}} 
-Q\+PointF {\bfseries mouse\+Pos}
+Q\+PointF \mbox{\hyperlink{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}{mouse\+Pos}}
 \item 
-\mbox{\Hypertarget{class_image_a89902799531faaaf346d1c1cf53684dc}\label{class_image_a89902799531faaaf346d1c1cf53684dc}} 
-std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ {\bfseries shapes}
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ \mbox{\hyperlink{class_image_a89902799531faaaf346d1c1cf53684dc}{shapes}}
 \item 
-\mbox{\Hypertarget{class_image_af1ca2a062cde981eaca8a53b3232f5ef}\label{class_image_af1ca2a062cde981eaca8a53b3232f5ef}} 
-std\+::vector$<$ Q\+Graphics\+Line\+Item $\ast$ $>$ {\bfseries lines}
+std\+::vector$<$ Q\+Graphics\+Line\+Item $\ast$ $>$ \mbox{\hyperlink{class_image_af1ca2a062cde981eaca8a53b3232f5ef}{lines}}
 \item 
-\mbox{\Hypertarget{class_image_a27b66497e34badfd29d5a3d218ffa9e5}\label{class_image_a27b66497e34badfd29d5a3d218ffa9e5}} 
-std\+::vector$<$ Q\+Graphics\+Ellipse\+Item $\ast$ $>$ {\bfseries points}
+std\+::vector$<$ Q\+Graphics\+Ellipse\+Item $\ast$ $>$ \mbox{\hyperlink{class_image_a27b66497e34badfd29d5a3d218ffa9e5}{points}}
 \item 
-\mbox{\Hypertarget{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}\label{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}} 
-\mbox{\hyperlink{class_model}{Model}} $\ast$ {\bfseries model}
+\mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}{model}}
 \item 
-\mbox{\Hypertarget{class_image_a7f674f7ab821f1972fa311fe5c4e0180}\label{class_image_a7f674f7ab821f1972fa311fe5c4e0180}} 
-Q\+Map$<$ std\+::string, Q\+Pen $>$ {\bfseries pens}
+Q\+Map$<$ std\+::string, Q\+Pen $>$ \mbox{\hyperlink{class_image_a7f674f7ab821f1972fa311fe5c4e0180}{pens}}
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The image object is a custom Q\+Graphics\+Pixmap\+Item for diplaying to the scene along with all its child Items. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_image_a9064afb06f2989582a6c00990fbf644f}\label{class_image_a9064afb06f2989582a6c00990fbf644f}} 
+\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}}
+{\footnotesize\ttfamily Image\+::\+Image (\begin{DoxyParamCaption}\item[{Q\+String}]{image\+Path,  }\item[{\mbox{\hyperlink{class_model}{Model}} $\ast$}]{model,  }\item[{Q\+Object $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\mbox{\hyperlink{class_image}{Image}} object constructor to be instantiated with the new keyword. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em image\+Path} & A file path to a compatible image that will be loaded as the Q\+Graphics\+Pixmap\+Item. \\
+\hline
+{\em model} & A pointer to the \mbox{\hyperlink{class_model}{Model}} object for refernce. \\
+\hline
+{\em parent} & leave as nullptr. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
@@ -218,6 +245,45 @@ Will copy the current attributes and increase/decrease the values depending on t
 \hline
 \end{DoxyParams}
 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_image_af1ca2a062cde981eaca8a53b3232f5ef}\label{class_image_af1ca2a062cde981eaca8a53b3232f5ef}} 
+\index{Image@{Image}!lines@{lines}}
+\index{lines@{lines}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{lines}{lines}}
+{\footnotesize\ttfamily std\+::vector$<$Q\+Graphics\+Line\+Item $\ast$ $>$ Image\+::lines\hspace{0.3cm}{\ttfamily [private]}}
+
+Holds the adresses of the lines (Q\+Graphics\+Line\+Item) that are on the image. \mbox{\Hypertarget{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}\label{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}} 
+\index{Image@{Image}!model@{model}}
+\index{model@{model}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}}$\ast$ Image\+::model\hspace{0.3cm}{\ttfamily [private]}}
+
+a pointer to the \mbox{\hyperlink{class_model}{Model}} object for calling its methods. \mbox{\Hypertarget{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}\label{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}} 
+\index{Image@{Image}!mousePos@{mousePos}}
+\index{mousePos@{mousePos}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{mousePos}{mousePos}}
+{\footnotesize\ttfamily Q\+PointF Image\+::mouse\+Pos\hspace{0.3cm}{\ttfamily [private]}}
+
+Holds the position of the mouse coursor within the image. \mbox{\Hypertarget{class_image_a7f674f7ab821f1972fa311fe5c4e0180}\label{class_image_a7f674f7ab821f1972fa311fe5c4e0180}} 
+\index{Image@{Image}!pens@{pens}}
+\index{pens@{pens}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{pens}{pens}}
+{\footnotesize\ttfamily Q\+Map$<$std\+::string, Q\+Pen$>$ Image\+::pens\hspace{0.3cm}{\ttfamily [private]}}
+
+A Q\+Map holding Q\+Pens that are used to draw points, line and shapes. \mbox{\Hypertarget{class_image_a27b66497e34badfd29d5a3d218ffa9e5}\label{class_image_a27b66497e34badfd29d5a3d218ffa9e5}} 
+\index{Image@{Image}!points@{points}}
+\index{points@{points}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{points}{points}}
+{\footnotesize\ttfamily std\+::vector$<$Q\+Graphics\+Ellipse\+Item $\ast$ $>$ Image\+::points\hspace{0.3cm}{\ttfamily [private]}}
+
+Holds the adresses of the points (Q\+Graphics\+Ellipse\+Item) that are on the image. \mbox{\Hypertarget{class_image_a89902799531faaaf346d1c1cf53684dc}\label{class_image_a89902799531faaaf346d1c1cf53684dc}} 
+\index{Image@{Image}!shapes@{shapes}}
+\index{shapes@{shapes}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{shapes}{shapes}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ Image\+::shapes\hspace{0.3cm}{\ttfamily [private]}}
+
+Holds the adresses of the shapes (Polygon\+Items) that are on the image. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

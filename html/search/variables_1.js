@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['folderpath_111',['folderPath',['../class_control.html#a1c528992795232db1c8420846c10838e',1,'Control']]]
+  ['drawpointsdrawn_147',['drawPointsDrawn',['../class_control.html#a351e423c059d032410c6c9bac77b947c',1,'Control']]],
+  ['drawsidesdrawn_148',['drawSidesDrawn',['../class_control.html#adf0a3cf18c15e8d16beb1d9ab5b0ab35',1,'Control']]]
 ];

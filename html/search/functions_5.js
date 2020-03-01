@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['loadclassifers_80',['loadClassifers',['../class_model.html#a9deb0a62b018ac2387d58c72b2d6fa6d',1,'Model']]],
-  ['loaddataset_81',['loadDataset',['../class_model.html#aac38ffcdf1dc94485461aefe37d6b118',1,'Model']]]
+  ['image_102',['Image',['../class_image.html#a9064afb06f2989582a6c00990fbf644f',1,'Image']]]
 ];

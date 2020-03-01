@@ -8,6 +8,7 @@ var class_model =
     [ "getImageNames", "class_model.html#aa32e2104f8758a4c418714518fb16a5f", null ],
     [ "loadClassifers", "class_model.html#a9deb0a62b018ac2387d58c72b2d6fa6d", null ],
     [ "loadDataset", "class_model.html#aac38ffcdf1dc94485461aefe37d6b118", null ],
+    [ "loadDates", "class_model.html#ab5ae8877c53427c656344d13ec162754", null ],
     [ "loadImage", "class_model.html#a4fb03aa40a6f8eab2d7a6293776cb431", null ],
     [ "loadImage", "class_model.html#ac6de363c9026e83365960d209c91ad17", null ],
     [ "pointDrawn", "class_model.html#ae0fb846cb6edd709a845242c080d9eb4", null ],

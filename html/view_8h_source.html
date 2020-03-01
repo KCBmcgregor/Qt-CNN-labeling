@@ -108,79 +108,89 @@ $(document).ready(function(){initNavTree('view_8h_source.html',''); initResizabl
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    Q_OBJECT</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    Ui::View *ui;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_control.html">Control</a> *control;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QGraphicsScene *scene;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QGraphicsPixmapItem *image;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QMap&lt;std::string,QPen&gt; pens;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="class_view.html#afb895b3468d67f9b69effe7450e91cdb">   27</a></span>&#160;    Ui::View *<a class="code" href="class_view.html#afb895b3468d67f9b69effe7450e91cdb">ui</a>; </div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_view.html#aa27fa496b0ffae23456cd47790e7c349">   28</a></span>&#160;    <a class="code" href="class_control.html">Control</a> *<a class="code" href="class_view.html#aa27fa496b0ffae23456cd47790e7c349">control</a>; </div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_view.html#a821506ae9bd8c761317a40cd99f8a0c5">   29</a></span>&#160;    QGraphicsScene *<a class="code" href="class_view.html#a821506ae9bd8c761317a40cd99f8a0c5">scene</a>; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_view.html#a57a683a7449408740776fd07084bf656">   30</a></span>&#160;    QGraphicsPixmapItem *<a class="code" href="class_view.html#a57a683a7449408740776fd07084bf656">image</a>; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_view.html#abd4ae673ecde941afe1284917b1db52a">   31</a></span>&#160;    QMap&lt;std::string,QPen&gt; <a class="code" href="class_view.html#abd4ae673ecde941afe1284917b1db52a">pens</a>; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="class_view.html">View</a>(<a class="code" href="class_control.html">Control</a> *cont = <span class="keyword">nullptr</span>,QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">   42</a></span>&#160;    QMap&lt;std::string,QPen&gt; <a class="code" href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">getPens</a>() {<span class="keywordflow">return</span> pens;}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a05107599c46df4c9e93d91c887473fab">renderLists</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> renderList1();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> renderList2();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    ~<a class="code" href="class_view.html">View</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_view.html#a5a4e1d3bb67718121843a8e13bffd435">View</a>(<a class="code" href="class_control.html">Control</a> *cont = <span class="keyword">nullptr</span>,QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">   53</a></span>&#160;    QMap&lt;std::string,QPen&gt; <a class="code" href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">getPens</a>() {<span class="keywordflow">return</span> <a class="code" href="class_view.html#abd4ae673ecde941afe1284917b1db52a">pens</a>;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">private</span> slots:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a453423c97a42de4369f94780799e0cd0">on_selectFolderButton_clicked</a>();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a69ca796fbb9093b28be0279495b1f6a5">on_selectFileButton_clicked</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#aae7ca0edc9211b30aa94bf4e11f8672a">on_sortButton_clicked</a>();</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#ae8ca57f32b48f36a5689c28f0132fea2">on_sortButton2_clicked</a>();</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">void</span> on_imageNamesList_currentItemChanged(QListWidgetItem *current);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a48d69d8bba1aeee8b636ad297f8defb5">on_shapeDrawButton_clicked</a>();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> on_shapesList_currentItemChanged(QListWidgetItem *current);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a55d2f3031b31a4d4e991d8a9d8f0973a">on_zoomInButton_clicked</a>();</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a073b111e4fea8a294d9bddc1352daf84">on_zoomOutButton_clicked</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#af37721088459f3e72f8a3da30ac27030">on_copyPasteButton_clicked</a>();</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a3c304df6675874eda73f5e1cc45ca7cd">on_resizeButton_clicked</a>();</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a499e324650c8f9413858cffd68a26bc6">on_saveButton_clicked</a>();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;};</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="preprocessor">#endif // VIEW_H</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a05107599c46df4c9e93d91c887473fab">renderLists</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> renderList1();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> renderList2();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ~<a class="code" href="class_view.html">View</a>();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="keyword">private</span> slots:</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a453423c97a42de4369f94780799e0cd0">on_selectFolderButton_clicked</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a69ca796fbb9093b28be0279495b1f6a5">on_selectFileButton_clicked</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#aae7ca0edc9211b30aa94bf4e11f8672a">on_sortButton_clicked</a>();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#ae8ca57f32b48f36a5689c28f0132fea2">on_sortButton2_clicked</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a1b71ea38968f52a7f8be8eb08af587b0">on_imageNamesList_currentItemChanged</a>(QListWidgetItem *current);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a48d69d8bba1aeee8b636ad297f8defb5">on_shapeDrawButton_clicked</a>();</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> on_shapesList_currentItemChanged(QListWidgetItem *current);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a55d2f3031b31a4d4e991d8a9d8f0973a">on_zoomInButton_clicked</a>();</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a073b111e4fea8a294d9bddc1352daf84">on_zoomOutButton_clicked</a>();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#af37721088459f3e72f8a3da30ac27030">on_copyPasteButton_clicked</a>();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a3c304df6675874eda73f5e1cc45ca7cd">on_resizeButton_clicked</a>();</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_view.html#a499e324650c8f9413858cffd68a26bc6">on_saveButton_clicked</a>();</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;};</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="preprocessor">#endif // VIEW_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_view_html_a3c304df6675874eda73f5e1cc45ca7cd"><div class="ttname"><a href="class_view.html#a3c304df6675874eda73f5e1cc45ca7cd">View::on_resizeButton_clicked</a></div><div class="ttdeci">void on_resizeButton_clicked()</div><div class="ttdoc">A private method for resize button.</div><div class="ttdef"><b>Definition:</b> view.cpp:179</div></div>
+<div class="ttc" id="aclass_control_html_aca1d230e698d8b33c529bd6467b7aa15"><div class="ttname"><a href="class_control.html#aca1d230e698d8b33c529bd6467b7aa15">Control::getMode3</a></div><div class="ttdeci">std::string getMode3()</div><div class="ttdef"><b>Definition:</b> control.h:72</div></div>
+<div class="ttc" id="aclass_control_html_aaf632b82edb95de7d8b129e54a9361e3"><div class="ttname"><a href="class_control.html#aaf632b82edb95de7d8b129e54a9361e3">Control::setMode2</a></div><div class="ttdeci">void setMode2(std::string m)</div><div class="ttdef"><b>Definition:</b> control.h:94</div></div>
 <div class="ttc" id="aclass_control_html_aa864e3a1714a0905be52de9d02e1e9e8"><div class="ttname"><a href="class_control.html#aa864e3a1714a0905be52de9d02e1e9e8">Control::requestImage</a></div><div class="ttdeci">QGraphicsPixmapItem * requestImage(const QString imageName)</div><div class="ttdoc">A method taking 1 argument and returing a QPixmap.</div><div class="ttdef"><b>Definition:</b> control.cpp:65</div></div>
+<div class="ttc" id="aclass_view_html_afb895b3468d67f9b69effe7450e91cdb"><div class="ttname"><a href="class_view.html#afb895b3468d67f9b69effe7450e91cdb">View::ui</a></div><div class="ttdeci">Ui::View * ui</div><div class="ttdef"><b>Definition:</b> view.h:27</div></div>
 <div class="ttc" id="aclass_control_html_a5008300ad811f81ad95b1cf46ce664c4"><div class="ttname"><a href="class_control.html#a5008300ad811f81ad95b1cf46ce664c4">Control::requestSortedNameDescending</a></div><div class="ttdeci">QStringList requestSortedNameDescending(int i)</div><div class="ttdef"><b>Definition:</b> control.cpp:144</div></div>
 <div class="ttc" id="aclass_view_html_aae7ca0edc9211b30aa94bf4e11f8672a"><div class="ttname"><a href="class_view.html#aae7ca0edc9211b30aa94bf4e11f8672a">View::on_sortButton_clicked</a></div><div class="ttdeci">void on_sortButton_clicked()</div><div class="ttdoc">A private method for sort button.</div><div class="ttdef"><b>Definition:</b> view.cpp:68</div></div>
 <div class="ttc" id="aclass_view_html_a499e324650c8f9413858cffd68a26bc6"><div class="ttname"><a href="class_view.html#a499e324650c8f9413858cffd68a26bc6">View::on_saveButton_clicked</a></div><div class="ttdeci">void on_saveButton_clicked()</div><div class="ttdoc">A private method for save button.</div><div class="ttdef"><b>Definition:</b> view.cpp:210</div></div>
 <div class="ttc" id="aclass_view_html_af37721088459f3e72f8a3da30ac27030"><div class="ttname"><a href="class_view.html#af37721088459f3e72f8a3da30ac27030">View::on_copyPasteButton_clicked</a></div><div class="ttdeci">void on_copyPasteButton_clicked()</div><div class="ttdoc">A private method for copy/paste button.</div><div class="ttdef"><b>Definition:</b> view.cpp:160</div></div>
-<div class="ttc" id="aclass_view_html_aef5d255a2ad6ee7878b545b26600867f"><div class="ttname"><a href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">View::getPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; getPens()</div><div class="ttdoc">A list of all pens.</div><div class="ttdef"><b>Definition:</b> view.h:42</div></div>
+<div class="ttc" id="aclass_view_html_aef5d255a2ad6ee7878b545b26600867f"><div class="ttname"><a href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">View::getPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; getPens()</div><div class="ttdoc">A list of all pens.</div><div class="ttdef"><b>Definition:</b> view.h:53</div></div>
 <div class="ttc" id="aclass_view_html"><div class="ttname"><a href="class_view.html">View</a></div><div class="ttdoc">A public class.</div><div class="ttdef"><b>Definition:</b> view.h:22</div></div>
 <div class="ttc" id="aclass_view_html_a69ca796fbb9093b28be0279495b1f6a5"><div class="ttname"><a href="class_view.html#a69ca796fbb9093b28be0279495b1f6a5">View::on_selectFileButton_clicked</a></div><div class="ttdeci">void on_selectFileButton_clicked()</div><div class="ttdoc">A private method for select file button.</div><div class="ttdef"><b>Definition:</b> view.cpp:62</div></div>
+<div class="ttc" id="aclass_view_html_aa27fa496b0ffae23456cd47790e7c349"><div class="ttname"><a href="class_view.html#aa27fa496b0ffae23456cd47790e7c349">View::control</a></div><div class="ttdeci">Control * control</div><div class="ttdef"><b>Definition:</b> view.h:28</div></div>
+<div class="ttc" id="aclass_control_html_ab518dbda5814e92ff84c1bc89cd25f8a"><div class="ttname"><a href="class_control.html#ab518dbda5814e92ff84c1bc89cd25f8a">Control::setMode3</a></div><div class="ttdeci">void setMode3(std::string m)</div><div class="ttdef"><b>Definition:</b> control.h:100</div></div>
+<div class="ttc" id="aclass_view_html_a5a4e1d3bb67718121843a8e13bffd435"><div class="ttname"><a href="class_view.html#a5a4e1d3bb67718121843a8e13bffd435">View::View</a></div><div class="ttdeci">View(Control *cont=nullptr, QWidget *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> view.cpp:6</div></div>
 <div class="ttc" id="aclass_control_html"><div class="ttname"><a href="class_control.html">Control</a></div><div class="ttdoc">The Control class to control the program logic.</div><div class="ttdef"><b>Definition:</b> control.h:20</div></div>
-<div class="ttc" id="aclass_control_html_a57fbb5107c6f2661fb88c87ae4b89b50"><div class="ttname"><a href="class_control.html#a57fbb5107c6f2661fb88c87ae4b89b50">Control::setSelectedImageName</a></div><div class="ttdeci">void setSelectedImageName(std::string iN)</div><div class="ttdoc">A public method.</div><div class="ttdef"><b>Definition:</b> control.h:73</div></div>
+<div class="ttc" id="aclass_control_html_a57fbb5107c6f2661fb88c87ae4b89b50"><div class="ttname"><a href="class_control.html#a57fbb5107c6f2661fb88c87ae4b89b50">Control::setSelectedImageName</a></div><div class="ttdeci">void setSelectedImageName(std::string iN)</div><div class="ttdoc">A public method.</div><div class="ttdef"><b>Definition:</b> control.h:82</div></div>
+<div class="ttc" id="aclass_view_html_a1b71ea38968f52a7f8be8eb08af587b0"><div class="ttname"><a href="class_view.html#a1b71ea38968f52a7f8be8eb08af587b0">View::on_imageNamesList_currentItemChanged</a></div><div class="ttdeci">void on_imageNamesList_currentItemChanged(QListWidgetItem *current)</div><div class="ttdef"><b>Definition:</b> view.cpp:115</div></div>
 <div class="ttc" id="aclass_view_html_a55d2f3031b31a4d4e991d8a9d8f0973a"><div class="ttname"><a href="class_view.html#a55d2f3031b31a4d4e991d8a9d8f0973a">View::on_zoomInButton_clicked</a></div><div class="ttdeci">void on_zoomInButton_clicked()</div><div class="ttdoc">A private method for zoom in button.</div><div class="ttdef"><b>Definition:</b> view.cpp:200</div></div>
+<div class="ttc" id="aclass_view_html_a57a683a7449408740776fd07084bf656"><div class="ttname"><a href="class_view.html#a57a683a7449408740776fd07084bf656">View::image</a></div><div class="ttdeci">QGraphicsPixmapItem * image</div><div class="ttdef"><b>Definition:</b> view.h:30</div></div>
+<div class="ttc" id="aclass_view_html_abd4ae673ecde941afe1284917b1db52a"><div class="ttname"><a href="class_view.html#abd4ae673ecde941afe1284917b1db52a">View::pens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; pens</div><div class="ttdef"><b>Definition:</b> view.h:31</div></div>
+<div class="ttc" id="aclass_control_html_a22d49a37793b0b1dae5c22b961e47e49"><div class="ttname"><a href="class_control.html#a22d49a37793b0b1dae5c22b961e47e49">Control::setMode</a></div><div class="ttdeci">void setMode(std::string m)</div><div class="ttdef"><b>Definition:</b> control.h:88</div></div>
 <div class="ttc" id="aclass_view_html_a48d69d8bba1aeee8b636ad297f8defb5"><div class="ttname"><a href="class_view.html#a48d69d8bba1aeee8b636ad297f8defb5">View::on_shapeDrawButton_clicked</a></div><div class="ttdeci">void on_shapeDrawButton_clicked()</div><div class="ttdoc">A private method for shape draw button.</div><div class="ttdef"><b>Definition:</b> view.cpp:138</div></div>
 <div class="ttc" id="aclass_control_html_a0d964f86f35ef9ff3c4484aa9a41912d"><div class="ttname"><a href="class_control.html#a0d964f86f35ef9ff3c4484aa9a41912d">Control::requestImageNames</a></div><div class="ttdeci">QStringList requestImageNames()</div><div class="ttdef"><b>Definition:</b> control.cpp:32</div></div>
 <div class="ttc" id="aclass_control_html_ac34c8f02d5a55446c0471d6a8110f6f6"><div class="ttname"><a href="class_control.html#ac34c8f02d5a55446c0471d6a8110f6f6">Control::requestFolderPath</a></div><div class="ttdeci">QString requestFolderPath()</div><div class="ttdoc">A method taking no arguments and returning a QString.</div><div class="ttdef"><b>Definition:</b> control.cpp:46</div></div>
 <div class="ttc" id="aclass_view_html_a05107599c46df4c9e93d91c887473fab"><div class="ttname"><a href="class_view.html#a05107599c46df4c9e93d91c887473fab">View::renderLists</a></div><div class="ttdeci">void renderLists()</div><div class="ttdoc">A public method used to update the lists.</div></div>
 <div class="ttc" id="aclass_view_html_a453423c97a42de4369f94780799e0cd0"><div class="ttname"><a href="class_view.html#a453423c97a42de4369f94780799e0cd0">View::on_selectFolderButton_clicked</a></div><div class="ttdeci">void on_selectFolderButton_clicked()</div><div class="ttdoc">A private method for select folder button.</div><div class="ttdef"><b>Definition:</b> view.cpp:57</div></div>
+<div class="ttc" id="aclass_control_html_a047ee7b619ed2d0534a72e87813b5097"><div class="ttname"><a href="class_control.html#a047ee7b619ed2d0534a72e87813b5097">Control::setSidesToDraw</a></div><div class="ttdeci">void setSidesToDraw(QString shape)</div><div class="ttdef"><b>Definition:</b> control.cpp:23</div></div>
 <div class="ttc" id="aclass_view_html_ae8ca57f32b48f36a5689c28f0132fea2"><div class="ttname"><a href="class_view.html#ae8ca57f32b48f36a5689c28f0132fea2">View::on_sortButton2_clicked</a></div><div class="ttdeci">void on_sortButton2_clicked()</div><div class="ttdef"><b>Definition:</b> view.cpp:97</div></div>
 <div class="ttc" id="aclass_view_html_a073b111e4fea8a294d9bddc1352daf84"><div class="ttname"><a href="class_view.html#a073b111e4fea8a294d9bddc1352daf84">View::on_zoomOutButton_clicked</a></div><div class="ttdeci">void on_zoomOutButton_clicked()</div><div class="ttdoc">A private method for zoom out button.</div><div class="ttdef"><b>Definition:</b> view.cpp:205</div></div>
 <div class="ttc" id="aclass_control_html_a0d8e15eceb9b59b1087fbb487d820a61"><div class="ttname"><a href="class_control.html#a0d8e15eceb9b59b1087fbb487d820a61">Control::requestFilePath</a></div><div class="ttdeci">QString requestFilePath()</div><div class="ttdoc">A method taking no arguments and returning a QString.</div><div class="ttdef"><b>Definition:</b> control.cpp:55</div></div>
 <div class="ttc" id="aclass_control_html_a16452e3b24661140e690f2140977587f"><div class="ttname"><a href="class_control.html#a16452e3b24661140e690f2140977587f">Control::requestSortedDateDescending</a></div><div class="ttdeci">QStringList requestSortedDateDescending()</div><div class="ttdoc">Sorts the image file modified date ascending.</div><div class="ttdef"><b>Definition:</b> control.cpp:181</div></div>
 <div class="ttc" id="aclass_control_html_aea378a505493c8249725319e2d9a9deb"><div class="ttname"><a href="class_control.html#aea378a505493c8249725319e2d9a9deb">Control::requestClassifierNames</a></div><div class="ttdeci">QStringList requestClassifierNames()</div><div class="ttdoc">A method taking no arguments and returning a QStringList.</div><div class="ttdef"><b>Definition:</b> control.cpp:39</div></div>
+<div class="ttc" id="aclass_view_html_a821506ae9bd8c761317a40cd99f8a0c5"><div class="ttname"><a href="class_view.html#a821506ae9bd8c761317a40cd99f8a0c5">View::scene</a></div><div class="ttdeci">QGraphicsScene * scene</div><div class="ttdef"><b>Definition:</b> view.h:29</div></div>
 <div class="ttc" id="aclass_control_html_a83373eb60f9c5f6f0611a4c42d4dc64f"><div class="ttname"><a href="class_control.html#a83373eb60f9c5f6f0611a4c42d4dc64f">Control::requestSortedDateAscending</a></div><div class="ttdeci">QStringList requestSortedDateAscending()</div><div class="ttdoc">Same as requestSortedNameAscending, but descending instead.</div><div class="ttdef"><b>Definition:</b> control.cpp:174</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
