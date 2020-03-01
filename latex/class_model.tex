@@ -1,0 +1,93 @@
+\hypertarget{class_model}{}\doxysection{Model Class Reference}
+\label{class_model}\index{Model@{Model}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_model_a76253cd48a1a405a8670fc6ae780cdd5}\label{class_model_a76253cd48a1a405a8670fc6ae780cdd5}} 
+{\bfseries Model} (\mbox{\hyperlink{class_control}{Control}} $\ast$cont=nullptr)
+\item 
+\mbox{\Hypertarget{class_model_aa32e2104f8758a4c418714518fb16a5f}\label{class_model_aa32e2104f8758a4c418714518fb16a5f}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Image\+Names} ()
+\item 
+\mbox{\Hypertarget{class_model_a6ecdfdd8682eebb595d82d87ec708336}\label{class_model_a6ecdfdd8682eebb595d82d87ec708336}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Classifier\+Names} ()
+\item 
+\mbox{\Hypertarget{class_model_a6f08a60cd6bb64011dc12cb5a18c15fc}\label{class_model_a6f08a60cd6bb64011dc12cb5a18c15fc}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Image\+Name\+Dates\+Asc} ()
+\item 
+\mbox{\Hypertarget{class_model_a953b7bb169ed21be360207a0acc708e5}\label{class_model_a953b7bb169ed21be360207a0acc708e5}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries get\+Image\+Name\+Dates\+Dec} ()
+\item 
+\mbox{\Hypertarget{class_model_a70a901640fe2571713ea90290dd87365}\label{class_model_a70a901640fe2571713ea90290dd87365}} 
+Q\+Map$<$ std\+::string, Q\+Pen $>$ {\bfseries request\+Pens} ()
+\item 
+\mbox{\Hypertarget{class_model_a68204046287429723d81cf771efe347f}\label{class_model_a68204046287429723d81cf771efe347f}} 
+Q\+Graphics\+Pixmap\+Item $\ast$ {\bfseries request\+Image\+Item} (std\+::string image\+Name)
+\item 
+\mbox{\Hypertarget{class_model_af8e25f4bea1459bdf1e50f00803617a1}\label{class_model_af8e25f4bea1459bdf1e50f00803617a1}} 
+std\+::string {\bfseries request\+Mode} ()
+\item 
+\mbox{\Hypertarget{class_model_af471c5cc960544a12d90e4e43b5fb6e1}\label{class_model_af471c5cc960544a12d90e4e43b5fb6e1}} 
+std\+::string {\bfseries request\+Mode2} ()
+\item 
+\mbox{\Hypertarget{class_model_ad3949a0908fc6090366c3732a524fa55}\label{class_model_ad3949a0908fc6090366c3732a524fa55}} 
+std\+::string {\bfseries request\+Mode3} ()
+\item 
+\mbox{\Hypertarget{class_model_aff2141f409a61232c27e8aef5b5fe29d}\label{class_model_aff2141f409a61232c27e8aef5b5fe29d}} 
+void {\bfseries request\+Connect\+Last\+Drawn\+Points} (std\+::string image\+Name)
+\item 
+\mbox{\Hypertarget{class_model_a489ddaa333368917165d68d61b8c0d31}\label{class_model_a489ddaa333368917165d68d61b8c0d31}} 
+void {\bfseries request\+Add\+Drawn\+Shape} (std\+::string image\+Name)
+\item 
+std\+::string \mbox{\hyperlink{class_model_aac38ffcdf1dc94485461aefe37d6b118}{load\+Dataset}} (std\+::string folder\+Path)
+\item 
+\mbox{\Hypertarget{class_model_a9deb0a62b018ac2387d58c72b2d6fa6d}\label{class_model_a9deb0a62b018ac2387d58c72b2d6fa6d}} 
+std\+::string {\bfseries load\+Classifers} (std\+::string file\+Path)
+\item 
+\mbox{\Hypertarget{class_model_ac6de363c9026e83365960d209c91ad17}\label{class_model_ac6de363c9026e83365960d209c91ad17}} 
+void {\bfseries load\+Image} (Q\+String image\+Path, const Q\+String image\+Name)
+\item 
+\mbox{\Hypertarget{class_model_a4fb03aa40a6f8eab2d7a6293776cb431}\label{class_model_a4fb03aa40a6f8eab2d7a6293776cb431}} 
+Q\+Pixmap {\bfseries load\+Image} (const Q\+String image\+Path)
+\item 
+\mbox{\Hypertarget{class_model_ae0fb846cb6edd709a845242c080d9eb4}\label{class_model_ae0fb846cb6edd709a845242c080d9eb4}} 
+void {\bfseries point\+Drawn} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_model_a0257e0e660950902a9374e0478b72835}\label{class_model_a0257e0e660950902a9374e0478b72835}} 
+\mbox{\hyperlink{class_control}{Control}} $\ast$ {\bfseries control}
+\item 
+\mbox{\Hypertarget{class_model_a0e3ee0a1c1803207f373698e7ecf5ec9}\label{class_model_a0e3ee0a1c1803207f373698e7ecf5ec9}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries image\+Names}
+\item 
+\mbox{\Hypertarget{class_model_a9de869f38826598f78f713bb0542ff92}\label{class_model_a9de869f38826598f78f713bb0542ff92}} 
+std\+::map$<$ std\+::string, \mbox{\hyperlink{class_image}{Image}} $\ast$ $>$ {\bfseries images}
+\item 
+\mbox{\Hypertarget{class_model_ab23b59759131e3233a26bfe8869e898b}\label{class_model_ab23b59759131e3233a26bfe8869e898b}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries classifier\+Names}
+\item 
+\mbox{\Hypertarget{class_model_a9d03dd4accf340c91bb8fe0b78f1e173}\label{class_model_a9d03dd4accf340c91bb8fe0b78f1e173}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries image\+Name\+Dates\+Asc}
+\item 
+\mbox{\Hypertarget{class_model_a411832ddb18ac0c015ab6cf93d4e98ba}\label{class_model_a411832ddb18ac0c015ab6cf93d4e98ba}} 
+std\+::vector$<$ std\+::string $>$ {\bfseries image\+Name\+Dates\+Dec}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_model_aac38ffcdf1dc94485461aefe37d6b118}\label{class_model_aac38ffcdf1dc94485461aefe37d6b118}} 
+\index{Model@{Model}!loadDataset@{loadDataset}}
+\index{loadDataset@{loadDataset}!Model@{Model}}
+\doxysubsubsection{\texorpdfstring{loadDataset()}{loadDataset()}}
+{\footnotesize\ttfamily std\+::string Model\+::load\+Dataset (\begin{DoxyParamCaption}\item[{std\+::string}]{folder\+Path }\end{DoxyParamCaption})}
+
+Sorts image files by date ascending
+
+Sorts image file by date descending
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+model.\+h\item 
+model.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,112 @@
+\hypertarget{class_image}{}\doxysection{Image Class Reference}
+\label{class_image}\index{Image@{Image}}
+Inheritance diagram for Image\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_image_ab2e81a3b6290f75d84acf8ebe99efa2f}\label{class_image_ab2e81a3b6290f75d84acf8ebe99efa2f}} 
+void {\bfseries copy\+Paste\+Selected\+Shapes} ()
+\item 
+\mbox{\Hypertarget{class_image_a3c44eb971d43365d682b1f46d36d5844}\label{class_image_a3c44eb971d43365d682b1f46d36d5844}} 
+void {\bfseries delete\+Selected\+Shapes} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_image_a9064afb06f2989582a6c00990fbf644f}\label{class_image_a9064afb06f2989582a6c00990fbf644f}} 
+{\bfseries Image} (Q\+String image\+Path, \mbox{\hyperlink{class_model}{Model}} $\ast$model, Q\+Object $\ast$parent=nullptr)
+\item 
+\mbox{\Hypertarget{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}\label{class_image_ac4c24510cb6e4e45638d5aaa4799f1cc}} 
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ {\bfseries get\+Shapes} ()
+\item 
+\mbox{\Hypertarget{class_image_a745f7088bd9058200bcbdd9a5ebc8091}\label{class_image_a745f7088bd9058200bcbdd9a5ebc8091}} 
+bool {\bfseries add\+Point} (Q\+PointF mouse\+Pos)
+\item 
+\mbox{\Hypertarget{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}\label{class_image_a4e84c78a1cbd7d3ee6272debcc91b8ea}} 
+bool {\bfseries add\+Line} (Q\+PointF point1, Q\+PointF point2)
+\item 
+bool \mbox{\hyperlink{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}{add\+Shape}} (Q\+PolygonF shape\+Points)
+\item 
+\mbox{\Hypertarget{class_image_aae0382acb83427a559ac64eab43b595e}\label{class_image_aae0382acb83427a559ac64eab43b595e}} 
+bool {\bfseries delete\+Shape} (\mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$shape\+To\+Delete)
+\item 
+bool \mbox{\hyperlink{class_image_a685e612995fe1361e7883fa5f1a1af6d}{add\+Drawn\+Shape}} ()
+\item 
+\mbox{\Hypertarget{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}\label{class_image_a1e0347dc36e99e0c1ef3188d2dcb2424}} 
+void {\bfseries copy\+Paste\+Shapes} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ shapes)
+\item 
+void \mbox{\hyperlink{class_image_a049c37a34ad53256e0df806919a3d06f}{shape\+To\+Resize}} (std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ selected\+Shapes)
+\begin{DoxyCompactList}\small\item\em If resize mode3 on \textquotesingle{}shrink\textquotesingle{} or \textquotesingle{}grow\textquotesingle{} resize function will execute. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_image_ae7a53ea9ea8cafd957f6af6aa3d0287f}\label{class_image_ae7a53ea9ea8cafd957f6af6aa3d0287f}} 
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ {\bfseries find\+Selected\+Shapes} ()
+\item 
+\mbox{\Hypertarget{class_image_a6947269bade4f3fb0439977d5cd34f13}\label{class_image_a6947269bade4f3fb0439977d5cd34f13}} 
+bool {\bfseries connect\+Last\+Drawn\+Points} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_image_a2b65c95efa990430b74667d43dea4490}\label{class_image_a2b65c95efa990430b74667d43dea4490}} 
+void {\bfseries mouse\+Press\+Event} (Q\+Graphics\+Scene\+Mouse\+Event $\ast$event)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}\label{class_image_a7b4f6c258bb18cd85a9ea2756e9edcb5}} 
+Q\+PointF {\bfseries mouse\+Pos}
+\item 
+\mbox{\Hypertarget{class_image_a89902799531faaaf346d1c1cf53684dc}\label{class_image_a89902799531faaaf346d1c1cf53684dc}} 
+std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$ {\bfseries shapes}
+\item 
+\mbox{\Hypertarget{class_image_af1ca2a062cde981eaca8a53b3232f5ef}\label{class_image_af1ca2a062cde981eaca8a53b3232f5ef}} 
+std\+::vector$<$ Q\+Graphics\+Line\+Item $\ast$ $>$ {\bfseries lines}
+\item 
+\mbox{\Hypertarget{class_image_a27b66497e34badfd29d5a3d218ffa9e5}\label{class_image_a27b66497e34badfd29d5a3d218ffa9e5}} 
+std\+::vector$<$ Q\+Graphics\+Ellipse\+Item $\ast$ $>$ {\bfseries points}
+\item 
+\mbox{\Hypertarget{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}\label{class_image_ae17beebfa4b40e1f44f8cc53b65f11fa}} 
+\mbox{\hyperlink{class_model}{Model}} $\ast$ {\bfseries model}
+\item 
+\mbox{\Hypertarget{class_image_a7f674f7ab821f1972fa311fe5c4e0180}\label{class_image_a7f674f7ab821f1972fa311fe5c4e0180}} 
+Q\+Map$<$ std\+::string, Q\+Pen $>$ {\bfseries pens}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_image_a685e612995fe1361e7883fa5f1a1af6d}\label{class_image_a685e612995fe1361e7883fa5f1a1af6d}} 
+\index{Image@{Image}!addDrawnShape@{addDrawnShape}}
+\index{addDrawnShape@{addDrawnShape}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addDrawnShape()}{addDrawnShape()}}
+{\footnotesize\ttfamily bool Image\+::add\+Drawn\+Shape (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+If mode2 set to copy, the a duplicate of the drawn shape is created\mbox{\Hypertarget{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}\label{class_image_a8b9a78e3d92923ce802fca6febe7b9e4}} 
+\index{Image@{Image}!addShape@{addShape}}
+\index{addShape@{addShape}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{addShape()}{addShape()}}
+{\footnotesize\ttfamily bool Image\+::add\+Shape (\begin{DoxyParamCaption}\item[{Q\+PolygonF}]{shape\+Points }\end{DoxyParamCaption})}
+
+Selected shape redrawn with a 20\% increment in size.
+
+Selected shape redrawn with a 20\% decrement in size.\mbox{\Hypertarget{class_image_a049c37a34ad53256e0df806919a3d06f}\label{class_image_a049c37a34ad53256e0df806919a3d06f}} 
+\index{Image@{Image}!shapeToResize@{shapeToResize}}
+\index{shapeToResize@{shapeToResize}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{shapeToResize()}{shapeToResize()}}
+{\footnotesize\ttfamily void Image\+::shape\+To\+Resize (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{class_polygon_item}{Polygon\+Item}} $\ast$ $>$}]{selected\+Shapes }\end{DoxyParamCaption})}
+
+
+
+If resize mode3 on \textquotesingle{}shrink\textquotesingle{} or \textquotesingle{}grow\textquotesingle{} resize function will execute. 
+
+For every shape selected the current shape is deleted..
+
+..and then the shape is redrawn with its new size.
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+image.\+h\item 
+image.\+cpp\end{DoxyCompactItemize}

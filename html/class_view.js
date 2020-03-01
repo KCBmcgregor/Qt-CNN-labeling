@@ -1,0 +1,26 @@
+var class_view =
+[
+    [ "View", "class_view.html#a5a4e1d3bb67718121843a8e13bffd435", null ],
+    [ "~View", "class_view.html#ad0dc854db9aabbea98a334dec89f785c", null ],
+    [ "getPens", "class_view.html#aef5d255a2ad6ee7878b545b26600867f", null ],
+    [ "on_copyPasteButton_clicked", "class_view.html#af37721088459f3e72f8a3da30ac27030", null ],
+    [ "on_imageNamesList_currentItemChanged", "class_view.html#a1b71ea38968f52a7f8be8eb08af587b0", null ],
+    [ "on_resizeButton_clicked", "class_view.html#a3c304df6675874eda73f5e1cc45ca7cd", null ],
+    [ "on_saveButton_clicked", "class_view.html#a499e324650c8f9413858cffd68a26bc6", null ],
+    [ "on_selectFileButton_clicked", "class_view.html#a69ca796fbb9093b28be0279495b1f6a5", null ],
+    [ "on_selectFolderButton_clicked", "class_view.html#a453423c97a42de4369f94780799e0cd0", null ],
+    [ "on_shapeDrawButton_clicked", "class_view.html#a48d69d8bba1aeee8b636ad297f8defb5", null ],
+    [ "on_shapesList_currentItemChanged", "class_view.html#a57db833cf5551c83c968301a891e2a77", null ],
+    [ "on_sortButton2_clicked", "class_view.html#ae8ca57f32b48f36a5689c28f0132fea2", null ],
+    [ "on_sortButton_clicked", "class_view.html#aae7ca0edc9211b30aa94bf4e11f8672a", null ],
+    [ "on_zoomInButton_clicked", "class_view.html#a55d2f3031b31a4d4e991d8a9d8f0973a", null ],
+    [ "on_zoomOutButton_clicked", "class_view.html#a073b111e4fea8a294d9bddc1352daf84", null ],
+    [ "renderList1", "class_view.html#a82b8a9f3972d11f236015ba3b69c4518", null ],
+    [ "renderList2", "class_view.html#a2436f60537c1a6af36a49cb789df84f3", null ],
+    [ "renderLists", "class_view.html#a05107599c46df4c9e93d91c887473fab", null ],
+    [ "control", "class_view.html#aa27fa496b0ffae23456cd47790e7c349", null ],
+    [ "image", "class_view.html#a57a683a7449408740776fd07084bf656", null ],
+    [ "pens", "class_view.html#abd4ae673ecde941afe1284917b1db52a", null ],
+    [ "scene", "class_view.html#a821506ae9bd8c761317a40cd99f8a0c5", null ],
+    [ "ui", "class_view.html#afb895b3468d67f9b69effe7450e91cdb", null ]
+];
