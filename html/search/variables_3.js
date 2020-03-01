@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['sidestodraw_98',['sidesToDraw',['../class_control.html#a39130b6dd643a1be546c1e79b7aaee77',1,'Control']]]
+  ['mode3_114',['mode3',['../class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6',1,'Control']]],
+  ['model_115',['model',['../class_control.html#a52e7dd5006a3f4b6fae87775a8036fe8',1,'Control']]]
 ];

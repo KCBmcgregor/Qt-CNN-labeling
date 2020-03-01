@@ -102,51 +102,76 @@ $(document).ready(function(){initNavTree('model_8h_source.html',''); initResizab
 <div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_model.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_model.html">Model</a></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_control.html">Control</a> *control;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    std::vector&lt;std::string&gt; imageNames;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::map&lt;std::string, Image * &gt; images;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;std::string&gt; classifierNames;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::vector&lt;std::string&gt; imageNameDatesAsc;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::vector&lt;std::string&gt; imageNameDatesDec;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_model.html">Model</a>(<a class="code" href="class_control.html">Control</a> *cont = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::vector&lt;std::string&gt; getImageNames() {<span class="keywordflow">return</span> imageNames;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;std::string&gt; getClassifierNames() {<span class="keywordflow">return</span> classifierNames;}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;std::string&gt; getImageNameDatesAsc() {<span class="keywordflow">return</span> imageNameDatesAsc;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;std::string&gt; getImageNameDatesDec() {<span class="keywordflow">return</span> imageNameDatesDec;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    QMap&lt;std::string,QPen&gt; requestPens();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    QGraphicsPixmapItem * requestImageItem(std::string imageName);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    std::string requestMode();</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::string requestMode2();</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string requestMode3();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> requestConnectLastDrawnPoints(std::string imageName);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> requestAddDrawnShape(std::string imageName);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::vector&lt;std::string&gt; imageNames;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_model.html#a9de869f38826598f78f713bb0542ff92">   23</a></span>&#160;    std::map&lt;std::string, Image * &gt; <a class="code" href="class_model.html#a9de869f38826598f78f713bb0542ff92">images</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    std::vector&lt;std::string&gt; classifierNames;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_model.html#a9d03dd4accf340c91bb8fe0b78f1e173">   30</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_model.html#a9d03dd4accf340c91bb8fe0b78f1e173">imageNameDatesAsc</a>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::vector&lt;std::string&gt; imageNameDatesDec;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="class_model.html">Model</a>(<a class="code" href="class_control.html">Control</a> *cont = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::string <a class="code" href="class_model.html#aac38ffcdf1dc94485461aefe37d6b118">loadDataset</a>(std::string folderPath);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string loadClassifers(std::string filePath);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> loadImage(QString imagePath, <span class="keyword">const</span> QString imageName);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    QPixmap loadImage(<span class="keyword">const</span> QString imagePath);</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_model.html#aa32e2104f8758a4c418714518fb16a5f">   39</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_model.html#aa32e2104f8758a4c418714518fb16a5f">getImageNames</a>() {<span class="keywordflow">return</span> imageNames;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> pointDrawn() {control-&gt;pointDrawn();}</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="class_model.html#a6ecdfdd8682eebb595d82d87ec708336">   44</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_model.html#a6ecdfdd8682eebb595d82d87ec708336">getClassifierNames</a>() {<span class="keywordflow">return</span> classifierNames;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    ~<a class="code" href="class_model.html">Model</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_model.html#a6f08a60cd6bb64011dc12cb5a18c15fc">   49</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_model.html#a6f08a60cd6bb64011dc12cb5a18c15fc">getImageNameDatesAsc</a>() {<span class="keywordflow">return</span> <a class="code" href="class_model.html#a9d03dd4accf340c91bb8fe0b78f1e173">imageNameDatesAsc</a>;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif // MODEL_H</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="class_model.html#a953b7bb169ed21be360207a0acc708e5">   54</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_model.html#a953b7bb169ed21be360207a0acc708e5">getImageNameDatesDec</a>() {<span class="keywordflow">return</span> imageNameDatesDec;}</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    QMap&lt;std::string,QPen&gt; <a class="code" href="class_model.html#a70a901640fe2571713ea90290dd87365">requestPens</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    QGraphicsPixmapItem * requestImageItem(std::string imageName);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    std::string requestMode();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    std::string requestMode2();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::string requestMode3();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_model.html#aff2141f409a61232c27e8aef5b5fe29d">requestConnectLastDrawnPoints</a>(std::string imageName);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_model.html#a489ddaa333368917165d68d61b8c0d31">requestAddDrawnShape</a>(std::string imageName);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::string <a class="code" href="class_model.html#aac38ffcdf1dc94485461aefe37d6b118">loadDataset</a>(std::string folderPath);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    std::string <a class="code" href="class_model.html#a9deb0a62b018ac2387d58c72b2d6fa6d">loadClassifers</a>(std::string filePath);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> loadImage(QString imagePath, <span class="keyword">const</span> QString imageName);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    QPixmap loadImage(<span class="keyword">const</span> QString imagePath);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> pointDrawn() {control-&gt;pointDrawn();}</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    ~<a class="code" href="class_model.html">Model</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;};</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#endif // MODEL_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_model_html_a9de869f38826598f78f713bb0542ff92"><div class="ttname"><a href="class_model.html#a9de869f38826598f78f713bb0542ff92">Model::images</a></div><div class="ttdeci">std::map&lt; std::string, Image * &gt; images</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:23</div></div>
+<div class="ttc" id="aclass_model_html_aa32e2104f8758a4c418714518fb16a5f"><div class="ttname"><a href="class_model.html#aa32e2104f8758a4c418714518fb16a5f">Model::getImageNames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getImageNames()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:39</div></div>
+<div class="ttc" id="aclass_model_html_a9d03dd4accf340c91bb8fe0b78f1e173"><div class="ttname"><a href="class_model.html#a9d03dd4accf340c91bb8fe0b78f1e173">Model::imageNameDatesAsc</a></div><div class="ttdeci">std::vector&lt; std::string &gt; imageNameDatesAsc</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:30</div></div>
+<div class="ttc" id="aclass_model_html_a70a901640fe2571713ea90290dd87365"><div class="ttname"><a href="class_model.html#a70a901640fe2571713ea90290dd87365">Model::requestPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; requestPens()</div><div class="ttdoc">A list of all pens.</div><div class="ttdef"><b>Definition:</b> model.cpp:19</div></div>
 <div class="ttc" id="aclass_control_html_ae09e04fb0848a08735f3ac19f1035187"><div class="ttname"><a href="class_control.html#ae09e04fb0848a08735f3ac19f1035187">Control::requestPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; requestPens()</div><div class="ttdoc">A public method used to update the lists.</div><div class="ttdef"><b>Definition:</b> control.cpp:27</div></div>
 <div class="ttc" id="aclass_control_html"><div class="ttname"><a href="class_control.html">Control</a></div><div class="ttdoc">The Control class to control the program logic.</div><div class="ttdef"><b>Definition:</b> control.h:20</div></div>
 <div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition:</b> image.h:13</div></div>
+<div class="ttc" id="aclass_model_html_a489ddaa333368917165d68d61b8c0d31"><div class="ttname"><a href="class_model.html#a489ddaa333368917165d68d61b8c0d31">Model::requestAddDrawnShape</a></div><div class="ttdeci">void requestAddDrawnShape(std::string imageName)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.cpp:57</div></div>
+<div class="ttc" id="aclass_model_html_a9deb0a62b018ac2387d58c72b2d6fa6d"><div class="ttname"><a href="class_model.html#a9deb0a62b018ac2387d58c72b2d6fa6d">Model::loadClassifers</a></div><div class="ttdeci">std::string loadClassifers(std::string filePath)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.cpp:81</div></div>
+<div class="ttc" id="aclass_model_html_a6f08a60cd6bb64011dc12cb5a18c15fc"><div class="ttname"><a href="class_model.html#a6f08a60cd6bb64011dc12cb5a18c15fc">Model::getImageNameDatesAsc</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getImageNameDatesAsc()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:49</div></div>
+<div class="ttc" id="aclass_model_html_aff2141f409a61232c27e8aef5b5fe29d"><div class="ttname"><a href="class_model.html#aff2141f409a61232c27e8aef5b5fe29d">Model::requestConnectLastDrawnPoints</a></div><div class="ttdeci">void requestConnectLastDrawnPoints(std::string imageName)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.cpp:52</div></div>
 <div class="ttc" id="aclass_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdef"><b>Definition:</b> model.h:13</div></div>
+<div class="ttc" id="aclass_model_html_a6ecdfdd8682eebb595d82d87ec708336"><div class="ttname"><a href="class_model.html#a6ecdfdd8682eebb595d82d87ec708336">Model::getClassifierNames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getClassifierNames()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:44</div></div>
 <div class="ttc" id="aclass_control_html_ab07040ef64080d45877dee68156593f6"><div class="ttname"><a href="class_control.html#ab07040ef64080d45877dee68156593f6">Control::qStringListToVector</a></div><div class="ttdeci">std::vector&lt; std::string &gt; qStringListToVector(QStringList list)</div><div class="ttdef"><b>Definition:</b> control.cpp:88</div></div>
-<div class="ttc" id="aclass_model_html_aac38ffcdf1dc94485461aefe37d6b118"><div class="ttname"><a href="class_model.html#aac38ffcdf1dc94485461aefe37d6b118">Model::loadDataset</a></div><div class="ttdeci">std::string loadDataset(std::string folderPath)</div><div class="ttdef"><b>Definition:</b> model.cpp:62</div></div>
+<div class="ttc" id="aclass_model_html_a953b7bb169ed21be360207a0acc708e5"><div class="ttname"><a href="class_model.html#a953b7bb169ed21be360207a0acc708e5">Model::getImageNameDatesDec</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getImageNameDatesDec()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.h:54</div></div>
+<div class="ttc" id="aclass_model_html_aac38ffcdf1dc94485461aefe37d6b118"><div class="ttname"><a href="class_model.html#aac38ffcdf1dc94485461aefe37d6b118">Model::loadDataset</a></div><div class="ttdeci">std::string loadDataset(std::string folderPath)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> model.cpp:62</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

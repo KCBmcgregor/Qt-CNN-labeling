@@ -32,7 +32,10 @@ class Model
     std::vector<std::string> imageNameDatesDec;
 public:
     Model(Control *cont = nullptr);
-
+    //! A public function
+    /*!
+     *Gets and returns the image names into imageNames.
+     */
     std::vector<std::string> getImageNames() {return imageNames;}
     //!A public function
     /*!

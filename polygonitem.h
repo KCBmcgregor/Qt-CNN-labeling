@@ -18,13 +18,24 @@ class PolygonItem : public QObject, public QGraphicsPolygonItem
 
     QMenu rightClickMenu;
 public:
+    //! A public constructor
+    /*!
+     * Creates the polygon shapes based off of given parameters.
+     * \param polygonPoints
+     * \param parentImage
+     * \param parent
+     */
     explicit PolygonItem(QPolygonF polygonPoints, Image *parentImage = nullptr, QObject *parent = nullptr);
     using QGraphicsPolygonItem::boundingRect;
     using QGraphicsPolygonItem::paint;
 
-    void requestCopyPasteSelectedShapes();
 
 protected:
+    //! A protected event function
+    /*!
+     * Used to determine right clicks on shapes to display the gui and pass the event onto the base  class.
+     * \param event
+     */
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
     bool Pressed;
 

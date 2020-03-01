@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['view_99',['view',['../class_control.html#a14fa15c3af57cead4194a1318193f2ef',1,'Control']]]
+  ['sidestodraw_116',['sidesToDraw',['../class_control.html#a39130b6dd643a1be546c1e79b7aaee77',1,'Control']]]
 ];
