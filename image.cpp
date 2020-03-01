@@ -1,4 +1,5 @@
 #include "image.h"
+#include "point.h"
 #include "polygonitem.h"
 #include <QGraphicsTextItem>
 #include <QPainterPath>
@@ -9,24 +10,50 @@
 #include <model.h>
 
 
+
 Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
 {
     model = m;
     points = {};
     lines = {};
     shapes = {};
-    pens = model->requestPens();
+
+    QPen pointPen(Qt::red);
+    pens["pointPen"] = pointPen;
+
+    QPen linePen(Qt::black);
+    linePen.setWidth(6);
+    linePen.setJoinStyle(Qt::MiterJoin);
+    pens["linePen"] = linePen;
+
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(6);
+    shapePen.setJoinStyle(Qt::MiterJoin);
+    pens["shapePen"] = shapePen;
+
+    QBrush pointBrush(Qt::red,Qt::SolidPattern);
+    brushs["pointBrush"] = pointBrush;
 
 }
 
-bool Image::addPoint(QPointF mousePos)
+bool Image::addPoint(QPointF mousePos, int polygonIndex, PolygonItem *parentShape)
 {
     qreal x = mousePos.x();
     qreal y = mousePos.y();
-    QGraphicsEllipseItem *shape =  new QGraphicsEllipseItem(0,0,10,10,this);
+    QGraphicsEllipseItem *shape;
+    if (parentShape == nullptr)
+    {
+        shape =  new Point(-3,-3,6,6,this);
+        points.push_back(shape);
+    }
+    else
+    {
+        shape =  new Point(-3,-3,6,6,polygonIndex,parentShape);
+    }
     shape->setPos(x,y);
     shape->setPen(pens["pointPen"]);
-    points.push_back(shape);
+    shape->setBrush(brushs["pointBrush"]);
+    shape->setZValue(50);
     return true;
 }
 
@@ -42,23 +69,11 @@ bool Image::addLine(QPointF point1, QPointF point2)
 
 bool Image::addShape(QPolygonF shapePoints)
 {
-    //std::string mode3 = model->requestMode3();
 
     PolygonItem *shape = new PolygonItem(shapePoints, this);
     shape->setFlag(PolygonItem::ItemIsMovable);
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
-
-    /*if(mode3=="grow"){                                                  //! Selected shape redrawn with a 20% increment in size.
-    shape->setTransformOriginPoint(shapePoints[0]);
-    shape->setScale(1.2);
-    }
-
-    if(mode3=="shrink"){                                                //! Selected shape redrawn with a 20% decrement in size.
-    shape->setTransformOriginPoint(shapePoints[0]);
-    shape->setScale(0.8);
-    }*/
-
     shapes.push_back(shape);
     return true;
 }
@@ -78,15 +93,31 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
     return true;
 }
                                      //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
-void Image::resizeShape(PolygonItem *shapeToResize)
+void Image::growShape(PolygonItem *shapeToResize)
 {
     QPolygonF shapePoints;
     shapePoints = shapeToResize->polygon();
     PolygonItem *shape = shapeToResize;
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(1.2);
+    //for(int i = 0; i < shapePoints.size(); i++)
+    //{
+
+    //}
+    shape->setSelected(false);
 
 }
+
+void Image::shrinkShape(PolygonItem *shapeToResize)
+{
+    QPolygonF shapePoints;
+    shapePoints = shapeToResize->polygon();
+    PolygonItem *shape = shapeToResize;
+    shape->setTransformOriginPoint(shapePoints[0]);
+    shape->setScale(0.8);
+
+}
+
 
 
 bool Image::addDrawnShape()
@@ -143,12 +174,22 @@ void Image::copyPasteSelectedShapes()
     copyPasteShapes(findSelectedShapes());
 }
 
-void Image::resizeSelectedShapes()
+void Image::growSelectedShapes()
 {
     std::vector<PolygonItem * > shapesToResize = findSelectedShapes();
     for(unsigned i=0; i < shapesToResize.size(); i++)
     {
-        resizeShape(shapesToResize[i]);
+        growShape(shapesToResize[i]);
+    }
+
+}
+
+void Image::shrinkSelectedShapes()
+{
+    std::vector<PolygonItem * > shapesToResize = findSelectedShapes();
+    for(unsigned i=0; i < shapesToResize.size(); i++)
+    {
+        shrinkShape(shapesToResize[i]);
     }
 
 }

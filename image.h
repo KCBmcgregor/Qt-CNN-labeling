@@ -21,6 +21,7 @@ class Image : public QObject, public QGraphicsPixmapItem
     std::vector<QGraphicsEllipseItem * > points;
     Model *model;
     QMap<std::string, QPen> pens;
+    QMap<std::string, QBrush> brushs;
 
 public:
     explicit Image(QString imagePath, Model *model, QObject *parent = nullptr);
@@ -29,16 +30,15 @@ public:
 
     std::vector<PolygonItem * > getShapes() {return shapes;}
 
-    bool addPoint(QPointF mousePos);
+    bool addPoint(QPointF mousePos, int polygonIndex = -1, PolygonItem *parentShape = nullptr);
     bool addLine(QPointF point1, QPointF point2);
     bool addShape(QPolygonF shapePoints);
     bool deleteShape(PolygonItem *shapeToDelete);
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
-    //void growShape(PolygonItem *shapeToResize);
-    //void shrinkShape(PolygonItem *shapeToResize);
-    void resizeShape(PolygonItem *shapeToResize);
+    void growShape(PolygonItem *shapeToResize);
+    void shrinkShape(PolygonItem *shapeToResize);
 
 
     std::vector<PolygonItem * > findSelectedShapes();
@@ -50,9 +50,9 @@ public:
 public slots:
     void copyPasteSelectedShapes();
     void deleteSelectedShapes();
-    //void growSelectedShapes();
-    //void shrinkSelectedShapes();
-    void resizeSelectedShapes();
+    void growSelectedShapes();
+    void shrinkSelectedShapes();
+
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
