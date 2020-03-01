@@ -171,56 +171,19 @@ QStringList Control::requestSortedNameDescending(int i){
 }
 
                                                         //! Sorts images by date in ascending order
-QStringList Control::requestSortedDateAscending(){
-    bool swapped = false;
-    std::vector<QDateTime>datesVector = model->getDates();
-    std::vector<std::string>namesVector =  model->getImageNames();
-
-    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
-        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
-
-            if (datesVector[j] > datesVector[j + 1]) {
-                std::string temp = namesVector[j];
-                namesVector[j] = namesVector[j + 1];
-                namesVector[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) {
-            break;
-        }
-        swapped = false;
-    }
+QStringList Control::requestSortedDateAscending()
+{
+    std::vector<std::string>namesVector = model->getImageNameDatesAsc();
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
 
-                                                         //! Sorts images by date in ascending order
-QStringList Control::requestSortedDateDescending(){
-    bool swapped = false;
-    std::vector<QDateTime>datesVector = model->getDates();
-    std::vector<std::string>namesVector =  model->getImageNames();
-
-    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
-        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
-
-            if (datesVector[j] < datesVector[j + 1]) {
-                std::string temp = namesVector[j];
-                namesVector[j] = namesVector[j + 1];
-                namesVector[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) {
-            break;
-        }
-        swapped = false;
-    }
+QStringList Control::requestSortedDateDescending()
+{
+    std::vector<std::string>namesVector = model->getImageNameDatesDec();
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
-
-
 
 int main(int argc, char *argv[])
 {
