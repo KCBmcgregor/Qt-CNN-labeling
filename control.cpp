@@ -111,7 +111,7 @@ void Control::pointDrawn()
     }
 }
 
-
+                // Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
 QStringList Control::requestSortedNameAscending(int i){
     std::vector<std::string>namesVector;
     if(i == 1){
@@ -140,7 +140,7 @@ QStringList Control::requestSortedNameAscending(int i){
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
-
+                // Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
 QStringList Control::requestSortedNameDescending(int i){
     std::vector<std::string>namesVector;
     if(i == 1){
@@ -170,57 +170,20 @@ QStringList Control::requestSortedNameDescending(int i){
     return sortedNames;
 }
 
-
-QStringList Control::requestSortedDateAscending(){
-    bool swapped = false;
-    std::vector<QDateTime>datesVector = model->getDates();
-    std::vector<std::string>namesVector =  model->getImageNames();
-
-    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
-        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
-
-            if (datesVector[j] > datesVector[j + 1]) {
-                std::string temp = namesVector[j];
-                namesVector[j] = namesVector[j + 1];
-                namesVector[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) {
-            break;
-        }
-        swapped = false;
-    }
+                                                        // Sorts images by date in ascending order
+QStringList Control::requestSortedDateAscending()
+{
+    std::vector<std::string>namesVector = model->getImageNameDatesAsc();
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
 
-
-QStringList Control::requestSortedDateDescending(){
-    bool swapped = false;
-    std::vector<QDateTime>datesVector = model->getDates();
-    std::vector<std::string>namesVector =  model->getImageNames();
-
-    for (unsigned int i = 0; i < datesVector.size() - 1; ++i) {
-        for (unsigned int j = 0; j < datesVector.size() - 1 - i; ++j) {
-
-            if (datesVector[j] < datesVector[j + 1]) {
-                std::string temp = namesVector[j];
-                namesVector[j] = namesVector[j + 1];
-                namesVector[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) {
-            break;
-        }
-        swapped = false;
-    }
+QStringList Control::requestSortedDateDescending()
+{
+    std::vector<std::string>namesVector = model->getImageNameDatesDec();
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
-
-
 
 int main(int argc, char *argv[])
 {

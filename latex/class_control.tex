@@ -1,0 +1,284 @@
+\hypertarget{class_control}{}\doxysection{Control Class Reference}
+\label{class_control}\index{Control@{Control}}
+
+
+The \mbox{\hyperlink{class_control}{Control}} class to control the program logic.  
+
+
+
+
+{\ttfamily \#include $<$control.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_control_aa730aeda4517f40bc48ba1e46ebded77}\label{class_control_aa730aeda4517f40bc48ba1e46ebded77}} 
+\mbox{\hyperlink{class_control_aa730aeda4517f40bc48ba1e46ebded77}{Control}} ()
+\begin{DoxyCompactList}\small\item\em The Contol constructor. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_control_a376fc27a00eec6341a3e0ca47fae483c}{get\+Folder\+Path}} ()
+\begin{DoxyCompactList}\small\item\em Access methods to the private variables. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a24fdded214c8f3b2ce998c6fb8a55556}\label{class_control_a24fdded214c8f3b2ce998c6fb8a55556}} 
+std\+::string {\bfseries get\+Mode} ()
+\item 
+\mbox{\Hypertarget{class_control_af22bbf842a5630e363f2ddbe1e35f969}\label{class_control_af22bbf842a5630e363f2ddbe1e35f969}} 
+std\+::string {\bfseries get\+Mode2} ()
+\item 
+\mbox{\Hypertarget{class_control_aca1d230e698d8b33c529bd6467b7aa15}\label{class_control_aca1d230e698d8b33c529bd6467b7aa15}} 
+std\+::string {\bfseries get\+Mode3} ()
+\item 
+int \mbox{\hyperlink{class_control_a321923366d1a013f5cc7771d85e3f59c}{get\+Sides\+To\+Draw}} ()
+\begin{DoxyCompactList}\small\item\em A public method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_a57fbb5107c6f2661fb88c87ae4b89b50}{set\+Selected\+Image\+Name}} (std\+::string iN)
+\begin{DoxyCompactList}\small\item\em A public method. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a22d49a37793b0b1dae5c22b961e47e49}\label{class_control_a22d49a37793b0b1dae5c22b961e47e49}} 
+void {\bfseries set\+Mode} (std\+::string m)
+\item 
+\mbox{\Hypertarget{class_control_aaf632b82edb95de7d8b129e54a9361e3}\label{class_control_aaf632b82edb95de7d8b129e54a9361e3}} 
+void {\bfseries set\+Mode2} (std\+::string m)
+\item 
+\mbox{\Hypertarget{class_control_ab518dbda5814e92ff84c1bc89cd25f8a}\label{class_control_ab518dbda5814e92ff84c1bc89cd25f8a}} 
+void {\bfseries set\+Mode3} (std\+::string m)
+\item 
+\mbox{\Hypertarget{class_control_a047ee7b619ed2d0534a72e87813b5097}\label{class_control_a047ee7b619ed2d0534a72e87813b5097}} 
+void {\bfseries set\+Sides\+To\+Draw} (Q\+String shape)
+\item 
+Q\+Map$<$ std\+::string, Q\+Pen $>$ \mbox{\hyperlink{class_control_ae09e04fb0848a08735f3ac19f1035187}{request\+Pens}} ()
+\begin{DoxyCompactList}\small\item\em A public method used to update the lists. \end{DoxyCompactList}\item 
+std\+::vector$<$ Q\+Date\+Time $>$ \mbox{\hyperlink{class_control_a646e52c8a41330a785434864586c3131}{request\+Dates}} ()
+\begin{DoxyCompactList}\small\item\em A method taking no arguments and returning a Q\+String\+List. \end{DoxyCompactList}\item 
+Q\+String\+List \mbox{\hyperlink{class_control_a0d964f86f35ef9ff3c4484aa9a41912d}{request\+Image\+Names}} ()
+\item 
+Q\+String\+List \mbox{\hyperlink{class_control_aea378a505493c8249725319e2d9a9deb}{request\+Classifier\+Names}} ()
+\begin{DoxyCompactList}\small\item\em A method taking no arguments and returning a Q\+String\+List. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_control_ac34c8f02d5a55446c0471d6a8110f6f6}{request\+Folder\+Path}} ()
+\begin{DoxyCompactList}\small\item\em A method taking no arguments and returning a Q\+String. \end{DoxyCompactList}\item 
+Q\+String \mbox{\hyperlink{class_control_a0d8e15eceb9b59b1087fbb487d820a61}{request\+File\+Path}} ()
+\begin{DoxyCompactList}\small\item\em A method taking no arguments and returning a Q\+String. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_aa864e3a1714a0905be52de9d02e1e9e8}\label{class_control_aa864e3a1714a0905be52de9d02e1e9e8}} 
+Q\+Graphics\+Pixmap\+Item $\ast$ \mbox{\hyperlink{class_control_aa864e3a1714a0905be52de9d02e1e9e8}{request\+Image}} (const Q\+String image\+Name)
+\begin{DoxyCompactList}\small\item\em A method taking 1 argument and returing a Q\+Pixmap. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a7f6c36a3143c5447e631169ce95c0579}\label{class_control_a7f6c36a3143c5447e631169ce95c0579}} 
+Q\+String\+List {\bfseries request\+Sorted\+Name\+Ascending} (int i)
+\item 
+Q\+String\+List \mbox{\hyperlink{class_control_a5008300ad811f81ad95b1cf46ce664c4}{request\+Sorted\+Name\+Descending}} (int i)
+\item 
+\mbox{\Hypertarget{class_control_a83373eb60f9c5f6f0611a4c42d4dc64f}\label{class_control_a83373eb60f9c5f6f0611a4c42d4dc64f}} 
+Q\+String\+List \mbox{\hyperlink{class_control_a83373eb60f9c5f6f0611a4c42d4dc64f}{request\+Sorted\+Date\+Ascending}} ()
+\begin{DoxyCompactList}\small\item\em Same as request\+Sorted\+Name\+Ascending, but descending instead. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a16452e3b24661140e690f2140977587f}\label{class_control_a16452e3b24661140e690f2140977587f}} 
+Q\+String\+List \mbox{\hyperlink{class_control_a16452e3b24661140e690f2140977587f}{request\+Sorted\+Date\+Descending}} ()
+\begin{DoxyCompactList}\small\item\em Sorts the image file modified date ascending. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_adb4334de8b5f24ff1b5030b4253ed618}\label{class_control_adb4334de8b5f24ff1b5030b4253ed618}} 
+Q\+String\+List \mbox{\hyperlink{class_control_adb4334de8b5f24ff1b5030b4253ed618}{vector\+To\+Q\+String\+List}} (std\+::vector$<$ std\+::string $>$ v)
+\begin{DoxyCompactList}\small\item\em Sorts the image file modified date descending. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{class_control_ab07040ef64080d45877dee68156593f6}{q\+String\+List\+To\+Vector}} (Q\+String\+List list)
+\item 
+\mbox{\Hypertarget{class_control_ac8f7a61c6171eb4495437488adccfd31}\label{class_control_ac8f7a61c6171eb4495437488adccfd31}} 
+void {\bfseries point\+Drawn} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_model}{Model}} $\ast$ \mbox{\hyperlink{class_control_a52e7dd5006a3f4b6fae87775a8036fe8}{model}}
+\begin{DoxyCompactList}\small\item\em Public pointers to the \mbox{\hyperlink{class_model}{Model}} \& \mbox{\hyperlink{class_view}{View}} objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_view}{View}} $\ast$ \mbox{\hyperlink{class_control_a14fa15c3af57cead4194a1318193f2ef}{view}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{class_control_a1c528992795232db1c8420846c10838e}{folder\+Path}}
+\begin{DoxyCompactList}\small\item\em State variables for file paths. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_control_a035fc5f6c71876bafd298fd5e7a3430c}{classifier\+File\+Path}}
+\item 
+\mbox{\Hypertarget{class_control_a6b9e0a4e1cdf7b0329b419e68da7ca79}\label{class_control_a6b9e0a4e1cdf7b0329b419e68da7ca79}} 
+std\+::string {\bfseries selected\+Image\+Name}
+\item 
+\mbox{\Hypertarget{class_control_a3b07dbcb1e368f0eaf75f5d4906c3936}\label{class_control_a3b07dbcb1e368f0eaf75f5d4906c3936}} 
+std\+::string {\bfseries mode}
+\item 
+\mbox{\Hypertarget{class_control_a11bfe0ed44fdc89b8ad12d59d1542d3a}\label{class_control_a11bfe0ed44fdc89b8ad12d59d1542d3a}} 
+std\+::string {\bfseries mode2}
+\item 
+\mbox{\Hypertarget{class_control_a6bce63d5b53948ad03a0c0b4bd68f7a6}\label{class_control_a6bce63d5b53948ad03a0c0b4bd68f7a6}} 
+std\+::string \mbox{\hyperlink{class_control_a6bce63d5b53948ad03a0c0b4bd68f7a6}{mode3}}
+\begin{DoxyCompactList}\small\item\em Used for copy paste. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a39130b6dd643a1be546c1e79b7aaee77}\label{class_control_a39130b6dd643a1be546c1e79b7aaee77}} 
+int \mbox{\hyperlink{class_control_a39130b6dd643a1be546c1e79b7aaee77}{sides\+To\+Draw}}
+\begin{DoxyCompactList}\small\item\em Used for resizing of shape. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_control_a351e423c059d032410c6c9bac77b947c}\label{class_control_a351e423c059d032410c6c9bac77b947c}} 
+int {\bfseries draw\+Points\+Drawn}
+\item 
+\mbox{\Hypertarget{class_control_adf0a3cf18c15e8d16beb1d9ab5b0ab35}\label{class_control_adf0a3cf18c15e8d16beb1d9ab5b0ab35}} 
+int {\bfseries draw\+Sides\+Drawn}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \mbox{\hyperlink{class_control}{Control}} class to control the program logic. 
+
+The \mbox{\hyperlink{class_control}{Control}} class will control the the program logic and manage the communication between the model and view objects it will also contain some variable about the current state of the program like the curently selected folder path. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_control_a376fc27a00eec6341a3e0ca47fae483c}\label{class_control_a376fc27a00eec6341a3e0ca47fae483c}} 
+\index{Control@{Control}!getFolderPath@{getFolderPath}}
+\index{getFolderPath@{getFolderPath}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{getFolderPath()}{getFolderPath()}}
+{\footnotesize\ttfamily std\+::string Control\+::get\+Folder\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access methods to the private variables. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string A public method
+\end{DoxyReturn}
+Gets and returns the address of the folder \mbox{\Hypertarget{class_control_a321923366d1a013f5cc7771d85e3f59c}\label{class_control_a321923366d1a013f5cc7771d85e3f59c}} 
+\index{Control@{Control}!getSidesToDraw@{getSidesToDraw}}
+\index{getSidesToDraw@{getSidesToDraw}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{getSidesToDraw()}{getSidesToDraw()}}
+{\footnotesize\ttfamily int Control\+::get\+Sides\+To\+Draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public method. 
+
+Gets and returns the position of where sides sould be drawn \mbox{\Hypertarget{class_control_ab07040ef64080d45877dee68156593f6}\label{class_control_ab07040ef64080d45877dee68156593f6}} 
+\index{Control@{Control}!qStringListToVector@{qStringListToVector}}
+\index{qStringListToVector@{qStringListToVector}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{qStringListToVector()}{qStringListToVector()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::string $>$ Control\+::q\+String\+List\+To\+Vector (\begin{DoxyParamCaption}\item[{Q\+String\+List}]{list }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$std\+::string$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_aea378a505493c8249725319e2d9a9deb}\label{class_control_aea378a505493c8249725319e2d9a9deb}} 
+\index{Control@{Control}!requestClassifierNames@{requestClassifierNames}}
+\index{requestClassifierNames@{requestClassifierNames}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestClassifierNames()}{requestClassifierNames()}}
+{\footnotesize\ttfamily Q\+String\+List Control\+::request\+Classifier\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method taking no arguments and returning a Q\+String\+List. 
+
+requests a list of the current classifier names stored in the model \begin{DoxyReturn}{Returns}
+list of the current classifier names 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_a646e52c8a41330a785434864586c3131}\label{class_control_a646e52c8a41330a785434864586c3131}} 
+\index{Control@{Control}!requestDates@{requestDates}}
+\index{requestDates@{requestDates}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestDates()}{requestDates()}}
+{\footnotesize\ttfamily std\+::vector$<$Q\+Date\+Time$>$ Control\+::request\+Dates (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method taking no arguments and returning a Q\+String\+List. 
+
+requests a list of the current image names stored in the model \begin{DoxyReturn}{Returns}
+list of the current image names ~\newline
+ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_a0d8e15eceb9b59b1087fbb487d820a61}\label{class_control_a0d8e15eceb9b59b1087fbb487d820a61}} 
+\index{Control@{Control}!requestFilePath@{requestFilePath}}
+\index{requestFilePath@{requestFilePath}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestFilePath()}{requestFilePath()}}
+{\footnotesize\ttfamily Q\+String Control\+::request\+File\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method taking no arguments and returning a Q\+String. 
+
+Using Q\+File\+Dialog the user is presented with the os\textquotesingle{}s file explorer only showing $\ast$.names files and is prompted to select their class file. the path of the selected file is returned. \begin{DoxyReturn}{Returns}
+File path as a Q\+String. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_ac34c8f02d5a55446c0471d6a8110f6f6}\label{class_control_ac34c8f02d5a55446c0471d6a8110f6f6}} 
+\index{Control@{Control}!requestFolderPath@{requestFolderPath}}
+\index{requestFolderPath@{requestFolderPath}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestFolderPath()}{requestFolderPath()}}
+{\footnotesize\ttfamily Q\+String Control\+::request\+Folder\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A method taking no arguments and returning a Q\+String. 
+
+Using Q\+File\+Dialog the user is presented with the os\textquotesingle{}s file explorer only showing directories and is prompted to select the folder containing the dataset they want to label. the path of the selected folder is returned. \begin{DoxyReturn}{Returns}
+Folder path as a Q\+String. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_control_a0d964f86f35ef9ff3c4484aa9a41912d}\label{class_control_a0d964f86f35ef9ff3c4484aa9a41912d}} 
+\index{Control@{Control}!requestImageNames@{requestImageNames}}
+\index{requestImageNames@{requestImageNames}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestImageNames()}{requestImageNames()}}
+{\footnotesize\ttfamily Q\+String\+List Control\+::request\+Image\+Names (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+takes no arguments and returns a vector of type Q\+Date\+Time. requests the file modification dates. \mbox{\Hypertarget{class_control_ae09e04fb0848a08735f3ac19f1035187}\label{class_control_ae09e04fb0848a08735f3ac19f1035187}} 
+\index{Control@{Control}!requestPens@{requestPens}}
+\index{requestPens@{requestPens}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestPens()}{requestPens()}}
+{\footnotesize\ttfamily Q\+Map$<$ std\+::string, Q\+Pen $>$ Control\+::request\+Pens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+A public method used to update the lists. 
+
+When run the two list widgets, holding image and classifier names are updated to the latest values in the model. \mbox{\Hypertarget{class_control_a5008300ad811f81ad95b1cf46ce664c4}\label{class_control_a5008300ad811f81ad95b1cf46ce664c4}} 
+\index{Control@{Control}!requestSortedNameDescending@{requestSortedNameDescending}}
+\index{requestSortedNameDescending@{requestSortedNameDescending}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{requestSortedNameDescending()}{requestSortedNameDescending()}}
+{\footnotesize\ttfamily Q\+String\+List Control\+::request\+Sorted\+Name\+Descending (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+Sorts either the image or the class names in ascending order. The int i parameter is used to determine which one is sorted(class or image). \mbox{\Hypertarget{class_control_a57fbb5107c6f2661fb88c87ae4b89b50}\label{class_control_a57fbb5107c6f2661fb88c87ae4b89b50}} 
+\index{Control@{Control}!setSelectedImageName@{setSelectedImageName}}
+\index{setSelectedImageName@{setSelectedImageName}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{setSelectedImageName()}{setSelectedImageName()}}
+{\footnotesize\ttfamily void Control\+::set\+Selected\+Image\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{iN }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+A public method. 
+
+Sets the image name 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_control_a035fc5f6c71876bafd298fd5e7a3430c}\label{class_control_a035fc5f6c71876bafd298fd5e7a3430c}} 
+\index{Control@{Control}!classifierFilePath@{classifierFilePath}}
+\index{classifierFilePath@{classifierFilePath}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{classifierFilePath}{classifierFilePath}}
+{\footnotesize\ttfamily std\+::string Control\+::classifier\+File\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+string to hold the currently selected class file path \mbox{\Hypertarget{class_control_a1c528992795232db1c8420846c10838e}\label{class_control_a1c528992795232db1c8420846c10838e}} 
+\index{Control@{Control}!folderPath@{folderPath}}
+\index{folderPath@{folderPath}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{folderPath}{folderPath}}
+{\footnotesize\ttfamily std\+::string Control\+::folder\+Path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+State variables for file paths. 
+
+string to hold the currently selected dataset folder path \mbox{\Hypertarget{class_control_a52e7dd5006a3f4b6fae87775a8036fe8}\label{class_control_a52e7dd5006a3f4b6fae87775a8036fe8}} 
+\index{Control@{Control}!model@{model}}
+\index{model@{model}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{model}{model}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_model}{Model}}$\ast$ Control\+::model}
+
+
+
+Public pointers to the \mbox{\hyperlink{class_model}{Model}} \& \mbox{\hyperlink{class_view}{View}} objects. 
+
+the 3 main objects need to be able to call methods on each other therfore they need to hold pointers to eachother so they can do this. the pointers are used whenever an object need to call the other objects methods. pointer to the \mbox{\hyperlink{class_model}{Model}} object \mbox{\Hypertarget{class_control_a14fa15c3af57cead4194a1318193f2ef}\label{class_control_a14fa15c3af57cead4194a1318193f2ef}} 
+\index{Control@{Control}!view@{view}}
+\index{view@{view}!Control@{Control}}
+\doxysubsubsection{\texorpdfstring{view}{view}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_view}{View}}$\ast$ Control\+::view}
+
+pointer to the \mbox{\hyperlink{class_view}{View}} object 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+control.\+h\item 
+control.\+cpp\end{DoxyCompactItemize}

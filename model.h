@@ -16,11 +16,24 @@ class Image;
 */
 class Model
 {
-    Control *control; /*!< TODO: describe */
-    std::vector<std::string> imageNames; /*!< TODO: describe */
-    std::map<std::string, Image * > images; /*!< TODO: describe */
-    std::vector<std::string> classifierNames; /*!< TODO: describe */
-    std::vector<QDateTime>dates; /*!< TODO: describe */
+    Control *control;
+
+
+    std::vector<std::string> imageNames;
+    //!A public function
+    /*!
+     * Maps the images.
+     */
+    std::map<std::string, Image * > images;
+
+    std::vector<std::string> classifierNames;
+    //!A public function
+    /*!
+     * Gets and returns the image dates in ascending order into imageNamesDatesAsc.
+     */
+    std::vector<std::string> imageNameDatesAsc;
+
+    std::vector<std::string> imageNameDatesDec;
 public:
     /*!
      \brief
@@ -28,44 +41,35 @@ public:
      \param cont
     */
     Model(Control *cont = nullptr);
-
+    //! A public function
     /*!
-     \brief
-
-     \return std::vector<std::string>
-    */
+     *Gets and returns the image names into imageNames.
+     */
     std::vector<std::string> getImageNames() {return imageNames;}
+    //!A public function
     /*!
-     \brief
-
-     \return std::vector<std::string>
-    */
+     * Gets and returns the classifier names into classifierNames.
+     */
     std::vector<std::string> getClassifierNames() {return classifierNames;}
+    //!A public function
     /*!
-     \brief
-
-     \return std::vector<QDateTime>
-    */
-    std::vector<QDateTime> getDates() {return dates;}
-
+     * Gets and returns the image dates in decending order into imageNamesDatesDec.
+     */
+    std::vector<std::string> getImageNameDatesAsc() {return imageNameDatesAsc;}
+    //!A public function
     /*!
-     \brief
+     * Gets and returns the image names into imageNames.
+     */
+    std::vector<std::string> getImageNameDatesDec() {return imageNameDatesDec;}
 
-     \return QMap<std::string, QPen>
+    //!A list of all pens
+    /*!
+    The QMap is an access method used to retrieve data it stores a list of all pen objects; line, shape, .appoint to be used when drawing shapes
     */
     QMap<std::string,QPen> requestPens();
-    /*!
-     \brief
 
-     \param imageName
-     \return QGraphicsPixmapItem
-    */
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
-    /*!
-     \brief
 
-     \return std::string
-    */
     std::string requestMode();
     /*!
      \brief
@@ -79,32 +83,31 @@ public:
      \return std::string
     */
     std::string requestMode3();
+    //!A public function
     /*!
-     \brief
-
-     \param imageName
-    */
+     * Makes a request to attempt connecting the last drawn points, if successful it will connect them.
+     * \param imageName
+     */
     void requestConnectLastDrawnPoints(std::string imageName);
+    //!A public function
     /*!
-     \brief
-
-     \param imageName
-    */
+     * Makes a request to attempt to add a drawn shape,if successful it will draw the shape.
+     * \param imageName
+     */
     void requestAddDrawnShape(std::string imageName);
-
+    //!A public function
     /*!
-     \brief
-
-     \param folderPath
-     \return std::string
-    */
+     * Loads the dataset into the program and gui, also enables the ability to sort in ascending or decending order.
+     * \param folderPath
+     *
+     */
     std::string loadDataset(std::string folderPath);
+    //!A public function
     /*!
-     \brief
-
-     \param filePath
-     \return std::string
-    */
+     * Loads the classifiers into the program.
+     * \param filePath
+     *
+     */
     std::string loadClassifers(std::string filePath);
     /*!
      \brief

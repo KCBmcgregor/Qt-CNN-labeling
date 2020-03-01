@@ -4,11 +4,13 @@
 #include <QFile>
 #include <QString>
 #include <QMainWindow>
-
+#include <iostream>
 Model::Model(Control *cont)
 {
     control = cont;
     imageNames = {};
+    imageNameDatesAsc = {};
+    imageNameDatesDec = {};
     images = {};
     classifierNames = {};
 
@@ -65,6 +67,14 @@ std::string Model::loadDataset(std::string folderPath)
     QStringList images = dir.entryList(filter);
     std::vector<std::string> newImageNames = control->qStringListToVector(images);
     imageNames = newImageNames;
+
+    QStringList imagesAsc = dir.entryList(filter, QDir::Files, QDir::Time);                 // Sorts image files by date ascending
+    std::vector<std::string> newImageNamesAsc = control->qStringListToVector(imagesAsc);
+    imageNameDatesAsc = newImageNamesAsc;
+
+    QStringList imagesDec = dir.entryList(filter, QDir::Files, QDir::Time| QDir::Reversed); // Sorts image file by date descending
+    std::vector<std::string> newImageNamesDec = control->qStringListToVector(imagesDec);
+    imageNameDatesDec = newImageNamesDec;
     return folderPath;
 }
 
@@ -93,19 +103,7 @@ std::string Model::loadClassifers(std::string filePath)
 }
 
 
-std::vector<QDateTime> Model::loadDates(std::vector<std::string> imageNames)
-{
-    std::vector<QDateTime> dates;
-    QFileInfo fileInfo;
-    QStringList newImageNames = control->vectorToQStringList(imageNames);
-    foreach (QString name, newImageNames){
-        QFileInfo fileInfo;
-        fileInfo.setFile(name);
-        QDateTime date = fileInfo.lastModified();
-        dates.push_back(date);
-    }
-    return dates;
-}
+
 
 void Model::loadImage(QString imagePath, const QString imageName)
 {

@@ -26,9 +26,9 @@ private:
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
     std::string selectedImageName;
     std::string mode;
-    std::string mode2;
-    std::string mode3; /*!< TODO: describe */
-    int sidesToDraw; /*!< TODO: describe */
+    std::string mode2;             //! Used for copy paste
+    std::string mode3;             //! Used for resizing of shape
+    int sidesToDraw;
 
     int drawPointsDrawn; /*!< TODO: describe */
     int drawSidesDrawn; /*!< TODO: describe */
@@ -56,6 +56,11 @@ public:
     /**
      @return std::string
      */
+
+    //! A public method
+    /*!
+     * Gets and returns the address of the folder
+     */
     std::string getFolderPath() {return folderPath;}
     std::string getMode() {return mode;}
     std::string getMode2() {return mode2;}
@@ -65,18 +70,15 @@ public:
      \return std::string
     */
     std::string getMode3() {return mode3;}
+    //!A public method
     /*!
-     \brief
-
-     \return int
-    */
+     * Gets and returns the number of needed sides to be drawn for the selected shape
+     */
     int getSidesToDraw() {return sidesToDraw;}
-
+    //!A public method
     /*!
-     \brief
-
-     \param iN
-    */
+     * Sets the selected image name
+     */
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
     /*!
      \brief
@@ -103,10 +105,9 @@ public:
     */
     void setSidesToDraw(QString shape);
 
+    //!A public method used to update the lists
     /*!
-     \brief
-
-     \return QMap<std::string, QPen>
+    When run the two list widgets, holding image and classifier names are updated to the latest values in the model.
     */
     QMap<std::string,QPen> requestPens();
 
