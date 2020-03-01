@@ -2,7 +2,7 @@
 #include "ui_view.h"
 #include <QGraphicsPixmapItem>
 #include <QFileDialog>
-#include<QtTest/QTest>
+
 
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
