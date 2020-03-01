@@ -19,7 +19,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->shapeUnassignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->resizeButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+
 
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
@@ -76,7 +76,7 @@ void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm 
      }
 
      if(ui->ImageComboBox->currentText() =="Name (Des)"){
-        QStringList imageNames = control->retrieveListDataAscending(1);
+        QStringList imageNames = control->retrieveListDataDescending(1);
         foreach (QString name, imageNames) {
             ui->imageNamesList->addItem(name);
         }
@@ -175,21 +175,6 @@ void View::on_copyPasteButton_clicked()
 
     }
 
-}
-//! Resize sets mode3 to either grow or shrink, so the shape selected is resized accordingly.
-void View::on_resizeButton_clicked()
-{
-    if(control->getMode3()=="shrink"){
-
-        control->setMode3("grow");
-        ui->resizeButton->setStyleSheet("background-color:red;\nborder:1px solid black;");
-        ui->resizeButton->setText("Grow Shape");
-    }
-    else{
-        control->setMode3("shrink");
-        ui->resizeButton->setStyleSheet("background-color:green;\nborder:1px solid black;");
-        ui->resizeButton->setText("Shrink Shape");
-    }
 }
 
 

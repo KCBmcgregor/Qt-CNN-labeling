@@ -42,23 +42,11 @@ bool Image::addLine(QPointF point1, QPointF point2)
 
 bool Image::addShape(QPolygonF shapePoints)
 {
-    //std::string mode3 = model->requestMode3();
 
     PolygonItem *shape = new PolygonItem(shapePoints, this);
     shape->setFlag(PolygonItem::ItemIsMovable);
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
-
-    /*if(mode3=="grow"){                                                  //! Selected shape redrawn with a 20% increment in size.
-    shape->setTransformOriginPoint(shapePoints[0]);
-    shape->setScale(1.2);
-    }
-
-    if(mode3=="shrink"){                                                //! Selected shape redrawn with a 20% decrement in size.
-    shape->setTransformOriginPoint(shapePoints[0]);
-    shape->setScale(0.8);
-    }*/
-
     shapes.push_back(shape);
     return true;
 }
@@ -78,15 +66,31 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
     return true;
 }
                                      //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
-void Image::resizeShape(PolygonItem *shapeToResize)
+void Image::growShape(PolygonItem *shapeToResize)
 {
     QPolygonF shapePoints;
     shapePoints = shapeToResize->polygon();
     PolygonItem *shape = shapeToResize;
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(1.2);
+    //for(int i = 0; i < shapePoints.size(); i++)
+    //{
+
+    //}
+    shape->setSelected(false);
 
 }
+
+void Image::shrinkShape(PolygonItem *shapeToResize)
+{
+    QPolygonF shapePoints;
+    shapePoints = shapeToResize->polygon();
+    PolygonItem *shape = shapeToResize;
+    shape->setTransformOriginPoint(shapePoints[0]);
+    shape->setScale(0.8);
+
+}
+
 
 
 bool Image::addDrawnShape()
@@ -143,12 +147,22 @@ void Image::copyPasteSelectedShapes()
     copyPasteShapes(findSelectedShapes());
 }
 
-void Image::resizeSelectedShapes()
+void Image::growSelectedShapes()
 {
     std::vector<PolygonItem * > shapesToResize = findSelectedShapes();
     for(unsigned i=0; i < shapesToResize.size(); i++)
     {
-        resizeShape(shapesToResize[i]);
+        growShape(shapesToResize[i]);
+    }
+
+}
+
+void Image::shrinkSelectedShapes()
+{
+    std::vector<PolygonItem * > shapesToResize = findSelectedShapes();
+    for(unsigned i=0; i < shapesToResize.size(); i++)
+    {
+        shrinkShape(shapesToResize[i]);
     }
 
 }

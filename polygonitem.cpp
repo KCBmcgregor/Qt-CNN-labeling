@@ -8,9 +8,9 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *parentImage, QObject *p
 {
     rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
     rightClickMenu.addAction("Delete", parentImage, SLOT(deleteSelectedShapes()));
-    //rightClickMenu.addAction("Grow", parentImage, SLOT(growSelectedShapes()));
-    //rightClickMenu.addAction("Shrink", parentImage, SLOT(shrinkSelectedShapes()));
-    rightClickMenu.addAction("Resize", parentImage, SLOT(resizeSelectedShapes()));
+    rightClickMenu.addAction("Grow", parentImage, SLOT(growSelectedShapes()));
+    rightClickMenu.addAction("Shrink", parentImage, SLOT(shrinkSelectedShapes()));
+
 }
 
 

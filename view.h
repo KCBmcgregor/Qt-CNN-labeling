@@ -51,7 +51,6 @@ private slots:
     void on_zoomInButton_clicked();
     void on_zoomOutButton_clicked();
     void on_copyPasteButton_clicked();
-    void on_resizeButton_clicked();
     void on_saveButton_clicked();
 
 };
