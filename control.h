@@ -111,11 +111,11 @@ public:
     */
     QGraphicsPixmapItem * requestImage(const QString imageName);
 
-    QStringList requestSortedNameAscending(int i);
+    QStringList requestSortedNameAscending(std::vector<std::string>namesVector);
     //! Sorts either the image or the class names in ascending order.
     //! The int i parameter is used to determine which one is sorted(class or image).
 
-    QStringList requestSortedNameDescending(int i);
+    QStringList requestSortedNameDescending(std::vector<std::string>namesVector);
     //! Same as requestSortedNameAscending, but descending instead.
 
     QStringList requestSortedDateAscending();
@@ -132,6 +132,9 @@ public:
      * @return std::vector<std::string>
      */
     std::vector<std::string> qStringListToVector(QStringList list);
+
+    QStringList retrieveListDataAscending(int i);
+    QStringList retrieveListDataDescending(int i);
 
     void pointDrawn();
 

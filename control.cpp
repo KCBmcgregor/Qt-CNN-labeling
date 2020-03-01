@@ -112,14 +112,11 @@ void Control::pointDrawn()
 }
 
                 //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
-QStringList Control::requestSortedNameAscending(int i){
-    std::vector<std::string>namesVector;
-    if(i == 1){
-        namesVector = model->getImageNames();
-    }
-    if(i == 2){
-        namesVector = model->getClassifierNames();
-    }
+
+
+
+QStringList Control::requestSortedNameAscending(std::vector<std::string>namesVector){
+
     bool swapped = false;
 
     for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {
@@ -140,8 +137,9 @@ QStringList Control::requestSortedNameAscending(int i){
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
-                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
-QStringList Control::requestSortedNameDescending(int i){
+
+QStringList Control::retrieveListDataAscending(int i)
+{
     std::vector<std::string>namesVector;
     if(i == 1){
         namesVector = model->getImageNames();
@@ -149,6 +147,27 @@ QStringList Control::requestSortedNameDescending(int i){
     if(i == 2){
         namesVector = model->getClassifierNames();
     }
+    QStringList sortedNames = requestSortedNameAscending(namesVector);
+    return sortedNames;
+}
+
+QStringList Control::retrieveListDataDescending(int i)
+{
+    std::vector<std::string>namesVector;
+    if(i == 1){
+        namesVector = model->getImageNames();
+
+    }
+    if(i == 2){
+        namesVector = model->getClassifierNames();
+    }
+    QStringList sortedNames = requestSortedNameDescending(namesVector);
+    return sortedNames;
+}
+
+                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
+QStringList Control::requestSortedNameDescending(std::vector<std::string>namesVector){
+
     bool swapped = false;
 
     for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {

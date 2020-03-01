@@ -35,7 +35,10 @@ public:
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
-    void shapeToResize(std::vector<PolygonItem * > selectedShapes);
+    //void growShape(PolygonItem *shapeToResize);
+    //void shrinkShape(PolygonItem *shapeToResize);
+    void resizeShape(PolygonItem *shapeToResize);
+
 
     std::vector<PolygonItem * > findSelectedShapes();
 
@@ -46,7 +49,9 @@ public:
 public slots:
     void copyPasteSelectedShapes();
     void deleteSelectedShapes();
-
+    //void growSelectedShapes();
+    //void shrinkSelectedShapes();
+    void resizeSelectedShapes();
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
 
