@@ -19,7 +19,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->shapeUnassignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->resizeButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+
 
 
     QPen pointPen(Qt::red);

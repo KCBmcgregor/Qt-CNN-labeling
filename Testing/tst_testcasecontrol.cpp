@@ -1,4 +1,3 @@
-
 #include <Qtest>
 #include<QtCore>
 #include <QtDebug>
