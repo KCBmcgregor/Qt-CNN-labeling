@@ -122,67 +122,72 @@ $(document).ready(function(){initNavTree('control_8h_source.html',''); initResiz
 <div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="class_control.html#a52e7dd5006a3f4b6fae87775a8036fe8">   48</a></span>&#160;    <a class="code" href="class_model.html">Model</a> *<a class="code" href="class_control.html#a52e7dd5006a3f4b6fae87775a8036fe8">model</a>; </div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="class_control.html#a14fa15c3af57cead4194a1318193f2ef">   49</a></span>&#160;    <a class="code" href="class_view.html">View</a> *<a class="code" href="class_control.html#a14fa15c3af57cead4194a1318193f2ef">view</a>; </div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">   55</a></span>&#160;    std::string <a class="code" href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">getFolderPath</a>() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a1c528992795232db1c8420846c10838e">folderPath</a>;}</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    std::string getMode() {<span class="keywordflow">return</span> mode;}</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::string getMode2() {<span class="keywordflow">return</span> mode2;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    std::string getMode3() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6">mode3</a>;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">int</span> getSidesToDraw() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a39130b6dd643a1be546c1e79b7aaee77">sidesToDraw</a>;}</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> setSelectedImageName(std::string iN) {selectedImageName = iN;}</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">void</span> setMode(std::string m) {mode = m;}</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">void</span> setMode2(std::string m) {mode2 = m;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> setMode3(std::string m) {<a class="code" href="class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6">mode3</a> = m;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> setSidesToDraw(QString shape);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    QMap&lt;std::string,QPen&gt; requestPens();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">   60</a></span>&#160;    std::string <a class="code" href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">getFolderPath</a>() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a1c528992795232db1c8420846c10838e">folderPath</a>;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::string getMode() {<span class="keywordflow">return</span> mode;}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    std::string getMode2() {<span class="keywordflow">return</span> mode2;}</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    std::string getMode3() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6">mode3</a>;}</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_control.html#a321923366d1a013f5cc7771d85e3f59c">   68</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_control.html#a321923366d1a013f5cc7771d85e3f59c">getSidesToDraw</a>() {<span class="keywordflow">return</span> <a class="code" href="class_control.html#a39130b6dd643a1be546c1e79b7aaee77">sidesToDraw</a>;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::vector&lt;QDateTime&gt; <a class="code" href="class_control.html#a646e52c8a41330a785434864586c3131">requestDates</a>();</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_control.html#a57fbb5107c6f2661fb88c87ae4b89b50">   73</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_control.html#a57fbb5107c6f2661fb88c87ae4b89b50">setSelectedImageName</a>(std::string iN) {selectedImageName = iN;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> setMode(std::string m) {mode = m;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> setMode2(std::string m) {mode2 = m;}</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> setMode3(std::string m) {<a class="code" href="class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6">mode3</a> = m;}</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> setSidesToDraw(QString shape);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    QStringList <a class="code" href="class_control.html#a0d964f86f35ef9ff3c4484aa9a41912d">requestImageNames</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    QStringList <a class="code" href="class_control.html#aea378a505493c8249725319e2d9a9deb">requestClassifierNames</a>();</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    QString <a class="code" href="class_control.html#ac34c8f02d5a55446c0471d6a8110f6f6">requestFolderPath</a>();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    QString <a class="code" href="class_control.html#a0d8e15eceb9b59b1087fbb487d820a61">requestFilePath</a>();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    QGraphicsPixmapItem * <a class="code" href="class_control.html#aa864e3a1714a0905be52de9d02e1e9e8">requestImage</a>(<span class="keyword">const</span> QString imageName);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    QStringList <a class="code" href="class_control.html#a7f6c36a3143c5447e631169ce95c0579">requestSortedNameAscending</a>(<span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    QStringList <a class="code" href="class_control.html#a5008300ad811f81ad95b1cf46ce664c4">requestSortedNameDescending</a>(<span class="keywordtype">int</span> i);</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    QStringList <a class="code" href="class_control.html#a83373eb60f9c5f6f0611a4c42d4dc64f">requestSortedDateAscending</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    QMap&lt;std::string,QPen&gt; <a class="code" href="class_control.html#ae09e04fb0848a08735f3ac19f1035187">requestPens</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    std::vector&lt;QDateTime&gt; <a class="code" href="class_control.html#a646e52c8a41330a785434864586c3131">requestDates</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    QStringList <a class="code" href="class_control.html#a0d964f86f35ef9ff3c4484aa9a41912d">requestImageNames</a>();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    QStringList <a class="code" href="class_control.html#aea378a505493c8249725319e2d9a9deb">requestClassifierNames</a>();</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    QString <a class="code" href="class_control.html#ac34c8f02d5a55446c0471d6a8110f6f6">requestFolderPath</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    QString <a class="code" href="class_control.html#a0d8e15eceb9b59b1087fbb487d820a61">requestFilePath</a>();</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    QStringList <a class="code" href="class_control.html#a16452e3b24661140e690f2140977587f">requestSortedDateDescending</a>();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    QStringList <a class="code" href="class_control.html#adb4334de8b5f24ff1b5030b4253ed618">vectorToQStringList</a>(std::vector&lt;std::string&gt; v);</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_control.html#ab07040ef64080d45877dee68156593f6">qStringListToVector</a>(QStringList list);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordtype">void</span> pointDrawn();</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;};</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    QGraphicsPixmapItem * <a class="code" href="class_control.html#aa864e3a1714a0905be52de9d02e1e9e8">requestImage</a>(<span class="keyword">const</span> QString imageName);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    QStringList requestSortedNameAscending(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    QStringList <a class="code" href="class_control.html#a5008300ad811f81ad95b1cf46ce664c4">requestSortedNameDescending</a>(<span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    QStringList <a class="code" href="class_control.html#a83373eb60f9c5f6f0611a4c42d4dc64f">requestSortedDateAscending</a>();</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif // CONTROL_H</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    QStringList <a class="code" href="class_control.html#a16452e3b24661140e690f2140977587f">requestSortedDateDescending</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    QStringList <a class="code" href="class_control.html#adb4334de8b5f24ff1b5030b4253ed618">vectorToQStringList</a>(std::vector&lt;std::string&gt; v);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="class_control.html#ab07040ef64080d45877dee68156593f6">qStringListToVector</a>(QStringList list);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">void</span> pointDrawn();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif // CONTROL_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_control_html_aa864e3a1714a0905be52de9d02e1e9e8"><div class="ttname"><a href="class_control.html#aa864e3a1714a0905be52de9d02e1e9e8">Control::requestImage</a></div><div class="ttdeci">QGraphicsPixmapItem * requestImage(const QString imageName)</div><div class="ttdoc">A method taking 1 argument and returing a QPixmap.</div><div class="ttdef"><b>Definition:</b> control.cpp:65</div></div>
-<div class="ttc" id="aclass_control_html_a5008300ad811f81ad95b1cf46ce664c4"><div class="ttname"><a href="class_control.html#a5008300ad811f81ad95b1cf46ce664c4">Control::requestSortedNameDescending</a></div><div class="ttdeci">QStringList requestSortedNameDescending(int i)</div><div class="ttdoc">Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts de...</div><div class="ttdef"><b>Definition:</b> control.cpp:144</div></div>
-<div class="ttc" id="aclass_control_html_a376fc27a00eec6341a3e0ca47fae483c"><div class="ttname"><a href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">Control::getFolderPath</a></div><div class="ttdeci">std::string getFolderPath()</div><div class="ttdoc">Access methods to the private variables.</div><div class="ttdef"><b>Definition:</b> control.h:55</div></div>
+<div class="ttc" id="aclass_control_html_a5008300ad811f81ad95b1cf46ce664c4"><div class="ttname"><a href="class_control.html#a5008300ad811f81ad95b1cf46ce664c4">Control::requestSortedNameDescending</a></div><div class="ttdeci">QStringList requestSortedNameDescending(int i)</div><div class="ttdef"><b>Definition:</b> control.cpp:144</div></div>
+<div class="ttc" id="aclass_control_html_a376fc27a00eec6341a3e0ca47fae483c"><div class="ttname"><a href="class_control.html#a376fc27a00eec6341a3e0ca47fae483c">Control::getFolderPath</a></div><div class="ttdeci">std::string getFolderPath()</div><div class="ttdoc">Access methods to the private variables.</div><div class="ttdef"><b>Definition:</b> control.h:60</div></div>
 <div class="ttc" id="aclass_view_html_aef5d255a2ad6ee7878b545b26600867f"><div class="ttname"><a href="class_view.html#aef5d255a2ad6ee7878b545b26600867f">View::getPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; getPens()</div><div class="ttdoc">A list of all pens.</div><div class="ttdef"><b>Definition:</b> view.h:42</div></div>
 <div class="ttc" id="aclass_control_html_a646e52c8a41330a785434864586c3131"><div class="ttname"><a href="class_control.html#a646e52c8a41330a785434864586c3131">Control::requestDates</a></div><div class="ttdeci">std::vector&lt; QDateTime &gt; requestDates()</div><div class="ttdoc">A method taking no arguments and returning a QStringList.</div></div>
 <div class="ttc" id="aclass_view_html"><div class="ttname"><a href="class_view.html">View</a></div><div class="ttdoc">A public class.</div><div class="ttdef"><b>Definition:</b> view.h:22</div></div>
+<div class="ttc" id="aclass_control_html_ae09e04fb0848a08735f3ac19f1035187"><div class="ttname"><a href="class_control.html#ae09e04fb0848a08735f3ac19f1035187">Control::requestPens</a></div><div class="ttdeci">QMap&lt; std::string, QPen &gt; requestPens()</div><div class="ttdoc">A public method used to update the lists.</div><div class="ttdef"><b>Definition:</b> control.cpp:27</div></div>
 <div class="ttc" id="aclass_control_html_a6bce63d5b53948ad03a0c0b4bd68f7a6"><div class="ttname"><a href="class_control.html#a6bce63d5b53948ad03a0c0b4bd68f7a6">Control::mode3</a></div><div class="ttdeci">std::string mode3</div><div class="ttdoc">Used for copy paste.</div><div class="ttdef"><b>Definition:</b> control.h:30</div></div>
 <div class="ttc" id="aclass_control_html_a035fc5f6c71876bafd298fd5e7a3430c"><div class="ttname"><a href="class_control.html#a035fc5f6c71876bafd298fd5e7a3430c">Control::classifierFilePath</a></div><div class="ttdeci">std::string classifierFilePath</div><div class="ttdef"><b>Definition:</b> control.h:26</div></div>
 <div class="ttc" id="aclass_control_html"><div class="ttname"><a href="class_control.html">Control</a></div><div class="ttdoc">The Control class to control the program logic.</div><div class="ttdef"><b>Definition:</b> control.h:20</div></div>
+<div class="ttc" id="aclass_control_html_a57fbb5107c6f2661fb88c87ae4b89b50"><div class="ttname"><a href="class_control.html#a57fbb5107c6f2661fb88c87ae4b89b50">Control::setSelectedImageName</a></div><div class="ttdeci">void setSelectedImageName(std::string iN)</div><div class="ttdoc">A public method.</div><div class="ttdef"><b>Definition:</b> control.h:73</div></div>
 <div class="ttc" id="aclass_control_html_adb4334de8b5f24ff1b5030b4253ed618"><div class="ttname"><a href="class_control.html#adb4334de8b5f24ff1b5030b4253ed618">Control::vectorToQStringList</a></div><div class="ttdeci">QStringList vectorToQStringList(std::vector&lt; std::string &gt; v)</div><div class="ttdoc">Sorts the image file modified date descending.</div><div class="ttdef"><b>Definition:</b> control.cpp:78</div></div>
-<div class="ttc" id="aclass_control_html_a7f6c36a3143c5447e631169ce95c0579"><div class="ttname"><a href="class_control.html#a7f6c36a3143c5447e631169ce95c0579">Control::requestSortedNameAscending</a></div><div class="ttdeci">QStringList requestSortedNameAscending(int i)</div><div class="ttdoc">Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts as...</div><div class="ttdef"><b>Definition:</b> control.cpp:115</div></div>
+<div class="ttc" id="aclass_control_html_a321923366d1a013f5cc7771d85e3f59c"><div class="ttname"><a href="class_control.html#a321923366d1a013f5cc7771d85e3f59c">Control::getSidesToDraw</a></div><div class="ttdeci">int getSidesToDraw()</div><div class="ttdoc">A public method.</div><div class="ttdef"><b>Definition:</b> control.h:68</div></div>
 <div class="ttc" id="aclass_control_html_a0d964f86f35ef9ff3c4484aa9a41912d"><div class="ttname"><a href="class_control.html#a0d964f86f35ef9ff3c4484aa9a41912d">Control::requestImageNames</a></div><div class="ttdeci">QStringList requestImageNames()</div><div class="ttdef"><b>Definition:</b> control.cpp:32</div></div>
 <div class="ttc" id="aclass_control_html_a39130b6dd643a1be546c1e79b7aaee77"><div class="ttname"><a href="class_control.html#a39130b6dd643a1be546c1e79b7aaee77">Control::sidesToDraw</a></div><div class="ttdeci">int sidesToDraw</div><div class="ttdoc">Used for resizing of shape.</div><div class="ttdef"><b>Definition:</b> control.h:31</div></div>
 <div class="ttc" id="aclass_control_html_ac34c8f02d5a55446c0471d6a8110f6f6"><div class="ttname"><a href="class_control.html#ac34c8f02d5a55446c0471d6a8110f6f6">Control::requestFolderPath</a></div><div class="ttdeci">QString requestFolderPath()</div><div class="ttdoc">A method taking no arguments and returning a QString.</div><div class="ttdef"><b>Definition:</b> control.cpp:46</div></div>

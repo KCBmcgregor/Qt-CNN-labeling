@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loaddataset_8',['loadDataset',['../class_model.html#aac38ffcdf1dc94485461aefe37d6b118',1,'Model']]]
+  ['image_15',['Image',['../class_image.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loaddataset_49',['loadDataset',['../class_model.html#aac38ffcdf1dc94485461aefe37d6b118',1,'Model']]]
+  ['findselectedshapes_62',['findSelectedShapes',['../class_image.html#ae7a53ea9ea8cafd957f6af6aa3d0287f',1,'Image']]]
 ];

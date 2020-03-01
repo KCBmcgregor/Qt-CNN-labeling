@@ -48,12 +48,12 @@ bool Image::addShape(QPolygonF shapePoints)
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
 
-    if(mode3=="grow"){                                                  //! Selected shape redrawn with a 20% increment in size.
+    if(mode3=="grow"){                                                  // Selected shape redrawn with a 20% increment in size.
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(1.2);
     }
 
-    if(mode3=="shrink"){                                                //! Selected shape redrawn with a 20% decrement in size.
+    if(mode3=="shrink"){                                                // Selected shape redrawn with a 20% decrement in size.
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(0.8);
     }
@@ -76,10 +76,10 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
     }
     return true;
 }
-                                     //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
+                                     // If resize mode3 on 'shrink' or 'grow' resize function will execute.
 void Image::shapeToResize(std::vector<PolygonItem * > selectedShapes)
-{                                                  //! For every shape selected the current shape is deleted..
-    std::string mode3 = model->requestMode3();     //! ..and then the shape is redrawn with its new size.
+{                                                  // For every shape selected the current shape is deleted..
+    std::string mode3 = model->requestMode3();     // ..and then the shape is redrawn with its new size.
     if(mode3 =="grow" || mode3 == "shrink")
     {
         QPolygonF shapePoints;
@@ -109,7 +109,7 @@ bool Image::addDrawnShape()
 
     addShape(shapePoints);
 
-    if (mode2=="copy"){                                 //! If mode2 set to copy, the a duplicate of the drawn shape is created
+    if (mode2=="copy"){                                 // If mode2 set to copy, the a duplicate of the drawn shape is created
         addShape(shapePoints);
     }
 

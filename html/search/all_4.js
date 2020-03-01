@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['image_7',['Image',['../class_image.html',1,'']]]
+  ['getfolderpath_11',['getFolderPath',['../class_control.html#a376fc27a00eec6341a3e0ca47fae483c',1,'Control']]],
+  ['getpens_12',['getPens',['../class_view.html#aef5d255a2ad6ee7878b545b26600867f',1,'View']]],
+  ['getshapes_13',['getShapes',['../class_image.html#ac4c24510cb6e4e45638d5aaa4799f1cc',1,'Image']]],
+  ['getsidestodraw_14',['getSidesToDraw',['../class_control.html#a321923366d1a013f5cc7771d85e3f59c',1,'Control']]]
 ];

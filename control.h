@@ -52,18 +52,34 @@ public:
     /**
      @return std::string
      */
+
+    //! A public method
+    /*!
+     * Gets and returns the address of the folder
+     */
     std::string getFolderPath() {return folderPath;}
     std::string getMode() {return mode;}
     std::string getMode2() {return mode2;}
     std::string getMode3() {return mode3;}
+    //!A public method
+    /*!
+     * Gets and returns the position of where sides sould be drawn
+     */
     int getSidesToDraw() {return sidesToDraw;}
-
+    //!A public method
+    /*!
+     * Sets the image name
+     */
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
     void setMode(std::string m) {mode = m;}
     void setMode2(std::string m) {mode2 = m;}
     void setMode3(std::string m) {mode3 = m;}
     void setSidesToDraw(QString shape);
 
+    //!A public method used to update the lists
+    /*!
+    When run the two list widgets, holding image and classifier names are updated to the latest values in the model.
+    */
     QMap<std::string,QPen> requestPens();
 
     //! A method taking no arguments and returning a QStringList.

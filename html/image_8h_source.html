@@ -115,41 +115,59 @@ $(document).ready(function(){initNavTree('image_8h_source.html',''); initResizab
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">using</span> QGraphicsPixmapItem::boundingRect;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">using</span> QGraphicsPixmapItem::paint;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    std::vector&lt;PolygonItem * &gt; getShapes() {<span class="keywordflow">return</span> shapes;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">bool</span> addPoint(QPointF mousePos);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">bool</span> addLine(QPointF point1, QPointF point2);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a8b9a78e3d92923ce802fca6febe7b9e4">addShape</a>(QPolygonF shapePoints);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> deleteShape(<a class="code" href="class_polygon_item.html">PolygonItem</a> *shapeToDelete);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a685e612995fe1361e7883fa5f1a1af6d">addDrawnShape</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="class_image.html#ac4c24510cb6e4e45638d5aaa4799f1cc">   33</a></span>&#160;    std::vector&lt;PolygonItem * &gt; <a class="code" href="class_image.html#ac4c24510cb6e4e45638d5aaa4799f1cc">getShapes</a>() {<span class="keywordflow">return</span> shapes;}</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> copyPasteShapes(std::vector&lt;PolygonItem * &gt; shapes);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_image.html#a049c37a34ad53256e0df806919a3d06f">shapeToResize</a>(std::vector&lt;PolygonItem * &gt; selectedShapes);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::vector&lt;PolygonItem * &gt; findSelectedShapes();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> connectLastDrawnPoints();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//bool moveVertex(Image *parent, QPolygonF shapePoints, QPointF mousePos);</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keyword">public</span> slots:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> copyPasteSelectedShapes();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> deleteSelectedShapes();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> mousePressEvent(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a745f7088bd9058200bcbdd9a5ebc8091">addPoint</a>(QPointF mousePos);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a4e84c78a1cbd7d3ee6272debcc91b8ea">addLine</a>(QPointF point1, QPointF point2);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // IMAGE_H</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a8b9a78e3d92923ce802fca6febe7b9e4">addShape</a>(QPolygonF shapePoints);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#aae0382acb83427a559ac64eab43b595e">deleteShape</a>(<a class="code" href="class_polygon_item.html">PolygonItem</a> *shapeToDelete);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a685e612995fe1361e7883fa5f1a1af6d">addDrawnShape</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_image.html#a1e0347dc36e99e0c1ef3188d2dcb2424">copyPasteShapes</a>(std::vector&lt;PolygonItem * &gt; shapes);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_image.html#a049c37a34ad53256e0df806919a3d06f">shapeToResize</a>(std::vector&lt;PolygonItem * &gt; selectedShapes);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    std::vector&lt;PolygonItem * &gt; <a class="code" href="class_image.html#ae7a53ea9ea8cafd957f6af6aa3d0287f">findSelectedShapes</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_image.html#a6947269bade4f3fb0439977d5cd34f13">connectLastDrawnPoints</a>();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">//bool moveVertex(Image *parent, QPolygonF shapePoints, QPointF mousePos);</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> copyPasteSelectedShapes();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">void</span> deleteSelectedShapes();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_image.html#a2b65c95efa990430b74667d43dea4490">mousePressEvent</a>(QGraphicsSceneMouseEvent *event);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;};</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor">#endif // IMAGE_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclass_image_html_ae7a53ea9ea8cafd957f6af6aa3d0287f"><div class="ttname"><a href="class_image.html#ae7a53ea9ea8cafd957f6af6aa3d0287f">Image::findSelectedShapes</a></div><div class="ttdeci">std::vector&lt; PolygonItem * &gt; findSelectedShapes()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:164</div></div>
+<div class="ttc" id="aclass_image_html_a6947269bade4f3fb0439977d5cd34f13"><div class="ttname"><a href="class_image.html#a6947269bade4f3fb0439977d5cd34f13">Image::connectLastDrawnPoints</a></div><div class="ttdeci">bool connectLastDrawnPoints()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:177</div></div>
+<div class="ttc" id="aclass_image_html_a4e84c78a1cbd7d3ee6272debcc91b8ea"><div class="ttname"><a href="class_image.html#a4e84c78a1cbd7d3ee6272debcc91b8ea">Image::addLine</a></div><div class="ttdeci">bool addLine(QPointF point1, QPointF point2)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:32</div></div>
 <div class="ttc" id="aclass_polygon_item_html"><div class="ttname"><a href="class_polygon_item.html">PolygonItem</a></div><div class="ttdef"><b>Definition:</b> polygonitem.h:15</div></div>
 <div class="ttc" id="aclass_image_html"><div class="ttname"><a href="class_image.html">Image</a></div><div class="ttdef"><b>Definition:</b> image.h:13</div></div>
-<div class="ttc" id="aclass_image_html_a685e612995fe1361e7883fa5f1a1af6d"><div class="ttname"><a href="class_image.html#a685e612995fe1361e7883fa5f1a1af6d">Image::addDrawnShape</a></div><div class="ttdeci">bool addDrawnShape()</div><div class="ttdef"><b>Definition:</b> image.cpp:101</div></div>
-<div class="ttc" id="aclass_image_html_a049c37a34ad53256e0df806919a3d06f"><div class="ttname"><a href="class_image.html#a049c37a34ad53256e0df806919a3d06f">Image::shapeToResize</a></div><div class="ttdeci">void shapeToResize(std::vector&lt; PolygonItem * &gt; selectedShapes)</div><div class="ttdoc">If resize mode3 on 'shrink' or 'grow' resize function will execute.</div><div class="ttdef"><b>Definition:</b> image.cpp:80</div></div>
+<div class="ttc" id="aclass_image_html_a745f7088bd9058200bcbdd9a5ebc8091"><div class="ttname"><a href="class_image.html#a745f7088bd9058200bcbdd9a5ebc8091">Image::addPoint</a></div><div class="ttdeci">bool addPoint(QPointF mousePos)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:21</div></div>
+<div class="ttc" id="aclass_image_html_ac4c24510cb6e4e45638d5aaa4799f1cc"><div class="ttname"><a href="class_image.html#ac4c24510cb6e4e45638d5aaa4799f1cc">Image::getShapes</a></div><div class="ttdeci">std::vector&lt; PolygonItem * &gt; getShapes()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.h:33</div></div>
+<div class="ttc" id="aclass_image_html_a685e612995fe1361e7883fa5f1a1af6d"><div class="ttname"><a href="class_image.html#a685e612995fe1361e7883fa5f1a1af6d">Image::addDrawnShape</a></div><div class="ttdeci">bool addDrawnShape()</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:101</div></div>
+<div class="ttc" id="aclass_image_html_a049c37a34ad53256e0df806919a3d06f"><div class="ttname"><a href="class_image.html#a049c37a34ad53256e0df806919a3d06f">Image::shapeToResize</a></div><div class="ttdeci">void shapeToResize(std::vector&lt; PolygonItem * &gt; selectedShapes)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:80</div></div>
 <div class="ttc" id="aclass_model_html"><div class="ttname"><a href="class_model.html">Model</a></div><div class="ttdef"><b>Definition:</b> model.h:13</div></div>
-<div class="ttc" id="aclass_image_html_a8b9a78e3d92923ce802fca6febe7b9e4"><div class="ttname"><a href="class_image.html#a8b9a78e3d92923ce802fca6febe7b9e4">Image::addShape</a></div><div class="ttdeci">bool addShape(QPolygonF shapePoints)</div><div class="ttdef"><b>Definition:</b> image.cpp:42</div></div>
+<div class="ttc" id="aclass_image_html_a1e0347dc36e99e0c1ef3188d2dcb2424"><div class="ttname"><a href="class_image.html#a1e0347dc36e99e0c1ef3188d2dcb2424">Image::copyPasteShapes</a></div><div class="ttdeci">void copyPasteShapes(std::vector&lt; PolygonItem * &gt; shapes)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:131</div></div>
+<div class="ttc" id="aclass_image_html_a2b65c95efa990430b74667d43dea4490"><div class="ttname"><a href="class_image.html#a2b65c95efa990430b74667d43dea4490">Image::mousePressEvent</a></div><div class="ttdeci">void mousePressEvent(QGraphicsSceneMouseEvent *event)</div><div class="ttdoc">A protected function.</div><div class="ttdef"><b>Definition:</b> image.cpp:188</div></div>
+<div class="ttc" id="aclass_image_html_a8b9a78e3d92923ce802fca6febe7b9e4"><div class="ttname"><a href="class_image.html#a8b9a78e3d92923ce802fca6febe7b9e4">Image::addShape</a></div><div class="ttdeci">bool addShape(QPolygonF shapePoints)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:42</div></div>
+<div class="ttc" id="aclass_image_html_aae0382acb83427a559ac64eab43b595e"><div class="ttname"><a href="class_image.html#aae0382acb83427a559ac64eab43b595e">Image::deleteShape</a></div><div class="ttdeci">bool deleteShape(PolygonItem *shapeToDelete)</div><div class="ttdoc">A public function.</div><div class="ttdef"><b>Definition:</b> image.cpp:65</div></div>
 <div class="ttc" id="aclass_control_html_a52e7dd5006a3f4b6fae87775a8036fe8"><div class="ttname"><a href="class_control.html#a52e7dd5006a3f4b6fae87775a8036fe8">Control::model</a></div><div class="ttdeci">Model * model</div><div class="ttdoc">Public pointers to the Model &amp; View objects.</div><div class="ttdef"><b>Definition:</b> control.h:48</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

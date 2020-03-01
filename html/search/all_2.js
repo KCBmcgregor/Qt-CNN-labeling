@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['folderpath_4',['folderPath',['../class_control.html#a1c528992795232db1c8420846c10838e',1,'Control']]]
+  ['deleteshape_8',['deleteShape',['../class_image.html#aae0382acb83427a559ac64eab43b595e',1,'Image']]]
 ];
