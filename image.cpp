@@ -4,6 +4,7 @@
 #include <QPainterPath>
 #include <QtGui>
 #include <QGraphicsSceneMouseEvent>
+#include<QtTest/QTest>
 #include <view.h>
 #include <model.h>
 
@@ -187,7 +188,7 @@ bool Image::connectLastDrawnPoints()
 
 void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
-    mousePos = (event->scenePos());
+   mousePos = (event->scenePos());
 
     if (event->buttons() == Qt::LeftButton)
     {
