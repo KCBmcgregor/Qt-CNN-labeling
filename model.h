@@ -16,13 +16,15 @@ class Model
     std::vector<std::string> imageNames;
     std::map<std::string, Image * > images;
     std::vector<std::string> classifierNames;
-    std::vector<QDateTime>dates;
+    std::vector<std::string> imageNameDatesAsc;
+    std::vector<std::string> imageNameDatesDec;
 public:
     Model(Control *cont = nullptr);
 
     std::vector<std::string> getImageNames() {return imageNames;}
     std::vector<std::string> getClassifierNames() {return classifierNames;}
-    std::vector<QDateTime> getDates() {return dates;}
+    std::vector<std::string> getImageNameDatesAsc() {return imageNameDatesAsc;}
+    std::vector<std::string> getImageNameDatesDec() {return imageNameDatesDec;}
 
     QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
@@ -35,7 +37,6 @@ public:
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
     void loadImage(QString imagePath, const QString imageName);
-    std::vector<QDateTime>loadDates(std::vector<std::string> imageNames);
     QPixmap loadImage(const QString imagePath);
 
     void pointDrawn() {control->pointDrawn();}
