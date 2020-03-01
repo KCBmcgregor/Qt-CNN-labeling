@@ -21,15 +21,15 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->resizeButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
     QPen pointPen(Qt::red);
-    pointPen.setWidth(10);
+    pointPen.setWidth(1);
     pens["pointPen"] = pointPen;
 
     QPen linePen(Qt::black);
-    linePen.setWidth(5);
+    linePen.setWidth(6);
     pens["linePen"] = linePen;
 
     QPen shapePen(Qt::green);
-    shapePen.setWidth(10);
+    shapePen.setWidth(6);
     pens["shapePen"] = shapePen;
 
 

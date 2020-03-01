@@ -7,6 +7,7 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *parentImage, QObject *p
       QGraphicsPolygonItem(polygonPoints, parentImage)
 {
     rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
+    rightClickMenu.addAction("Edit", parentImage, SLOT());
     rightClickMenu.addAction("Delete", parentImage, SLOT(deleteSelectedShapes()));
 }
 

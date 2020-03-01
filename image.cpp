@@ -14,7 +14,22 @@ Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphi
     points = {};
     lines = {};
     shapes = {};
-    pens = model->requestPens();
+
+    QPen pointPen(Qt::red);
+    pens["pointPen"] = pointPen;
+
+    QPen linePen(Qt::black);
+    linePen.setWidth(6);
+    linePen.setJoinStyle(Qt::MiterJoin);
+    pens["linePen"] = linePen;
+
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(6);
+    shapePen.setJoinStyle(Qt::MiterJoin);
+    pens["shapePen"] = shapePen;
+
+    QBrush pointBrush(Qt::red,Qt::SolidPattern);
+    brushs["pointBrush"] = pointBrush;
 
 }
 
@@ -22,9 +37,10 @@ bool Image::addPoint(QPointF mousePos)
 {
     qreal x = mousePos.x();
     qreal y = mousePos.y();
-    QGraphicsEllipseItem *shape =  new QGraphicsEllipseItem(0,0,10,10,this);
+    QGraphicsEllipseItem *shape =  new QGraphicsEllipseItem(-3,-3,6,6,this);
     shape->setPos(x,y);
     shape->setPen(pens["pointPen"]);
+    shape->setBrush(brushs["pointBrush"]);
     points.push_back(shape);
     return true;
 }
