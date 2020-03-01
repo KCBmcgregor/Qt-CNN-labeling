@@ -10,6 +10,7 @@
 #include <view.h>
 #include <polygonitem.h>
 
+
 class Image : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -36,7 +37,9 @@ public:
     bool addDrawnShape();
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
-    void shapeToResize(std::vector<PolygonItem * > selectedShapes);
+    void growShape(PolygonItem *shapeToResize);
+    void shrinkShape(PolygonItem *shapeToResize);
+
 
     std::vector<PolygonItem * > findSelectedShapes();
 
@@ -47,6 +50,8 @@ public:
 public slots:
     void copyPasteSelectedShapes();
     void deleteSelectedShapes();
+    void growSelectedShapes();
+    void shrinkSelectedShapes();
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

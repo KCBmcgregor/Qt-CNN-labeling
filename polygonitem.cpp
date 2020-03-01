@@ -11,6 +11,8 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *pI, QObject *parent)
     rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
     edit = rightClickMenu.addAction("Edit", this, SLOT(startModifying()));
     rightClickMenu.addAction("Delete", parentImage, SLOT(deleteSelectedShapes()));
+    rightClickMenu.addAction("Grow", parentImage, SLOT(growSelectedShapes()));
+    rightClickMenu.addAction("Shrink", parentImage, SLOT(shrinkSelectedShapes()));
 
 }
 

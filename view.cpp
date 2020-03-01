@@ -3,6 +3,7 @@
 #include <QGraphicsPixmapItem>
 #include <QFileDialog>
 
+
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
     control = cont;
@@ -19,6 +20,21 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->resizeButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+
+
+    QPen pointPen(Qt::red);
+    pointPen.setWidth(10);
+    pens["pointPen"] = pointPen;
+
+    QPen linePen(Qt::black);
+    linePen.setWidth(5);
+    pens["linePen"] = linePen;
+
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(10);
+    pens["shapePen"] = shapePen;
+
+
 }
 
 void View::renderList1()
@@ -54,14 +70,14 @@ void View::on_selectFileButton_clicked()
 void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm based on that
     ui->imageNamesList->clear();
     if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->requestSortedNameAscending(1);  //! 1 is passed as parameter meaning...
+        QStringList imageNames = control->retrieveListDataAscending(1);  //! 1 is passed as parameter meaning...
         foreach (QString name, imageNames) {     //! ..The data sorted using the ascending algorithm is image names
             ui->imageNamesList->addItem(name);
         }
      }
 
      if(ui->ImageComboBox->currentText() =="Name (Des)"){
-        QStringList imageNames = control->requestSortedNameDescending(1);
+        QStringList imageNames = control->retrieveListDataDescending(1);
         foreach (QString name, imageNames) {
             ui->imageNamesList->addItem(name);
         }
@@ -83,14 +99,14 @@ void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm 
 void View::on_sortButton2_clicked(){   //! ..and chooses the sorting algorithm based on that
     ui->classifierList->clear();
     if(ui->classComboBox->currentText()=="Name (Asc)"){
-        QStringList classifierNames = control->requestSortedNameAscending(2); //! 2 is passed as parameter meaning...
+        QStringList classifierNames = control->retrieveListDataAscending(2); //! 2 is passed as parameter meaning...
         foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
             ui->classifierList->addItem(name);
         }
     }
 
     if(ui->classComboBox->currentText()=="Name (Des)"){
-        QStringList classifierNames = control->requestSortedNameDescending(2);
+        QStringList classifierNames = control->retrieveListDataDescending(2);
         foreach (QString name, classifierNames) {
             ui->classifierList->addItem(name);
         }
@@ -160,21 +176,6 @@ void View::on_copyPasteButton_clicked()
 
     }
 
-}
-//! Resize sets mode3 to either grow or shrink, so the shape selected is resized accordingly.
-void View::on_resizeButton_clicked()
-{
-    if(control->getMode3()=="shrink"){
-
-        control->setMode3("grow");
-        ui->resizeButton->setStyleSheet("background-color:red;\nborder:1px solid black;");
-        ui->resizeButton->setText("Grow Shape");
-    }
-    else{
-        control->setMode3("shrink");
-        ui->resizeButton->setStyleSheet("background-color:green;\nborder:1px solid black;");
-        ui->resizeButton->setText("Shrink Shape");
-    }
 }
 
 
