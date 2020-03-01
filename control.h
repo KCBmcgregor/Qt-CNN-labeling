@@ -5,6 +5,7 @@
 #include <QGraphicsPixmapItem>
 #include <string>
 
+
 class Model;
 class View;
 

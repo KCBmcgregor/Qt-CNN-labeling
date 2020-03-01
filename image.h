@@ -10,6 +10,7 @@
 #include <view.h>
 #include <polygonitem.h>
 
+
 class Image : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT

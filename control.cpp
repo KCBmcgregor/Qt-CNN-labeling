@@ -111,9 +111,7 @@ void Control::pointDrawn()
     }
 }
 
-                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
-
-
+                // Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts ascending
 
 QStringList Control::requestSortedNameAscending(std::vector<std::string>namesVector){
 
@@ -137,6 +135,30 @@ QStringList Control::requestSortedNameAscending(std::vector<std::string>namesVec
     QStringList sortedNames = vectorToQStringList(namesVector);
     return sortedNames;
 }
+
+QStringList Control::requestSortedNameDescending(std::vector<std::string>namesVector){
+
+    bool swapped = false;
+
+    for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {
+        for (unsigned int j = 0; j < namesVector.size() - 1 - i; ++j) {
+
+            if (namesVector[j] < namesVector[j + 1]) {
+                std::string temp = namesVector[j];
+                namesVector[j] = namesVector[j + 1];
+                namesVector[j + 1] = temp;
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break;
+        }
+        swapped = false;
+    }
+    QStringList sortedNames = vectorToQStringList(namesVector);
+    return sortedNames;
+}
+
 
 QStringList Control::retrieveListDataAscending(int i)
 {
@@ -165,31 +187,9 @@ QStringList Control::retrieveListDataDescending(int i)
     return sortedNames;
 }
 
-                //! Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
-QStringList Control::requestSortedNameDescending(std::vector<std::string>namesVector){
+                // Takes parameter i, which determines the data being sorted(either image/classifier names) and sorts descending
 
-    bool swapped = false;
-
-    for (unsigned int i = 0; i < namesVector.size() - 1; ++i) {
-        for (unsigned int j = 0; j < namesVector.size() - 1 - i; ++j) {
-
-            if (namesVector[j] < namesVector[j + 1]) {
-                std::string temp = namesVector[j];
-                namesVector[j] = namesVector[j + 1];
-                namesVector[j + 1] = temp;
-                swapped = true;
-            }
-        }
-        if (!swapped) {
-            break;
-        }
-        swapped = false;
-    }
-    QStringList sortedNames = vectorToQStringList(namesVector);
-    return sortedNames;
-}
-
-                                                        //! Sorts images by date in ascending order
+                                                        // Sorts images by date in ascending order
 QStringList Control::requestSortedDateAscending()
 {
     std::vector<std::string>namesVector = model->getImageNameDatesAsc();

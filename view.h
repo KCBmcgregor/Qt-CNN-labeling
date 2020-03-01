@@ -7,6 +7,7 @@
 #include <QGraphicsScene>
 #include <QPen>
 #include <QGraphicsItem>
+#include<QtTest/QTest>
 class ImageData;
 
 QT_BEGIN_NAMESPACE
