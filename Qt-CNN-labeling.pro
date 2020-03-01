@@ -20,6 +20,7 @@ SOURCES += \
     image.cpp \
     model.cpp \
     polygonitem.cpp \
+    savetimer.cpp \
     view.cpp
 
 HEADERS += \
@@ -27,6 +28,7 @@ HEADERS += \
     image.h\
     model.h \
     polygonitem.h\
+    savetimer.h \
     view.h
 
 FORMS += \

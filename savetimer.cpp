@@ -1,19 +1,6 @@
-
-#include <Qtest>
+#include "savetimer.h"
 #include<QtCore>
 #include <QtDebug>
-
-class saveTimer :public QObject
-{
-    Q_OBJECT
-public:
-    saveTimer();
-    QTimer *timer;
-public slots:
-    void MySlot();
-};
-
-
 
 saveTimer::saveTimer()
 {
@@ -32,8 +19,3 @@ void saveTimer::MySlot(){
                 counter = 0;
            }
 }
-
-
-QTEST_APPLESS_MAIN(saveTimer)
-
-#include "tst_testcasecontrol.moc"
