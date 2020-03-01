@@ -1,4 +1,5 @@
 #include "image.h"
+#include "point.h"
 #include "polygonitem.h"
 #include <QGraphicsTextItem>
 #include <QPainterPath>
@@ -6,6 +7,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <view.h>
 #include <model.h>
+
 
 
 Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
@@ -33,15 +35,24 @@ Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphi
 
 }
 
-bool Image::addPoint(QPointF mousePos)
+bool Image::addPoint(QPointF mousePos, int polygonIndex, PolygonItem *parentShape)
 {
     qreal x = mousePos.x();
     qreal y = mousePos.y();
-    QGraphicsEllipseItem *shape =  new QGraphicsEllipseItem(-3,-3,6,6,this);
+    QGraphicsEllipseItem *shape;
+    if (parentShape == nullptr)
+    {
+        shape =  new Point(-3,-3,6,6,this);
+        points.push_back(shape);
+    }
+    else
+    {
+        shape =  new Point(-3,-3,6,6,polygonIndex,parentShape);
+    }
     shape->setPos(x,y);
     shape->setPen(pens["pointPen"]);
     shape->setBrush(brushs["pointBrush"]);
-    points.push_back(shape);
+    shape->setZValue(50);
     return true;
 }
 

@@ -19,6 +19,7 @@ SOURCES += \
     control.cpp \
     image.cpp \
     model.cpp \
+    point.cpp \
     polygonitem.cpp \
     view.cpp
 
@@ -26,6 +27,7 @@ HEADERS += \
     control.h \
     image.h\
     model.h \
+    point.h \
     polygonitem.h\
     view.h
 

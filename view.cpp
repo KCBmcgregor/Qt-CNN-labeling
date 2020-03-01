@@ -19,20 +19,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->resizeButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-
-    QPen pointPen(Qt::red);
-    pointPen.setWidth(1);
-    pens["pointPen"] = pointPen;
-
-    QPen linePen(Qt::black);
-    linePen.setWidth(6);
-    pens["linePen"] = linePen;
-
-    QPen shapePen(Qt::green);
-    shapePen.setWidth(6);
-    pens["shapePen"] = shapePen;
-
-
 }
 
 void View::renderList1()

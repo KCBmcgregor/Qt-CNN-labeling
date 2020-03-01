@@ -29,7 +29,7 @@ public:
 
     std::vector<PolygonItem * > getShapes() {return shapes;}
 
-    bool addPoint(QPointF mousePos);
+    bool addPoint(QPointF mousePos, int polygonIndex = -1, PolygonItem *parentShape = nullptr);
     bool addLine(QPointF point1, QPointF point2);
     bool addShape(QPolygonF shapePoints);
     bool deleteShape(PolygonItem *shapeToDelete);
