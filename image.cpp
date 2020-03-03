@@ -118,6 +118,15 @@ void Image::shrinkShape(PolygonItem *shapeToResize)
 
 }
 
+void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
+{
+    std::vector<PolygonItem * > shapesToAssign = findSelectedShapes();
+    for(unsigned i=0; i < shapesToAssign.size(); i++)
+    {
+        shapesToAssign[i]->assignClassifier(c, lineIndex);
+    }
+}
+
 
 
 bool Image::addDrawnShape()

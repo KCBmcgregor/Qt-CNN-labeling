@@ -132,6 +132,11 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     }
 }
 
+void View::on_classifierList_currentItemChanged(QListWidgetItem *current)
+{
+    control->setSelectedClassifier(current->text());
+}
+
 View::~View()
 {
     delete ui;

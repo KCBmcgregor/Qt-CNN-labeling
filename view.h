@@ -44,15 +44,16 @@ private slots:
     void on_selectFileButton_clicked();
     void on_sortButton_clicked();
     void on_sortButton2_clicked();
+    void on_shapeDrawButton_clicked();
 
     void on_imageNamesList_currentItemChanged(QListWidgetItem *current);
-    void on_shapeDrawButton_clicked();
+    void on_classifierList_currentItemChanged(QListWidgetItem *current);
     void on_shapesList_currentItemChanged(QListWidgetItem *current);
     void on_zoomInButton_clicked();
     void on_zoomOutButton_clicked();
     void on_copyPasteButton_clicked();
     void on_saveButton_clicked();
 
-};
+    };
 
 #endif // VIEW_H

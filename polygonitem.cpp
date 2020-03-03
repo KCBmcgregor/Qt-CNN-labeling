@@ -8,6 +8,8 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *pI, QObject *parent)
 {
     parentImage = pI;
 
+    classifierText = new QGraphicsSimpleTextItem("", this);
+
     rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
     edit = rightClickMenu.addAction("Edit", this, SLOT(startModifying()));
     rightClickMenu.addAction("Delete", parentImage, SLOT(deleteSelectedShapes()));
@@ -24,6 +26,12 @@ void PolygonItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
             rightClickMenu.exec((event->screenPos()));
         }
     QGraphicsPolygonItem::mousePressEvent(event);
+}
+
+void PolygonItem::assignClassifier(QString c, int lineIndex)
+{
+    classifier = {c, lineIndex};
+    classifierText->setText(c);
 }
 
 void PolygonItem::startModifying()

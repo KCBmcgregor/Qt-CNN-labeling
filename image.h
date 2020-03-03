@@ -40,6 +40,8 @@ public:
     void growShape(PolygonItem *shapeToResize);
     void shrinkShape(PolygonItem *shapeToResize);
 
+    void assignClassifierToSelectedShapes(QString c, int lineIndex);
+
 
     std::vector<PolygonItem * > findSelectedShapes();
 
