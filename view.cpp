@@ -16,7 +16,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->shapeUnassignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+    ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
@@ -207,4 +207,9 @@ void View::on_saveButton_clicked()
             QPixmap pixMap = this->ui->graphicsView->grab();
             pixMap.save(fileName);
         }
+}
+
+void View::on_shapeAssignButton_clicked()
+{
+    control->requestAssignClassifierToSelectedShapes();
 }

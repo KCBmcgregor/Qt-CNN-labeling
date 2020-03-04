@@ -1,6 +1,8 @@
 #include "polygonitem.h"
 #include "image.h"
+#include "point.h"
 #include <QGraphicsSceneMouseEvent>
+#include <typeinfo>
 
 PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *pI, QObject *parent)
     : QObject(parent),
@@ -9,6 +11,8 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *pI, QObject *parent)
     parentImage = pI;
 
     classifierText = new QGraphicsSimpleTextItem("", this);
+    classifierText->setZValue(25);
+    centerText();
 
     rightClickMenu.addAction("Copy", parentImage, SLOT(copyPasteSelectedShapes()));
     edit = rightClickMenu.addAction("Edit", this, SLOT(startModifying()));
@@ -18,6 +22,11 @@ PolygonItem::PolygonItem(QPolygonF polygonPoints, Image *pI, QObject *parent)
 
 }
 
+void PolygonItem::centerText()
+{
+    QPointF shapeCenter = boundingRect().center();
+    classifierText->setPos(shapeCenter);
+}
 
 void PolygonItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
@@ -52,6 +61,7 @@ void PolygonItem::updatePolygonPointPosition(int pointIndex, QPointF newPos)
     setPolygon(newPolygon);
     update();
     parentImage->update();
+    centerText();
 }
 
 void PolygonItem::stopModifying()
@@ -59,7 +69,10 @@ void PolygonItem::stopModifying()
     QList<QGraphicsItem * > points = childItems();
     foreach(QGraphicsItem *point, points)
     {
-        delete point;
+        if( typeid( *point ) == typeid( Point ) )
+        {
+           delete point;
+        }
     }
     rightClickMenu.removeAction(modify);
     edit = rightClickMenu.addAction("Edit", this, SLOT(startModifying()));

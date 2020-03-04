@@ -7,7 +7,7 @@
 #include <QGraphicsScene>
 #include <QPen>
 #include <QGraphicsItem>
-#include<QtTest/QTest>
+//#include<QtTest/QTest>
 class ImageData;
 
 QT_BEGIN_NAMESPACE
@@ -54,6 +54,7 @@ private slots:
     void on_copyPasteButton_clicked();
     void on_saveButton_clicked();
 
-    };
+    void on_shapeAssignButton_clicked();
+};
 
 #endif // VIEW_H

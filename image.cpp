@@ -5,7 +5,7 @@
 #include <QPainterPath>
 #include <QtGui>
 #include <QGraphicsSceneMouseEvent>
-#include<QtTest/QTest>
+//#include<QtTest/QTest>
 #include <view.h>
 #include <model.h>
 

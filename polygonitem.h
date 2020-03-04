@@ -34,6 +34,7 @@ public:
     using QGraphicsPolygonItem::paint;
 
     void requestCopyPasteSelectedShapes();
+    void centerText();
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
