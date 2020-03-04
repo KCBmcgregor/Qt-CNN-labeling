@@ -65,12 +65,12 @@ void View::on_selectFileButton_clicked()
     QString path = control->requestFilePath();
     ui->classiferPathLabel->setText(path);
 }
-                                        //! When sortButton is clicked it retrieves imageComboBox current item..
-void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm based on that
+                                        // When sortButton is clicked it retrieves imageComboBox current item..
+void View::on_sortButton_clicked(){     // ..and chooses the sorting algorithm based on that
     ui->imageNamesList->clear();
     if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->retrieveListDataAscending(1);  //! 1 is passed as parameter meaning...
-        foreach (QString name, imageNames) {     //! ..The data sorted using the ascending algorithm is image names
+        QStringList imageNames = control->retrieveListDataAscending(1);  // 1 is passed as parameter meaning...
+        foreach (QString name, imageNames) {     // ..The data sorted using the ascending algorithm is image names
             ui->imageNamesList->addItem(name);
         }
      }
@@ -81,7 +81,7 @@ void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm 
             ui->imageNamesList->addItem(name);
         }
     }
-     if(ui->ImageComboBox->currentText() =="Date (Asc)"){              //! Sorting images by their dates
+     if(ui->ImageComboBox->currentText() =="Date (Asc)"){              // Sorting images by their dates
         QStringList imageNames = control->requestSortedDateAscending();
         foreach (QString name, imageNames) {
             ui->imageNamesList->addItem(name);
@@ -94,12 +94,12 @@ void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm 
         }
     }
 }
-                                        //! When sortButton3 is clicked it retrieves classComboBox current item..
-void View::on_sortButton2_clicked(){   //! ..and chooses the sorting algorithm based on that
+                                        // When sortButton3 is clicked it retrieves classComboBox current item..
+void View::on_sortButton2_clicked(){   // ..and chooses the sorting algorithm based on that
     ui->classifierList->clear();
     if(ui->classComboBox->currentText()=="Name (Asc)"){
-        QStringList classifierNames = control->retrieveListDataAscending(2); //! 2 is passed as parameter meaning...
-        foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
+        QStringList classifierNames = control->retrieveListDataAscending(2); // 2 is passed as parameter meaning...
+        foreach (QString name, classifierNames) {  // ..the data sorted using the ascending algorithm is classifier names
             ui->classifierList->addItem(name);
         }
     }
@@ -135,14 +135,14 @@ View::~View()
 {
     delete ui;
 }
-               //! The copypaste function is only valid when the user preselects the draw function..
-void View::on_shapeDrawButton_clicked()   //! ..so this function validates this and sets the modes/button styles
+               // The copypaste function is only valid when the user preselects the draw function..
+void View::on_shapeDrawButton_clicked()   // ..so this function validates this and sets the modes/button styles
 {
 
     if (control->getMode()=="draw")
     {
         if(control->getMode2()=="copy")
-        {                               //! When draw mode is deselected, if mode2 (copyPaste) is active it's also deselected
+        {                               // When draw mode is deselected, if mode2 (copyPaste) is active it's also deselected
             control->setMode2("");
             ui->copyPasteButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
         }
@@ -157,7 +157,7 @@ void View::on_shapeDrawButton_clicked()   //! ..so this function validates this 
     }
 
 }
-                              //! Copypaste function sets mode2 to copy so the current shape being drawn is copied
+                              // Copypaste function sets mode2 to copy so the current shape being drawn is copied
 void View::on_copyPasteButton_clicked()
 {
     if (control->getMode2()=="copy"){
