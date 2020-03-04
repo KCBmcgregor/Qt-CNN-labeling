@@ -92,7 +92,7 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
     }
     return true;
 }
-                                     // If resize mode3 on 'shrink' or 'grow' resize function will execute.
+                                     //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
 void Image::growShape(PolygonItem *shapeToResize)
 {
     QPolygonF shapePoints;
@@ -140,7 +140,7 @@ bool Image::addDrawnShape()
 
     addShape(shapePoints);
 
-    if (mode2=="copy"){                                 // If mode2 set to copy, the a duplicate of the drawn shape is created
+    if (mode2=="copy"){                                 //! If mode2 set to copy, the a duplicate of the drawn shape is created
         addShape(shapePoints);
     }
 

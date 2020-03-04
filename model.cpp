@@ -73,11 +73,11 @@ std::string Model::loadDataset(std::string folderPath)
     std::vector<std::string> newImageNames = control->qStringListToVector(images);
     imageNames = newImageNames;
 
-    QStringList imagesAsc = dir.entryList(filter, QDir::Files, QDir::Time);                 // Sorts image files by date ascending
+    QStringList imagesAsc = dir.entryList(filter, QDir::Files, QDir::Time);                 //! Sorts image files by date ascending
     std::vector<std::string> newImageNamesAsc = control->qStringListToVector(imagesAsc);
     imageNameDatesAsc = newImageNamesAsc;
 
-    QStringList imagesDec = dir.entryList(filter, QDir::Files, QDir::Time| QDir::Reversed); // Sorts image file by date descending
+    QStringList imagesDec = dir.entryList(filter, QDir::Files, QDir::Time| QDir::Reversed); //! Sorts image file by date descending
     std::vector<std::string> newImageNamesDec = control->qStringListToVector(imagesDec);
     imageNameDatesDec = newImageNamesDec;
     return folderPath;
