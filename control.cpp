@@ -8,6 +8,9 @@
 #include <QFileDialog>
 
 
+
+
+
 //Control constructor
 Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
@@ -16,7 +19,6 @@ Control::Control() {
     sidesToDraw = 3;
     drawPointsDrawn = 0;
     drawSidesDrawn = 0;
-    selectedClassifier.second = -1;
 }
 void Control::setSidesToDraw(QString shape) {
     sidesToDraw = shape.at(0).digitValue();
@@ -71,12 +73,6 @@ QGraphicsPixmapItem * Control::requestImage(const QString imageName)
         image = model->requestImageItem(imageName.toStdString());
     }
     return image;
-}
-
-void Control::requestAssignClassifierToSelectedShapes()
-{
-    model->requestAssignClassifierToSelectedShapes
-            (selectedImageName,selectedClassifier.first,selectedClassifier.second);
 }
 
 QStringList Control::vectorToQStringList(std::vector<std::string> v)

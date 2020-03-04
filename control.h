@@ -26,7 +26,6 @@ private:
     std::string folderPath; /**< string to hold the currently selected dataset folder path */
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
     std::string selectedImageName;
-    std::pair<QString,int> selectedClassifier;
     std::string mode;
     std::string mode2;             //! Used for copy paste
     std::string mode3;             //! Used for resizing of shape
@@ -61,7 +60,6 @@ public:
     int getSidesToDraw() {return sidesToDraw;}
 
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
-    void setSelectedClassifier(QString c) {selectedClassifier.first = c;}
     void setMode(std::string m) {mode = m;}
     void setMode2(std::string m) {mode2 = m;}
     void setMode3(std::string m) {mode3 = m;}
@@ -113,8 +111,6 @@ public:
 
     */
     QGraphicsPixmapItem * requestImage(const QString imageName);
-
-    void requestAssignClassifierToSelectedShapes();
 
     QStringList requestSortedNameAscending(std::vector<std::string>namesVector);
     //! Sorts either the image or the class names in ascending order.

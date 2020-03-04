@@ -59,11 +59,6 @@ void Model::requestAddDrawnShape(std::string imageName)
     images[imageName]->addDrawnShape();
 }
 
-void Model::requestAssignClassifierToSelectedShapes(std::string imageName, QString c, int lineIndex)
-{
-    images[imageName]->assignClassifierToSelectedShapes(c, lineIndex);
-}
-
 std::string Model::loadDataset(std::string folderPath)
 {
     const QStringList filter = {"*.jpg","*.JPG","*.png"};

@@ -1,38 +1,80 @@
-#include <Qtest>
+#include <QtTest>
+#include<QtTest/QTest>
+#include<QtWidgets/QGraphicsWidget>
 #include<QtCore>
-#include <QtDebug>
+#include <QtWidgets/QGraphicsPixmapItem>
 
-class saveTimer :public QObject
+#include <QtWidgets/QFileDialog>
+
+#include <QtWidgets/QListWidgetItem>
+
+#include <QtWidgets/QMainWindow>
+#include <QtWidgets/QGraphicsScene>
+#include <QPen>
+#include <QtWidgets/QGraphicsItem>
+#include<QtTestGui>
+
+
+
+
+//class Image;
+
+class Model
 {
-    Q_OBJECT
+   // Control *control;
+    std::vector<std::string> imageNames;
+    //std::map<std::string, Image * > images;
+    std::vector<std::string> classifierNames;
+    std::vector<std::string> imageNameDatesAsc;
+    std::vector<std::string> imageNameDatesDec;
 public:
-    saveTimer();
-    QTimer *timer;
-public slots:
-    void MySlot();
+   // Model(Control *cont = nullptr);
+
+    std::vector<std::string> getImageNames() {return imageNames;}
+    std::vector<std::string> getClassifierNames() {return classifierNames;}
+    std::vector<std::string> getImageNameDatesAsc() {return imageNameDatesAsc;}
+    std::vector<std::string> getImageNameDatesDec() {return imageNameDatesDec;}
+
+
+    std::string loadClassifers(std::string filePath);
+
+
+  //  void pointDrawn() {control->pointDrawn();}
+
+
+
+
+
+
+    ~Model();
 };
 
-
-
-saveTimer::saveTimer()
+std::string Model::loadClassifers(std::string filePath)
 {
-timer = new QTimer (this);
-connect (timer,SIGNAL(timeout()),this,SLOT(MySlot()));
-timer->start(1000);
+    QString qFilePath = QString::fromStdString(filePath);
+    QFile file(qFilePath);
 
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+    {
+
+    }
+    else
+    {
+        classifierNames = {};
+        QTextStream in(&file);
+        QString line;
+        std::string stringLine;
+        while (!(in.atEnd())) {
+            line = in.readLine();
+            stringLine = line.toStdString();
+            classifierNames.push_back(stringLine);
+        }
+    }
+    return filePath;
 }
 
-void saveTimer::MySlot(){
-    int counter=0;
-    qDebug()<<"Timer has been executed";
-    counter ++;
-           if(counter==60){
-            //add saving implementation
-                counter = 0;
-           }
-}
 
 
-QTEST_APPLESS_MAIN(saveTimer)
+QTEST_APPLESS_MAIN (Model)
 
 #include "tst_testcasecontrol.moc"

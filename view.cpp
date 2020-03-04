@@ -21,7 +21,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
 
-
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
     pens["pointPen"] = pointPen;
@@ -130,11 +129,6 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
     {
         scene->removeItem(image);
     }
-}
-
-void View::on_classifierList_currentItemChanged(QListWidgetItem *current)
-{
-    control->setSelectedClassifier(current->text());
 }
 
 View::~View()

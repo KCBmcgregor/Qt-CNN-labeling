@@ -33,7 +33,6 @@ public:
     std::string requestMode3();
     void requestConnectLastDrawnPoints(std::string imageName);
     void requestAddDrawnShape(std::string imageName);
-    void requestAssignClassifierToSelectedShapes(std::string imageName, QString c, int lineIndex);
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
