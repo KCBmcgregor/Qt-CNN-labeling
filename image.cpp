@@ -1,4 +1,5 @@
 #include "image.h"
+#include "point.h"
 #include "polygonitem.h"
 #include <QGraphicsTextItem>
 #include <QPainterPath>
@@ -9,24 +10,50 @@
 #include <model.h>
 
 
+
 Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
 {
     model = m;
     points = {};
     lines = {};
     shapes = {};
-    pens = model->requestPens();
+
+    QPen pointPen(Qt::red);
+    pens["pointPen"] = pointPen;
+
+    QPen linePen(Qt::black);
+    linePen.setWidth(6);
+    linePen.setJoinStyle(Qt::MiterJoin);
+    pens["linePen"] = linePen;
+
+    QPen shapePen(Qt::green);
+    shapePen.setWidth(6);
+    shapePen.setJoinStyle(Qt::MiterJoin);
+    pens["shapePen"] = shapePen;
+
+    QBrush pointBrush(Qt::red,Qt::SolidPattern);
+    brushs["pointBrush"] = pointBrush;
 
 }
 
-bool Image::addPoint(QPointF mousePos)
+bool Image::addPoint(QPointF mousePos, int polygonIndex, PolygonItem *parentShape)
 {
     qreal x = mousePos.x();
     qreal y = mousePos.y();
-    QGraphicsEllipseItem *shape =  new QGraphicsEllipseItem(0,0,10,10,this);
+    QGraphicsEllipseItem *shape;
+    if (parentShape == nullptr)
+    {
+        shape =  new Point(-3,-3,6,6,this);
+        points.push_back(shape);
+    }
+    else
+    {
+        shape =  new Point(-3,-3,6,6,polygonIndex,parentShape);
+    }
     shape->setPos(x,y);
     shape->setPen(pens["pointPen"]);
-    points.push_back(shape);
+    shape->setBrush(brushs["pointBrush"]);
+    shape->setZValue(50);
     return true;
 }
 
@@ -89,6 +116,15 @@ void Image::shrinkShape(PolygonItem *shapeToResize)
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(0.8);
 
+}
+
+void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
+{
+    std::vector<PolygonItem * > shapesToAssign = findSelectedShapes();
+    for(unsigned i=0; i < shapesToAssign.size(); i++)
+    {
+        shapesToAssign[i]->assignClassifier(c, lineIndex);
+    }
 }
 
 
