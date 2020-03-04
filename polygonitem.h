@@ -10,13 +10,24 @@
 #include <view.h>
 #include <QPainter>
 
+class Point;
+
 class Image;
 
 class PolygonItem : public QObject, public QGraphicsPolygonItem
 {
     Q_OBJECT
 
+    Image *parentImage = nullptr;
+    std::pair<QString,int> classifier = {"",-1};
+    QGraphicsSimpleTextItem *classifierText;
+
     QMenu rightClickMenu;
+    QAction *edit;
+    QAction *modify;
+    //std::vector<Point> modifyPoints;
+
+
 public:
     explicit PolygonItem(QPolygonF polygonPoints, Image *parentImage = nullptr, QObject *parent = nullptr);
     using QGraphicsPolygonItem::boundingRect;
@@ -26,7 +37,13 @@ public:
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);
-    bool Pressed;
+
+public slots:
+    void assignClassifier(QString c, int lineIndex);
+    void startModifying();
+    void updatePolygonPointPosition(int pointIndex, QPointF newPos);
+    void stopModifying();
+
 
 signals:
 
