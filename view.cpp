@@ -2,8 +2,11 @@
 #include "ui_view.h"
 #include <QGraphicsPixmapItem>
 #include <QFileDialog>
-
-
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <QTextEdit>
+#include <QTextStream>
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
     control = cont;
@@ -17,7 +20,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    //ui->shapeSelectButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
 
@@ -207,6 +209,27 @@ void View::on_saveButton_clicked()
             QPixmap pixMap = this->ui->graphicsView->grab();
             pixMap.save(fileName);
         }
+}
+
+void View::on_addClassButton_clicked(){
+
+     //selectionModel->clear();
+
+    QString addClass = ui->addClassTextEdit->toPlainText();
+    //std::string text = addClass.toUtf8().constData();
+    QString path = QString::fromStdString(control->getFilePath());
+
+    if(addClass!="" || addClass.length() < 10){
+
+        QFile outfile(path);
+        outfile.open(QIODevice::Append);
+        QTextStream out(&outfile);
+        out <<"\n"<< addClass;
+
+        ui->addClassTextEdit->clear();
+        ui->classifierList->clear();
+
+    }
 }
 
 void View::on_shapeAssignButton_clicked()

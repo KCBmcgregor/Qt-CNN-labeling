@@ -55,6 +55,7 @@ public:
      @return std::string
      */
     std::string getFolderPath() {return folderPath;}
+    std::string getFilePath() {return classifierFilePath;}
     std::string getMode() {return mode;}
     std::string getMode2() {return mode2;}
     std::string getMode3() {return mode3;}

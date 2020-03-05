@@ -8,6 +8,8 @@
 #include <QPen>
 #include <QGraphicsItem>
 //#include<QtTest/QTest>
+
+
 class ImageData;
 
 QT_BEGIN_NAMESPACE
@@ -28,11 +30,11 @@ private:
 
 public:
     View(Control *cont = nullptr,QWidget *parent = nullptr);
+    //void setSelectionModel(QItemSelectionModel*  selectionModel);
 
 
     QMap<std::string,QPen> getPens() {return pens;}
 
-    void renderLists();
 
     void renderList1();
     void renderList2();
@@ -53,7 +55,8 @@ private slots:
     void on_zoomOutButton_clicked();
     void on_copyPasteButton_clicked();
     void on_saveButton_clicked();
-
+    void on_addClassButton_clicked();
+    //void on_addClassButton_clicked(QListWidgetItem *current);
     void on_shapeAssignButton_clicked();
 };
 
