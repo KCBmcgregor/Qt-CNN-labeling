@@ -6,6 +6,9 @@
 #include <fstream>
 #include <sstream>
 #include <QTextEdit>
+#include <QRegularExpression>
+#include <QRegularExpressionMatch>
+#include <QRegularExpressionMatchIterator>
 #include <QTextStream>
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
@@ -53,8 +56,12 @@ void View::renderList1()
 void View::renderList2()
 {
     QStringList classifierNames = control->requestClassifierNames();
-    foreach (QString name, classifierNames) {
-        ui->classifierList->addItem(name);
+    foreach (QString name, classifierNames)
+    {
+        if ( name!= "***DELETED***")
+        {
+            ui->classifierList->addItem(name);
+        }
     }
 }
 
@@ -137,6 +144,7 @@ void View::on_imageNamesList_currentItemChanged(QListWidgetItem *current)
 void View::on_classifierList_currentItemChanged(QListWidgetItem *current)
 {
     control->setSelectedClassifier(current->text());
+
 }
 
 View::~View()
@@ -212,14 +220,12 @@ void View::on_saveButton_clicked()
 }
 
 void View::on_addClassButton_clicked(){
-
-     //selectionModel->clear();
+    ui->classifierList->blockSignals(true);
 
     QString addClass = ui->addClassTextEdit->toPlainText();
-    //std::string text = addClass.toUtf8().constData();
     QString path = QString::fromStdString(control->getFilePath());
 
-    if(addClass!="" || addClass.length() < 10){
+    if(addClass.isEmpty() || addClass.length() < 10){
 
         QFile outfile(path);
         outfile.open(QIODevice::Append);
@@ -228,11 +234,35 @@ void View::on_addClassButton_clicked(){
 
         ui->addClassTextEdit->clear();
         ui->classifierList->clear();
+        ui->classifierList->blockSignals(false);
 
     }
 }
+
+void View::on_removeClassButton_clicked()
+{
+    QString classToRemove = control->getSelectedClassifier();
+    QString path = QString::fromStdString(control->getFilePath());
+    QFile outfile(path);
+
+    outfile.open(QIODevice::Text | QIODevice::ReadWrite);
+    QString dataText = outfile.readAll();
+
+    QRegularExpression textToReplace(classToRemove);
+    QString replacementText("***DELETED***");
+    dataText.replace(textToReplace, replacementText);
+    outfile.seek(0);
+
+    QTextStream out(&outfile);
+    out << dataText;
+    ui->classifierList->blockSignals(true);
+    ui->classifierList->clear();
+    ui->classifierList->blockSignals(false);
+}
+
 
 void View::on_shapeAssignButton_clicked()
 {
     control->requestAssignClassifierToSelectedShapes();
 }
+

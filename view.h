@@ -56,8 +56,8 @@ private slots:
     void on_copyPasteButton_clicked();
     void on_saveButton_clicked();
     void on_addClassButton_clicked();
-    //void on_addClassButton_clicked(QListWidgetItem *current);
     void on_shapeAssignButton_clicked();
+    void on_removeClassButton_clicked();
 };
 
 #endif // VIEW_H
