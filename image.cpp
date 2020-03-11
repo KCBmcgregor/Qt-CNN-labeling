@@ -96,14 +96,16 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
 void Image::growShape(PolygonItem *shapeToResize)
 {
     QPolygonF shapePoints;
+    QPolygon newShapePoints;
     shapePoints = shapeToResize->polygon();
     PolygonItem *shape = shapeToResize;
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(1.2);
-    //for(int i = 0; i < shapePoints.size(); i++)
-    //{
+    for(int i = 0; i < shapePoints.size(); i++)
+    {
 
-    //}
+
+    }
     shape->setSelected(false);
 
 }

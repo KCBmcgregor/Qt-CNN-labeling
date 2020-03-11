@@ -45,7 +45,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 void View::renderList1()
 {
     ui->imageNamesList->clear();
-    ui->classifierList->clear();
+
 
     QStringList imageNames = control->requestImageNames();
     foreach (QString name, imageNames) {
@@ -55,6 +55,7 @@ void View::renderList1()
 
 void View::renderList2()
 {
+    ui->classifierList->clear();
     QStringList classifierNames = control->requestClassifierNames();
     foreach (QString name, classifierNames)
     {
