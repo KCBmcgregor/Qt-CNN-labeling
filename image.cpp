@@ -8,7 +8,7 @@
 //#include<QtTest/QTest>
 #include <view.h>
 #include <model.h>
-
+#include <control.h> //to be commented out
 
 
 Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
@@ -32,7 +32,7 @@ Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphi
     pens["shapePen"] = shapePen;
 
     QBrush pointBrush(Qt::red,Qt::SolidPattern);
-    brushs["pointBrush"] = pointBrush;
+    brushes["pointBrush"] = pointBrush;
 
 }
 
@@ -52,7 +52,7 @@ bool Image::addPoint(QPointF mousePos, int polygonIndex, PolygonItem *parentShap
     }
     shape->setPos(x,y);
     shape->setPen(pens["pointPen"]);
-    shape->setBrush(brushs["pointBrush"]);
+    shape->setBrush(brushes["pointBrush"]);
     shape->setZValue(50);
     return true;
 }
@@ -96,14 +96,16 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
 void Image::growShape(PolygonItem *shapeToResize)
 {
     QPolygonF shapePoints;
+    QPolygon newShapePoints;
     shapePoints = shapeToResize->polygon();
     PolygonItem *shape = shapeToResize;
     shape->setTransformOriginPoint(shapePoints[0]);
     shape->setScale(1.2);
-    //for(int i = 0; i < shapePoints.size(); i++)
-    //{
+    for(int i = 0; i < shapePoints.size(); i++)
+    {
 
-    //}
+
+    }
     shape->setSelected(false);
 
 }
@@ -124,8 +126,10 @@ void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
     for(unsigned i=0; i < shapesToAssign.size(); i++)
     {
         shapesToAssign[i]->assignClassifier(c, lineIndex);
+
     }
 }
+
 
 
 
@@ -140,7 +144,7 @@ bool Image::addDrawnShape()
 
     addShape(shapePoints);
 
-    if (mode2=="copy"){                                 //! If mode2 set to copy, the a duplicate of the drawn shape is created
+    if (mode2=="copy"){                                    // duplicate of the drawn shape is created
         addShape(shapePoints);
     }
 
@@ -161,12 +165,15 @@ bool Image::addDrawnShape()
 
 void Image::copyPasteShapes(std::vector<PolygonItem *> shapesToCopyPaste)
 {
+
     qreal pasteOffset = 50;
     QPointF pos;
     QPolygonF shapePoints;
 
     for(unsigned i=0; i < shapesToCopyPaste.size(); i++)
     {
+        QString name = shapesToCopyPaste[i]->getClassifier();
+
         shapesToCopyPaste[i]->setSelected(false);
         shapePoints = shapesToCopyPaste[i]->polygon();
         pos = shapesToCopyPaste[i]->pos();
@@ -174,7 +181,8 @@ void Image::copyPasteShapes(std::vector<PolygonItem *> shapesToCopyPaste)
         pos.setY(pos.y() + pasteOffset);
         addShape(shapePoints);
         shapes.back()->setPos(pos);
-        shapes.back()->setSelected(true);
+        shapes.back()->setSelected(true);      
+        assignClassifierToSelectedShapes(name, -1);
     }
 }
 
@@ -215,6 +223,7 @@ void Image::deleteSelectedShapes()
 
 std::vector<PolygonItem * > Image::findSelectedShapes()
 {
+
     std::vector<PolygonItem * > selectedShapes = {};
     for(unsigned i=0; i < shapes.size(); i++)
     {

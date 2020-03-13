@@ -21,7 +21,7 @@ class Image : public QObject, public QGraphicsPixmapItem
     std::vector<QGraphicsEllipseItem * > points;
     Model *model;
     QMap<std::string, QPen> pens;
-    QMap<std::string, QBrush> brushs;
+    QMap<std::string, QBrush> brushes;
 
 public:
     explicit Image(QString imagePath, Model *model, QObject *parent = nullptr);

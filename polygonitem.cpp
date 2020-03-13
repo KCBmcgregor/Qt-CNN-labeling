@@ -41,7 +41,15 @@ void PolygonItem::assignClassifier(QString c, int lineIndex)
 {
     classifier = {c, lineIndex};
     classifierText->setText(c);
+
 }
+
+QString PolygonItem::getClassifier()
+{
+    QString c = classifierText->text();
+    return c;
+}
+
 
 void PolygonItem::startModifying()
 {

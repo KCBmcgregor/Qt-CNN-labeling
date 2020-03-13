@@ -10,6 +10,8 @@
 #include <QRegularExpressionMatch>
 #include <QRegularExpressionMatchIterator>
 #include <QTextStream>
+#include <QMessageBox>
+#include <QFile>
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
     control = cont;
@@ -45,7 +47,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 void View::renderList1()
 {
     ui->imageNamesList->clear();
-    ui->classifierList->clear();
+
 
     QStringList imageNames = control->requestImageNames();
     foreach (QString name, imageNames) {
@@ -55,6 +57,7 @@ void View::renderList1()
 
 void View::renderList2()
 {
+    ui->classifierList->clear();
     QStringList classifierNames = control->requestClassifierNames();
     foreach (QString name, classifierNames)
     {
@@ -77,49 +80,57 @@ void View::on_selectFileButton_clicked()
 }
                                         //! When sortButton is clicked it retrieves imageComboBox current item..
 void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm based on that
-    ui->imageNamesList->clear();
-    if(ui->ImageComboBox->currentText() =="Name (Asc)"){
-        QStringList imageNames = control->retrieveListDataAscending(1);  //! 1 is passed as parameter meaning...
-        foreach (QString name, imageNames) {     //! ..The data sorted using the ascending algorithm is image names
-            ui->imageNamesList->addItem(name);
-        }
-     }
 
-     if(ui->ImageComboBox->currentText() =="Name (Des)"){
-        QStringList imageNames = control->retrieveListDataDescending(1);
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
+   if(ui->imageNamesList->count() != 0) {
+       ui->imageNamesList->clear();
+       if(ui->ImageComboBox->currentText() =="Name (Asc)"){
+           QStringList imageNames = control->retrieveListDataAscending(1);  //! 1 is passed as parameter meaning...
+           foreach (QString name, imageNames) {     //! ..The data sorted using the ascending algorithm is image names
+               ui->imageNamesList->addItem(name);
+           }
         }
+
+        if(ui->ImageComboBox->currentText() =="Name (Des)"){
+           QStringList imageNames = control->retrieveListDataDescending(1);
+           foreach (QString name, imageNames) {
+               ui->imageNamesList->addItem(name);
+           }
+       }
+        if(ui->ImageComboBox->currentText() =="Date (Asc)"){              //! Sorting images by their dates
+           QStringList imageNames = control->requestSortedDateAscending();
+           foreach (QString name, imageNames) {
+               ui->imageNamesList->addItem(name);
+           }
+       }
+        if(ui->ImageComboBox->currentText() =="Date (Des)"){
+           QStringList imageNames = control->requestSortedDateDescending();
+           foreach (QString name, imageNames) {
+               ui->imageNamesList->addItem(name);
+           }
+       }
+
     }
-     if(ui->ImageComboBox->currentText() =="Date (Asc)"){              //! Sorting images by their dates
-        QStringList imageNames = control->requestSortedDateAscending();
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-    }
-     if(ui->ImageComboBox->currentText() =="Date (Des)"){
-        QStringList imageNames = control->requestSortedDateDescending();
-        foreach (QString name, imageNames) {
-            ui->imageNamesList->addItem(name);
-        }
-    }
+
 }
                                         //! When sortButton3 is clicked it retrieves classComboBox current item..
 void View::on_sortButton2_clicked(){   //! ..and chooses the sorting algorithm based on that
-    ui->classifierList->clear();
-    if(ui->classComboBox->currentText()=="Name (Asc)"){
-        QStringList classifierNames = control->retrieveListDataAscending(2); //! 2 is passed as parameter meaning...
-        foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
-            ui->classifierList->addItem(name);
+    if(ui->classifierList->count() != 0) {
+        ui->classifierList->clear();
+        if(ui->classComboBox->currentText()=="Name (Asc)"){
+            QStringList classifierNames = control->retrieveListDataAscending(2); //! 2 is passed as parameter meaning...
+            foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
+                ui->classifierList->addItem(name);
+            }
+        }
+
+        if(ui->classComboBox->currentText()=="Name (Des)"){
+            QStringList classifierNames = control->retrieveListDataDescending(2);
+            foreach (QString name, classifierNames) {
+                ui->classifierList->addItem(name);
+            }
         }
     }
 
-    if(ui->classComboBox->currentText()=="Name (Des)"){
-        QStringList classifierNames = control->retrieveListDataDescending(2);
-        foreach (QString name, classifierNames) {
-            ui->classifierList->addItem(name);
-        }
-    }
 }
 
 
@@ -211,14 +222,29 @@ void View::on_zoomOutButton_clicked()
 
 void View::on_saveButton_clicked()
 {
+
+    QString fileName = QFileDialog::getSaveFileName(this,
+            tr("Annotations"), "",
+            tr("Annotation (*.annotations);;All Files (*)"));
+
+    if (fileName.isEmpty())
+          return;
+      else {
+          QFile file(fileName);
+          if (!file.open(QIODevice::WriteOnly)) {
+              QMessageBox::information(this, tr("Unable to open file"),
+                  file.errorString());
+              return;
+          }
+   /*
     QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
         if (!fileName.isNull())
         {
             QPixmap pixMap = this->ui->graphicsView->grab();
             pixMap.save(fileName);
-        }
+        }*/
 }
-
+}
 void View::on_addClassButton_clicked(){
     ui->classifierList->blockSignals(true);
 
