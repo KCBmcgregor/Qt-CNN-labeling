@@ -34,6 +34,7 @@ public:
 
     QMap<std::string,QPen> requestPens();
     QGraphicsPixmapItem * requestImageItem(std::string imageName);
+    int requestNumberOfShapes(std::string imageName);
     std::string requestMode();
     std::string requestMode2();
     std::string requestMode3();

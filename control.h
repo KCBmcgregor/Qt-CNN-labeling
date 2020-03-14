@@ -69,6 +69,8 @@ public:
     void setMode3(std::string m) {mode3 = m;}
     void setSidesToDraw(QString shape);
 
+    int requestNumberOfShapes();
+
     QMap<std::string,QPen> requestPens();
 
     //! A method taking no arguments and returning a QStringList.

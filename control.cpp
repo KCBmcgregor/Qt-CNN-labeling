@@ -22,6 +22,11 @@ void Control::setSidesToDraw(QString shape) {
     sidesToDraw = shape.at(0).digitValue();
 }
 
+int Control::requestNumberOfShapes()
+{
+     return model->requestNumberOfShapes(selectedImageName);
+}
+
 QMap<std::string, QPen> Control::requestPens()
 {
     return view->getPens();

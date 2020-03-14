@@ -32,6 +32,11 @@ QGraphicsPixmapItem * Model::requestImageItem(std::string imageName)
     }
 }
 
+int Model::requestNumberOfShapes(std::string imageName)
+{
+    return images[imageName]->getNumberOfShapes();
+}
+
 std::string Model::requestMode()
 {
     std::string mode = control->getMode();
