@@ -31,6 +31,7 @@ public:
     using QGraphicsPixmapItem::paint;
 
     std::vector<PolygonItem * > getShapes() {return shapes;}
+    int getNumberOfShapes() {return shapes.size();}
 
     bool addPoint(QPointF mousePos, int polygonIndex = -1, PolygonItem *parentShape = nullptr);
     bool addLine(QPointF point1, QPointF point2);
