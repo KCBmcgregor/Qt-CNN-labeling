@@ -1,8 +1,14 @@
 #ifndef MODEL_H
 #define MODEL_H
 
-#include "control.h"
-
+#include <QObject>
+#include <string>
+#include <map>
+#include <vector>
+#include <QGraphicsItem>
+#include <QMenu>
+#include <view.h>
+#include <polygonitem.h>
 
 #include <QStringListModel>
 

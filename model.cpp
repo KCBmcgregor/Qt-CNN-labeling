@@ -64,6 +64,7 @@ void Model::requestAssignClassifierToSelectedShapes(std::string imageName, QStri
     images[imageName]->assignClassifierToSelectedShapes(c, lineIndex);
 }
 
+
 std::string Model::loadDataset(std::string folderPath)
 {
     const QStringList filter = {"*.jpg","*.JPG","*.png"};

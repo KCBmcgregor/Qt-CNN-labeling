@@ -75,8 +75,11 @@ bool Image::addShape(QPolygonF shapePoints)
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
     shapes.push_back(shape);
+    shapeCount = incShapeCounter(shapeCount);
+
     return true;
 }
+
 
 bool Image::deleteShape(PolygonItem *shapeToDelete)
 {
@@ -90,7 +93,20 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
         }
 
     }
+    shapeCount=decShapeCounter(shapeCount);
     return true;
+}
+
+int Image::incShapeCounter(int shapeCount)
+{
+    return shapeCount +=1;
+
+}
+
+int Image::decShapeCounter(int shapeCount)
+{
+    return shapeCount +=1;
+
 }
                                      //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
 void Image::growShape(PolygonItem *shapeToResize)

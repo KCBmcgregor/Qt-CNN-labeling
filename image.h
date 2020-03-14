@@ -23,7 +23,9 @@ class Image : public QObject, public QGraphicsPixmapItem
     QMap<std::string, QPen> pens;
     QMap<std::string, QBrush> brushes;
 
+
 public:
+    int shapeCount=0;
     explicit Image(QString imagePath, Model *model, QObject *parent = nullptr);
     using QGraphicsPixmapItem::boundingRect;
     using QGraphicsPixmapItem::paint;
@@ -35,6 +37,8 @@ public:
     bool addShape(QPolygonF shapePoints);
     bool deleteShape(PolygonItem *shapeToDelete);
     bool addDrawnShape();
+    int incShapeCounter(int shapeCount);
+    int decShapeCounter(int shapeCount);
 
     void copyPasteShapes(std::vector<PolygonItem * > shapes);
     void growShape(PolygonItem *shapeToResize);
