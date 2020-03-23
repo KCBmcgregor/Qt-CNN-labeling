@@ -228,21 +228,15 @@ void View::on_saveButton_clicked()
               QMessageBox::information(this, tr("Unable to open file"),
                   file.errorString());
               return;
-
           }
           QTextStream out(&file);
           QStringList imageNames = control->requestImageNames();
-          foreach (QString name, imageNames) {
-            out<< name<< endl;
-          }
-
-          //count = imageshape();
-          //out<< count<<endl;
-
-          //QDataStream out(&file);
-             //   out.setVersion(QDataStream::Qt_4_5);
-
-
+          foreach (QString imageSelected, imageNames) {
+            out<< imageSelected<< endl;}
+          
+         
+          int numShapes = control->requestNumberOfShapes();
+          out<<numShapes<<endl;
 }
 }
 
