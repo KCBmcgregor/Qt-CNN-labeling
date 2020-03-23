@@ -279,6 +279,7 @@ void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
    // addDrawnShape();
 
    // <PolygonItem * > getShapes() {return shapes;}
+   //shapes =  std::vector<PolygonItem * >  getShapes() {return shapes};
 
     //for(std::vector<int>::iterator it = shapes.begin(); it != shapes.end();++it){
       //  std::vector<QPoint> points = shapes[it].polygon() pointDrawn()
