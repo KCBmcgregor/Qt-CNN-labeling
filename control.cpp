@@ -22,10 +22,6 @@ void Control::setSidesToDraw(QString shape) {
     sidesToDraw = shape.at(0).digitValue();
 }
 
-void Control::savingToFile()
-{
-
-}
 
 int Control::requestNumberOfShapes()
 {

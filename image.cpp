@@ -272,27 +272,3 @@ void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
     QGraphicsPixmapItem::mousePressEvent(event);
 }
 
-//int Image::requestxPoints(){
-    //foreach (std::vector polygonItem, shapes){
-
-   // }
-   // addDrawnShape();
-
-   // <PolygonItem * > getShapes() {return shapes;}
-   //shapes =  std::vector<PolygonItem * >  getShapes() {return shapes};
-
-    //for(std::vector<int>::iterator it = shapes.begin(); it != shapes.end();++it){
-      //  std::vector<QPoint> points = shapes[it].polygon() pointDrawn()
-        //int x = points[0].x()*it;
-        //int y = points[0].y()*it;
-    //}
-
-    //for (std::vector<PolygonItem * > shapes)
-    //{
-    //    std::vector<QPoint> points = shapes[i].polygon() pointDrawn()
-    //    x= points[0].x();
-    //      y= points[0].y();
-    //}
-
-//}
-

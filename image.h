@@ -18,6 +18,7 @@ class Image : public QObject, public QGraphicsPixmapItem
 
     QPointF mousePos;
     std::vector<PolygonItem * > shapes;
+    std::vector<QGraphicsLineItem * > lines;
     std::vector<QGraphicsEllipseItem * > points;
     Model *model;
     QMap<std::string, QPen> pens;
