@@ -11,6 +11,7 @@
 #include <control.h> //to be commented out
 
 
+
 Image::Image(QString path, Model *m, QObject *parent) : QObject(parent), QGraphicsPixmapItem(path)
 {
     model = m;
@@ -75,7 +76,7 @@ bool Image::addShape(QPolygonF shapePoints)
     shape->setFlag(PolygonItem::ItemIsSelectable);
     shape->setPen(pens["shapePen"]);
     shapes.push_back(shape);
-    shapeCount = incShapeCounter(shapeCount);
+
 
     return true;
 }
@@ -93,21 +94,11 @@ bool Image::deleteShape(PolygonItem *shapeToDelete)
         }
 
     }
-    shapeCount=decShapeCounter(shapeCount);
+
     return true;
 }
 
-int Image::incShapeCounter(int shapeCount)
-{
-    return shapeCount +=1;
 
-}
-
-int Image::decShapeCounter(int shapeCount)
-{
-    return shapeCount +=1;
-
-}
                                      //! If resize mode3 on 'shrink' or 'grow' resize function will execute.
 void Image::growShape(PolygonItem *shapeToResize)
 {
@@ -280,4 +271,28 @@ void Image::mousePressEvent(QGraphicsSceneMouseEvent *event)
     }
     QGraphicsPixmapItem::mousePressEvent(event);
 }
+
+//int Image::requestxPoints(){
+    //foreach (std::vector polygonItem, shapes){
+
+   // }
+   // addDrawnShape();
+
+   // <PolygonItem * > getShapes() {return shapes;}
+   //shapes =  std::vector<PolygonItem * >  getShapes() {return shapes};
+
+    //for(std::vector<int>::iterator it = shapes.begin(); it != shapes.end();++it){
+      //  std::vector<QPoint> points = shapes[it].polygon() pointDrawn()
+        //int x = points[0].x()*it;
+        //int y = points[0].y()*it;
+    //}
+
+    //for (std::vector<PolygonItem * > shapes)
+    //{
+    //    std::vector<QPoint> points = shapes[i].polygon() pointDrawn()
+    //    x= points[0].x();
+    //      y= points[0].y();
+    //}
+
+//}
 

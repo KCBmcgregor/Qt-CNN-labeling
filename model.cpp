@@ -5,6 +5,9 @@
 #include <QString>
 #include <QMainWindow>
 #include <iostream>
+#include <QMessageBox>
+#include <QFile>
+#include<QDataStream>
 Model::Model(Control *cont)
 {
     control = cont;
@@ -62,8 +65,8 @@ void Model::requestConnectLastDrawnPoints(std::string imageName)
 void Model::requestAddDrawnShape(std::string imageName)
 {
     images[imageName]->addDrawnShape();
-}
 
+}
 void Model::requestAssignClassifierToSelectedShapes(std::string imageName, QString c, int lineIndex)
 {
     images[imageName]->assignClassifierToSelectedShapes(c, lineIndex);
