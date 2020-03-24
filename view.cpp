@@ -208,13 +208,15 @@ void View::on_saveButton_clicked()
               return;
           }
           QTextStream out(&file);
-          QStringList imageNames = control->requestImageNames();
+          /*QStringList imageNames = control->requestImageNames();
           foreach (QString imageSelected, imageNames) {
             out<< imageSelected<< endl;}
+Returns all the shapes names in the dataset
+*/
           
          
           int numShapes = control->requestNumberOfShapes();
-          out<<numShapes<<endl;
+          out<<"The Number Of Shapes On The Image "<<numShapes<<endl;
 }
 }
 

@@ -53,7 +53,6 @@ private slots:
     void on_shapesList_currentItemChanged(QListWidgetItem *current);
     void on_zoomInButton_clicked();
     void on_zoomOutButton_clicked();
-    void on_copyPasteButton_clicked();
     void on_saveButton_clicked();
     void on_addClassButton_clicked();
     void on_shapeAssignButton_clicked();
