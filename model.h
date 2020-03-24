@@ -44,6 +44,7 @@ public:
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
+
     void loadImage(QString imagePath, const QString imageName);
     QPixmap loadImage(const QString imagePath);
 
