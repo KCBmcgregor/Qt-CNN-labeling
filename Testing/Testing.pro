@@ -13,4 +13,24 @@ isEmpty(BOOST_INCLUDE_DIR): {
 }
 
 SOURCES += \
-    main.cpp
+    main.cpp \
+    control.cpp \
+    image.cpp \
+    model.cpp \
+    point.cpp \
+    polygonitem.cpp \
+    savetimer.cpp \
+    view.cpp
+
+HEADERS += \
+    control.h \
+    image.h\
+    model.h \
+    point.h \
+    polygonitem.h\
+    savetimer.h \
+    view.h
+
+FORMS += \
+    view.ui
+

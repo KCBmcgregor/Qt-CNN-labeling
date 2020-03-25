@@ -22,7 +22,11 @@ SOURCES += \
     point.cpp \
     polygonitem.cpp \
     savetimer.cpp \
+    testing.cpp \
     view.cpp
+
+
+
 
 
 
@@ -42,6 +46,9 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+LIBS += -lboost_unit_test_framework
+isEmpty(BOOST_INCLUDE_DIR): BOOST_INCLUDE_DIR="C:/Users/Roshni/Documents/boost_1_72_0"
+!isEmpty(BOOST_INCLUDE_DIR): INCLUDEPATH *= $${BOOST_INCLUDE_DIR}
 
 
 
