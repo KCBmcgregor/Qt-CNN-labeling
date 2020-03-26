@@ -15,7 +15,10 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+
+
 SOURCES += \
+    Testing/main.cpp \
     control.cpp \
     image.cpp \
     model.cpp \
@@ -24,10 +27,6 @@ SOURCES += \
     savetimer.cpp \
     testing.cpp \
     view.cpp
-
-
-
-
 
 
 HEADERS += \
@@ -46,9 +45,16 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
-LIBS += -lboost_unit_test_framework
+
+
+isEmpty(BOOST_INCLUDE_DIR): BOOST_INCLUDE_DIR=$$(BOOST_INCLUDE_DIR)
+# set by Qt Creator wizard
 isEmpty(BOOST_INCLUDE_DIR): BOOST_INCLUDE_DIR="C:/Users/Roshni/Documents/boost_1_72_0"
 !isEmpty(BOOST_INCLUDE_DIR): INCLUDEPATH *= $${BOOST_INCLUDE_DIR}
+
+isEmpty(BOOST_INCLUDE_DIR): {
+    message("BOOST_INCLUDE_DIR is not set, assuming Boost can be found automatically in your system")
+}
 
 
 

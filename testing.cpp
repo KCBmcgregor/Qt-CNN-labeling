@@ -1,14 +1,16 @@
-#define BOOST_TEST_MODULE sortName
 #include <boost/test/included/unit_test.hpp>
 #include "control.h"
-#include "control.cpp"
 
-/*BOOST_AUTO_TEST_CASE( sortAscending )
+QStringList vectorToQStringList(std::vector<std::string> v)
 {
-    BOOST_TEST( true  test assertion  );
+    QStringList returnList;
+    for(unsigned i=0; i < v.size(); i++) {
+        QString item = QString::fromStdString(v[i]);
+        returnList.append(item);
+    }
+    return returnList;
 }
-*/
-QStringList Control::requestSortedNameAscending(std::vector<std::string>namesVector){
+QStringList requestSortedNameAscending(std::vector<std::string>namesVector){
 
     bool swapped = false;
 
@@ -36,5 +38,6 @@ BOOST_AUTO_TEST_CASE( Sort_Name_Ascending_Test1 )
    std::vector<std::string> names = {"dog","cow","cat"};
    QStringList expectedResult = {"cat","cow","dog"};
 
-   BOOST_CHECK_EQUAL( requestSortedNameAscending(names), expectedResult);
+   BOOST_TEST( requestSortedNameAscending(names)== (expectedResult));
 }
+
