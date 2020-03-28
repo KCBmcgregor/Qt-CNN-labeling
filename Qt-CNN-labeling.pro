@@ -24,7 +24,6 @@ SOURCES += \
     point.cpp \
     polygonitem.cpp \
     savetimer.cpp \
-    testing.cpp \
     view.cpp
 
 
