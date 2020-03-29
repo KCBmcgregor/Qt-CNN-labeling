@@ -55,9 +55,9 @@ void sortAscDes::test_case1() //Sorting for ascending classifier names
 
 
     QStringList list1 = {"cat","dog","mouse"};
-    //QStringList list2 = {"bat","dog","mouse"};
+    QStringList list2 = {"bat","dog","mouse"};
     QVERIFY(true);
-    QCOMPARE(returnList,list1);
+    QCOMPARE(returnList,list2);
 }
 void sortAscDes::test_case2()//Sorting for descending classifier names
 {

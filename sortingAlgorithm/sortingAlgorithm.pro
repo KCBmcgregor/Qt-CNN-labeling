@@ -6,4 +6,5 @@ CONFIG -= app_bundle
 
 TEMPLATE = app
 
-SOURCES +=  tst_sortasc.cpp
+SOURCES +=  \
+    testSortAlg.cpp
