@@ -25,6 +25,7 @@ private:
     //! State variables for file paths.
     std::string folderPath; /**< string to hold the currently selected dataset folder path */
     std::string classifierFilePath; /**< string to hold the currently selected class file path */
+    std::string annotationFilePath; /**< string to hold the currently annotation file path */
     std::string selectedImageName;
     std::pair<QString,int> selectedClassifier;
     std::string mode;
@@ -113,6 +114,15 @@ public:
       \return File path as a QString.
     */
     QString requestFilePath();
+
+    //! A method taking no arguments and returning a QString.
+    /*!
+     Using QFileDialog the user is presented with the os's file
+     explorer only showing *.annotation files and is prompted to select
+     their annotation file. the path of the selected file is returned.
+      \return File path as a QString.
+    */
+    QString requestAnnotationPath();
 
     //! A method taking 1 argument and returing a QPixmap.
     /*!

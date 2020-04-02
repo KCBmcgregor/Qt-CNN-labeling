@@ -98,9 +98,7 @@ std::string Model::loadClassifers(std::string filePath)
     QFile file(qFilePath);
 
     if (!file.open(QFile::ReadOnly | QFile::Text))
-    {
-
-    }
+    {}
     else
     {
         classifierNames = {};
@@ -116,8 +114,33 @@ std::string Model::loadClassifers(std::string filePath)
     return filePath;
 }
 
+std::string Model::loadSavedAnnotations(std::string filePath)
+{
+    QString qFilePath = QString::fromStdString(filePath);
+    QFile file(qFilePath);
+
+    if (!file.open(QFile::ReadOnly | QFile::Text))
+    {}
+    else
+    {
+        imagesWithAnnotationsSaved = {};
+        QTextStream in(&file);
+        QString line;
+        std::string stringLine;
+        while (!(in.atEnd())) {
+            line = in.readLine();
 
 
+            if ( line == "{" )
+            {
+                line = in.readLine();
+                stringLine = line.toStdString();
+                imagesWithAnnotationsSaved.push_back(stringLine);
+            }
+        }
+    }
+    return filePath;
+}
 
 void Model::loadImage(QString imagePath, const QString imageName)
 {

@@ -46,6 +46,8 @@ public:
 
     void assignClassifierToSelectedShapes(QString c, int lineIndex);
 
+    void writeImageData(std::vector<std::string> *out);
+
 
     std::vector<PolygonItem * > findSelectedShapes();
 

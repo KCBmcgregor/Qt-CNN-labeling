@@ -137,6 +137,16 @@ void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
     }
 }
 
+void Image::writeImageData(std::vector<std::string> *out)
+{
+
+    out.push_back(shapes.size()) << "\n";
+    for(unsigned i=0; i < shapes.size(); i++)
+    {
+        shapes[i]->writeShapeData(out);
+    }
+}
+
 
 
 

@@ -28,6 +28,22 @@ void PolygonItem::centerText()
     classifierText->setPos(shapeCenter);
 }
 
+void PolygonItem::writeShapeData(QTextStream out)
+{
+    out << (classifier.second) << "\n";
+    QPolygonF points = polygon();
+
+    int i=0;
+    while(1)
+    {
+        out << "(" << (points[i].x()) << "," << (points[i].y()) << ")";
+        if(i == points.size() - 1) {break;}
+        out << ";";
+    }
+    out << "\n";
+}
+
+
 void PolygonItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->buttons() == Qt::RightButton)
@@ -41,7 +57,6 @@ void PolygonItem::assignClassifier(QString c, int lineIndex)
 {
     classifier = {c, lineIndex};
     classifierText->setText(c);
-
 }
 
 QString PolygonItem::getClassifier()

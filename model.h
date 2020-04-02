@@ -22,8 +22,10 @@ class Model
     std::vector<std::string> imageNames;
     std::map<std::string, Image * > images;
     std::vector<std::string> classifierNames;
+    std::vector<std::string> imagesWithAnnotationsSaved;
     std::vector<std::string> imageNameDatesAsc;
     std::vector<std::string> imageNameDatesDec;
+
 public:
     Model(Control *cont = nullptr);
 
@@ -44,6 +46,7 @@ public:
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
+    std::string loadSavedAnnotations(std::string filePath);
 
     void loadImage(QString imagePath, const QString imageName);
     QPixmap loadImage(const QString imagePath);

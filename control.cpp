@@ -66,6 +66,16 @@ QString Control::requestFilePath()
     return QStringFilePath;
 }
 
+QString Control::requestAnnotationPath()
+{
+    QString filter = "Annotation Files (*.annotation)";
+    QString QStringFilePath = QFileDialog::getOpenFileName(view, "Select your annotation file", "C://",filter);
+    annotationFilePath = QStringFilePath.toStdString();
+    model->loadSavedAnnotation(annotationFilePath);
+    view->renderList2();
+    return QStringFilePath;
+}
+
 QGraphicsPixmapItem * Control::requestImage(const QString imageName)
 {
     QGraphicsPixmapItem *image = model->requestImageItem(imageName.toStdString());
