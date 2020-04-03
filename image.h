@@ -46,6 +46,7 @@ public:
 
     void assignClassifierToSelectedShapes(QString c, int lineIndex);
 
+    void loadImageData(QTextStream *read);
     void writeImageData(QTextStream *write, std::string name);
 
 

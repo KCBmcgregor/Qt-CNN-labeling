@@ -49,7 +49,8 @@ public:
     std::string loadSavedAnnotations(std::string filePath);
 
     void loadImage(QString imagePath, const QString imageName);
-    QPixmap loadImage(const QString imagePath);
+    QPixmap loadImage(const QString imagePath);    
+    void loadImageData(std::string filePath, QString imageName);
 
     void save(std::string filePath);
     void writeImagedata(QTextStream *write, std::string name);

@@ -30,8 +30,10 @@ void PolygonItem::centerText()
 
 void PolygonItem::writeShapeData(QTextStream *write)
 {
+    update();
     *write << (classifier.second) << "\n";
     QPolygonF points = polygon();
+    points = this->mapToParent(points);
 
     int i=0;
     while(1)

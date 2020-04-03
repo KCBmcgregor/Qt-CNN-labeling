@@ -119,6 +119,8 @@ std::string Model::loadSavedAnnotations(std::string filePath)
     QString qFilePath = QString::fromStdString(filePath);
     QFile file(qFilePath);
 
+
+
     if (!file.open(QFile::ReadOnly | QFile::Text))
     {}
     else
@@ -148,6 +150,37 @@ void Model::loadImage(QString imagePath, const QString imageName)
     newImage = new Image(imagePath, this);
     std::string index = imageName.toStdString();
     images[index] = newImage;
+    loadImageData(control->getAnnotationFilePath(),imageName);
+}
+
+void Model::loadImageData(std::string filePath, QString imageName)
+{
+    QString qFilePath = QString::fromStdString(filePath);
+    QFile file(qFilePath);
+
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        return;
+    }
+    else
+    {
+        QTextStream read(&file);
+        while (!read.atEnd())
+        {
+            QString line = read.readLine();
+
+            if (line == "{")
+            {
+                QString line = read.readLine();
+                if (line == imageName)
+                {
+                    images[imageName.toStdString()]->loadImageData(&read);
+                    break;
+                }
+            }
+        }
+    }
+
 }
 
 void Model::save(std::string filePath)

@@ -25,7 +25,6 @@ class PolygonItem : public QObject, public QGraphicsPolygonItem
     QMenu rightClickMenu;
     QAction *edit;
     QAction *modify;
-    //std::vector<Point> modifyPoints;
 
 
 public:

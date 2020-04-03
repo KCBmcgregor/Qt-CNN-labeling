@@ -137,6 +137,41 @@ void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
     }
 }
 
+void Image::loadImageData(QTextStream *read)
+{
+    QString line = read->readLine();
+    int numberOfShapes = line.toInt();
+    QStringList loadedShapePoints;
+
+    for(int i=0; i!=numberOfShapes; i++)
+    {
+        line = read->readLine();
+        int classifierIndex = line.toInt();
+        QString classifierText = ""; //match the index too text
+        std::pair<QString,int> classifier = {classifierText, classifierIndex};
+
+        line = read->readLine();
+        loadedShapePoints = line.split(";");
+        QStringList loadedCoordinates;
+        qreal x;
+        qreal y;
+        QPolygonF loadedPolygon = {};
+        foreach(QString loadedPoint, loadedShapePoints)
+        {
+            loadedPoint.remove("(");
+            loadedPoint.remove(")");
+            loadedCoordinates = loadedPoint.split(",");
+            x = loadedCoordinates[0].toDouble();
+            y = loadedCoordinates[1].toDouble();
+            QPointF loadedQPoint(x,y);
+            loadedPolygon.push_back(loadedQPoint);
+        }
+
+        addShape(loadedPolygon);
+        shapes.back()->assignClassifier(classifier.first,classifier.second);
+    }
+}
+
 void Image::writeImageData(QTextStream *write, std::string name)
 {
     QString qName = QString::fromStdString(name);
