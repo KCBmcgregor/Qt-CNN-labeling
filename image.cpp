@@ -137,16 +137,17 @@ void Image::assignClassifierToSelectedShapes(QString c, int lineIndex)
     }
 }
 
-void Image::writeImageData(std::vector<std::string> *out)
+void Image::writeImageData(QTextStream *write, std::string name)
 {
-
-    out.push_back(shapes.size()) << "\n";
+    QString qName = QString::fromStdString(name);
+    *write << qName << "\n";
+    int length = shapes.size();
+    *write << length << "\n";
     for(unsigned i=0; i < shapes.size(); i++)
     {
-        shapes[i]->writeShapeData(out);
+        shapes[i]->writeShapeData(write);
     }
 }
-
 
 
 

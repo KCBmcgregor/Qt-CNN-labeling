@@ -35,7 +35,7 @@ public:
 
     void requestCopyPasteSelectedShapes();
     void centerText();
-    void writeShapeData(QTextStream out);
+    void writeShapeData(QTextStream *write);
 
 protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event);

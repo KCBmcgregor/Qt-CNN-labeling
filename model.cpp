@@ -150,6 +150,28 @@ void Model::loadImage(QString imagePath, const QString imageName)
     images[index] = newImage;
 }
 
+void Model::save(std::string filePath)
+{
+    QString qFilePath = QString::fromStdString(filePath);
+    QFile file(qFilePath);
+
+    if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
+        return;
+
+    QTextStream write(&file);
+    write << "The number of images detaled in the file\n";
+    writeImagedata(&write, "dragon_eye.jpg");
+}
+
+void Model::writeImagedata(QTextStream *write, std::string name)
+{
+    *write << "{\n" ;
+
+    images[name]->writeImageData(write, name);
+
+    *write << "}\n\n" ;
+}
+
 
 Model::~Model()
 {

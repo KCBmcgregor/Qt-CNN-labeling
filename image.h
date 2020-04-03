@@ -46,7 +46,7 @@ public:
 
     void assignClassifierToSelectedShapes(QString c, int lineIndex);
 
-    void writeImageData(std::vector<std::string> *out);
+    void writeImageData(QTextStream *write, std::string name);
 
 
     std::vector<PolygonItem * > findSelectedShapes();

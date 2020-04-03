@@ -57,6 +57,7 @@ private slots:
     void on_addClassButton_clicked();
     void on_shapeAssignButton_clicked();
     void on_removeClassButton_clicked();
+    void on_selectAnnotationFileButton_clicked();
 };
 
 #endif // VIEW_H

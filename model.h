@@ -51,6 +51,9 @@ public:
     void loadImage(QString imagePath, const QString imageName);
     QPixmap loadImage(const QString imagePath);
 
+    void save(std::string filePath);
+    void writeImagedata(QTextStream *write, std::string name);
+
     void pointDrawn() {control->pointDrawn();}
 
 

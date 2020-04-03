@@ -78,6 +78,13 @@ void View::on_selectFileButton_clicked()
     QString path = control->requestFilePath();
     ui->classiferPathLabel->setText(path);
 }
+
+void View::on_selectAnnotationFileButton_clicked()
+{
+    QString path = control->requestAnnotationPath();
+    ui->annotationPathLabel->setText(path);
+}
+
                                         //! When sortButton is clicked it retrieves imageComboBox current item..
 void View::on_sortButton_clicked(){     //! ..and chooses the sorting algorithm based on that
     if(ui->imageNamesList->count() != 0) {
@@ -198,7 +205,10 @@ void View::on_zoomOutButton_clicked()
 
 void View::on_saveButton_clicked()
 {
+   control->requestSave();
+}
 
+/*
     QString fileName = QFileDialog::getSaveFileName(this,
             tr("Annotations"), "",
             tr("Annotation (*.annotations);;All Files (*)"));
@@ -212,17 +222,17 @@ void View::on_saveButton_clicked()
               return;
           }
           QTextStream out(&file);
-          /*QStringList imageNames = control->requestImageNames();
+          QStringList imageNames = control->requestImageNames();
           foreach (QString imageSelected, imageNames) {
             out<< imageSelected<< endl;}
 Returns all the shapes names in the dataset
-*/
+
           
          
           int numShapes = control->requestNumberOfShapes();
           out<<"The Number Of Shapes On The Image "<<numShapes<<endl;
-}
-}
+          */
+
 
   /*
     QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
@@ -278,4 +288,6 @@ void View::on_shapeAssignButton_clicked()
 {
     control->requestAssignClassifierToSelectedShapes();
 }
+
+
 

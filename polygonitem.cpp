@@ -28,19 +28,20 @@ void PolygonItem::centerText()
     classifierText->setPos(shapeCenter);
 }
 
-void PolygonItem::writeShapeData(QTextStream out)
+void PolygonItem::writeShapeData(QTextStream *write)
 {
-    out << (classifier.second) << "\n";
+    *write << (classifier.second) << "\n";
     QPolygonF points = polygon();
 
     int i=0;
     while(1)
     {
-        out << "(" << (points[i].x()) << "," << (points[i].y()) << ")";
+        *write << "(" << (points[i].x()) << "," << (points[i].y()) << ")";
         if(i == points.size() - 1) {break;}
-        out << ";";
+        *write << ";";
+        i++;
     }
-    out << "\n";
+    *write << "\n";
 }
 
 

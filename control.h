@@ -124,6 +124,8 @@ public:
     */
     QString requestAnnotationPath();
 
+    void requestSave();
+
     //! A method taking 1 argument and returing a QPixmap.
     /*!
 
