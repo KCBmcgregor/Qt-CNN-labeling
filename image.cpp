@@ -176,7 +176,7 @@ void Image::writeImageData(QTextStream *write, std::string name)
 {
     QString qName = QString::fromStdString(name);
     *write << qName << "\n";
-    int length = shapes.size();
+    unsigned length = shapes.size();
     *write << length << "\n";
     for(unsigned i=0; i < shapes.size(); i++)
     {

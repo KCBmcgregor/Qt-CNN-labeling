@@ -65,7 +65,7 @@ public:
     int getSidesToDraw() {return sidesToDraw;}
 
     void setSelectedImageName(std::string iN) {selectedImageName = iN;}
-    void setSelectedClassifier(QString c) {selectedClassifier.first = c;}
+    void setSelectedClassifier(QString c);
     void setMode(std::string m) {mode = m;}
     void setMode2(std::string m) {mode2 = m;}
     void setMode3(std::string m) {mode3 = m;}

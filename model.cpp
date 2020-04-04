@@ -19,6 +19,16 @@ Model::Model(Control *cont)
 
 }
 
+int Model::getClassifierIndex(std::string classifierName)
+{
+    for(unsigned i=0; i<classifierNames.size(); i++)
+    {
+        if(classifierName == classifierNames[i])
+            return i;
+    }
+    return -1;
+}
+
 QMap<std::string, QPen> Model::requestPens()
 {
     return control->requestPens();
@@ -114,36 +124,6 @@ std::string Model::loadClassifers(std::string filePath)
     return filePath;
 }
 
-std::string Model::loadSavedAnnotations(std::string filePath)
-{
-    QString qFilePath = QString::fromStdString(filePath);
-    QFile file(qFilePath);
-
-
-
-    if (!file.open(QFile::ReadOnly | QFile::Text))
-    {}
-    else
-    {
-        imagesWithAnnotationsSaved = {};
-        QTextStream in(&file);
-        QString line;
-        std::string stringLine;
-        while (!(in.atEnd())) {
-            line = in.readLine();
-
-
-            if ( line == "{" )
-            {
-                line = in.readLine();
-                stringLine = line.toStdString();
-                imagesWithAnnotationsSaved.push_back(stringLine);
-            }
-        }
-    }
-    return filePath;
-}
-
 void Model::loadImage(QString imagePath, const QString imageName)
 {
     Image *newImage;
@@ -180,7 +160,6 @@ void Model::loadImageData(std::string filePath, QString imageName)
             }
         }
     }
-
 }
 
 void Model::save(std::string filePath)
@@ -191,16 +170,36 @@ void Model::save(std::string filePath)
     if (!file.open(QIODevice::WriteOnly | QIODevice::Text))
         return;
 
+
     QTextStream write(&file);
-    write << "The number of images detaled in the file\n";
-    writeImagedata(&write, "dragon_eye.jpg");
+
+    std::vector<std::string> imagesToBeSaved = {};
+    unsigned numberOfImages = imageNames.size();
+    for(unsigned i=0; i < numberOfImages; i++)
+    {
+        if (images.count(imageNames[i]))
+        {
+            if(images[imageNames[i]]->getShapes().size() != 0)
+            {
+                imagesToBeSaved.push_back(imageNames[i]);
+            }
+        }
+    }
+
+
+    write << imagesToBeSaved.size() << "\n";
+    unsigned numberOfImagesToSave = imagesToBeSaved.size();
+    for(unsigned i=0; i < numberOfImagesToSave; i++)
+    {
+        writeImagedata(&write, imagesToBeSaved[i]);
+    }
 }
 
 void Model::writeImagedata(QTextStream *write, std::string name)
 {
     *write << "{\n" ;
 
-    images[name]->writeImageData(write, name);
+    (images[name])->writeImageData(write, name);
 
     *write << "}\n\n" ;
 }

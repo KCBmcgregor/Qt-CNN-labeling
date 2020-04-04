@@ -16,7 +16,12 @@ Control::Control() {
     sidesToDraw = 3;
     drawPointsDrawn = 0;
     drawSidesDrawn = 0;
-    selectedClassifier.second = -1;
+}
+
+void Control::setSelectedClassifier(QString c)
+{
+     selectedClassifier.first = c;
+     selectedClassifier.second = model->getClassifierIndex(c.toStdString());
 }
 void Control::setSidesToDraw(QString shape) {
     sidesToDraw = shape.at(0).digitValue();

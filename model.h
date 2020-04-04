@@ -31,6 +31,7 @@ public:
 
     std::vector<std::string> getImageNames() {return imageNames;}
     std::vector<std::string> getClassifierNames() {return classifierNames;}
+    int getClassifierIndex(std::string classifierName);
     std::vector<std::string> getImageNameDatesAsc() {return imageNameDatesAsc;}
     std::vector<std::string> getImageNameDatesDec() {return imageNameDatesDec;}
 
@@ -46,7 +47,6 @@ public:
 
     std::string loadDataset(std::string folderPath);
     std::string loadClassifers(std::string filePath);
-    std::string loadSavedAnnotations(std::string filePath);
 
     void loadImage(QString imagePath, const QString imageName);
     QPixmap loadImage(const QString imagePath);    
