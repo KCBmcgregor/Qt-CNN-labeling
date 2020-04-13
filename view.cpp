@@ -1,5 +1,6 @@
 #include "view.h"
 #include "ui_view.h"
+#include "linkedlist.h"
 #include "image.h"
 #include <QGraphicsPixmapItem>
 #include <QFileDialog>
@@ -14,6 +15,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include<QDataStream>
+
 
 View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View)
 {
@@ -82,7 +84,7 @@ void View::on_selectFileButton_clicked()
 void View::on_selectAnnotationFileButton_clicked()
 {
     QString path = control->requestAnnotationPath();
-    ui->annotationPathLabel->setText(path);
+    //ui->annotationPathLabel->setText(path);
 }
 
                                         //! When sortButton is clicked it retrieves imageComboBox current item..

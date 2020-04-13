@@ -20,6 +20,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
     control.cpp \
     image.cpp \
+    linkedlist.cpp \
     model.cpp \
     point.cpp \
     polygonitem.cpp \
@@ -30,6 +31,7 @@ SOURCES += \
 HEADERS += \
     control.h \
     image.h\
+    linkedlist.h \
     model.h \
     point.h \
     polygonitem.h\
