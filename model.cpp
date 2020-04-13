@@ -1,5 +1,6 @@
 #include "model.h"
 #include "image.h"
+#include <QtDebug>
 
 #include <QFile>
 #include <QString>
@@ -164,6 +165,7 @@ void Model::loadImageData(std::string filePath, QString imageName)
 
 void Model::save(std::string filePath)
 {
+    qDebug("saved");
     QString qFilePath = QString::fromStdString(filePath);
     QFile file(qFilePath);
 

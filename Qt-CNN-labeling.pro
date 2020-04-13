@@ -24,7 +24,7 @@ SOURCES += \
     model.cpp \
     point.cpp \
     polygonitem.cpp \
-    savetimer.cpp \
+    threads.cpp \
     view.cpp
 
 
@@ -35,7 +35,7 @@ HEADERS += \
     model.h \
     point.h \
     polygonitem.h\
-    savetimer.h \
+    threads.h \
     view.h
 
 FORMS += \

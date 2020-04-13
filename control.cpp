@@ -1,6 +1,7 @@
 #include "model.h"
 #include "view.h"
 #include "control.h"
+#include "threads.h"
 #include <string>
 
 #include <QtCore>
@@ -244,6 +245,9 @@ int main(int argc, char *argv[])
     control.model = &model;
     View view(&control);
     control.view = &view;
+
+    Threads myThread;
+    myThread.start();
 
     view.setWindowTitle("CNN Image Labeling");
     view.show();
