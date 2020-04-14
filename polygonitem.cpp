@@ -68,6 +68,12 @@ QString PolygonItem::getClassifier()
     return c;
 }
 
+int PolygonItem::getLineIndex()
+{
+    int lineIndex = classifier.second;
+    return lineIndex;
+}
+
 
 void PolygonItem::startModifying()
 {

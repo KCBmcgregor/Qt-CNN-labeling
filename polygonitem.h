@@ -42,6 +42,7 @@ protected:
 public slots:
     void assignClassifier(QString c, int lineIndex);
     QString getClassifier();
+    int getLineIndex();
     void startModifying();
     void updatePolygonPointPosition(int pointIndex, QPointF newPos);
     void stopModifying();

@@ -226,6 +226,7 @@ void Image::copyPasteShapes(std::vector<PolygonItem *> shapesToCopyPaste)
     for(unsigned i=0; i < shapesToCopyPaste.size(); i++)
     {
         QString name = shapesToCopyPaste[i]->getClassifier();
+        int lineIndex = shapesToCopyPaste[i]->getLineIndex();
 
         shapesToCopyPaste[i]->setSelected(false);
         shapePoints = shapesToCopyPaste[i]->polygon();
@@ -235,7 +236,7 @@ void Image::copyPasteShapes(std::vector<PolygonItem *> shapesToCopyPaste)
         addShape(shapePoints);
         shapes.back()->setPos(pos);
         shapes.back()->setSelected(true);      
-        assignClassifierToSelectedShapes(name, -1);
+        assignClassifierToSelectedShapes(name, lineIndex);
     }
 }
 
