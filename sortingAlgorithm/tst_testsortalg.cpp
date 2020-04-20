@@ -156,4 +156,4 @@ void sortAscDes::test_case4()//Sorting for descending image data names
 }
 QTEST_APPLESS_MAIN(sortAscDes)
 
-#include "tst_sortasc.moc"
+#include "tst_testsortalg.moc"
