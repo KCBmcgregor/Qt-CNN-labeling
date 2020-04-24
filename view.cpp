@@ -26,9 +26,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->graphicsView->setScene(scene);
 
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
