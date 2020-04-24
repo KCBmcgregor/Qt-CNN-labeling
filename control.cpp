@@ -13,6 +13,7 @@
 Control::Control() {
     folderPath = "Please Select Your Dataset Folder >>";
     classifierFilePath = "Please Select Your Class File >>";
+    annotationFilePath = "Please Select Your Annotation File or Select To Create one >>";
     mode = "none";
     sidesToDraw = 3;
     drawPointsDrawn = 0;
@@ -83,7 +84,10 @@ QString Control::requestAnnotationPath()
 
 void Control::requestSave()
 {
-    model->save(annotationFilePath);
+    if (annotationFilePath != "Please Select Your Annotation File or Select To Create one >>")
+    {
+        model->save(annotationFilePath);
+    }
 }
 
 QGraphicsPixmapItem * Control::requestImage(const QString imageName)
@@ -246,7 +250,7 @@ int main(int argc, char *argv[])
     View view(&control);
     control.view = &view;
 
-    Threads myThread;
+    Threads myThread(&control);
     myThread.start();
 
     view.setWindowTitle("CNN Image Labeling");

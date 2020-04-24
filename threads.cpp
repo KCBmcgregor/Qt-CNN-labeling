@@ -1,15 +1,18 @@
 #include "threads.h"
 #include<QtCore>
 #include <QtDebug>
+#include "control.h"
 
-Threads::Threads(QObject *parent) : QThread(parent){}
+Threads::Threads(Control *cont, QObject *parent) : QThread(parent){
+    control = cont;
+}
 
 void Threads::run()
 {
     while(1){
         QThread::sleep(60); //60 seconds
 
-        //SLOT(requestSave()); or control->requestSave();
-        //qDebug("saved");
+        control->requestSave();
+        qDebug("saved");
     }
 }

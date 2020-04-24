@@ -2,12 +2,15 @@
 #define THREADS_H
 #include <QtCore>
 
+class Control;
+
 class Threads :public QThread
 {
     Q_OBJECT
+    Control *control;
 
 public:
-    explicit Threads(QObject *parent = 0);
+    explicit Threads(Control *cont, QObject *parent = 0);
 
 protected:
     void run();
