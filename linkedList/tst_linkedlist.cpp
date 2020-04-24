@@ -89,9 +89,6 @@ QString linkedList::returnEle(int index)
         }
     return(current->data);
 }
-
-
-
 QTEST_MAIN(linkedList)
 
 #include "tst_linkedlist.moc"

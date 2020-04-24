@@ -28,7 +28,7 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->toggleClassifierButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
+
 
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
@@ -293,3 +293,21 @@ void View::on_shapeAssignButton_clicked()
 
 
 
+
+void View::on_createAnnotationFileButton_clicked()
+{
+    QString fileName = QFileDialog::getSaveFileName(this,
+             tr("Annotations"), "",
+             tr("Annotation (*.annotations);;All Files (*)"));
+
+     if (fileName.isEmpty())
+           return;
+       else {
+           QFile file(fileName);
+           if (!file.open(QIODevice::WriteOnly)) {
+               QMessageBox::information(this, tr("Unable to open file"),
+                   file.errorString());
+               return;
+           }
+}
+}
