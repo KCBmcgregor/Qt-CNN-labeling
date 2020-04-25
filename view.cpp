@@ -132,13 +132,20 @@ void View::on_sortButton2_clicked(){   //! ..and chooses the sorting algorithm b
         if(ui->classComboBox->currentText()=="Name (Asc)"){
             QStringList classifierNames = control->retrieveListDataAscending(2); //! 2 is passed as parameter meaning...
             foreach (QString name, classifierNames) {  //! ..the data sorted using the ascending algorithm is classifier names
-                ui->classifierList->addItem(name);
+                if ( name!= "***DELETED***")
+                {
+                    ui->classifierList->addItem(name);
+                }
+
             }
         }
         if(ui->classComboBox->currentText()=="Name (Des)"){
             QStringList classifierNames = control->retrieveListDataDescending(2);
             foreach (QString name, classifierNames) {
-                ui->classifierList->addItem(name);
+                if ( name!= "***DELETED***")
+                {
+                    ui->classifierList->addItem(name);
+                }
              }
         }
    }
