@@ -84,7 +84,8 @@ QString Control::requestAnnotationPath()
 
 void Control::requestSave()
 {
-    if (annotationFilePath != "Please Select Your Annotation File or Select To Create one >>")
+    if ((annotationFilePath != "Please Select Your Annotation File or Select To Create one >>")
+        && (folderPath != "Please Select Your Dataset Folder >>"))
     {
         model->save(annotationFilePath);
     }
