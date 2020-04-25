@@ -27,10 +27,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
 
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
-    ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-    ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-
-
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
     pens["pointPen"] = pointPen;
@@ -42,7 +38,6 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     QPen shapePen(Qt::green);
     shapePen.setWidth(10);
     pens["shapePen"] = shapePen;
-
 
 }
 
