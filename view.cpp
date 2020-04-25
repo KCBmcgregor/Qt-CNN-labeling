@@ -26,12 +26,10 @@ View::View(Control *cont, QWidget *parent): QMainWindow(parent), ui(new Ui::View
     ui->graphicsView->setScene(scene);
 
     ui->shapeDrawButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
-<<<<<<< HEAD
+
     ui->saveButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
     ui->shapeAssignButton->setStyleSheet("background-color:white;\nborder:1px solid black;");
 
-=======
->>>>>>> 882bcda195f556356265ef4631d3859a2b679e7e
 
     QPen pointPen(Qt::red);
     pointPen.setWidth(10);
@@ -213,39 +211,7 @@ void View::on_saveButton_clicked()
    control->requestSave();
 }
 
-/*
-    QString fileName = QFileDialog::getSaveFileName(this,
-            tr("Annotations"), "",
-            tr("Annotation (*.annotations);;All Files (*)"));
-    if (fileName.isEmpty())
-          return;
-      else {
-          QFile file(fileName);
-          if (!file.open(QIODevice::WriteOnly| QIODevice::Text)) {
-              QMessageBox::information(this, tr("Unable to open file"),
-                  file.errorString());
-              return;
-          }
-          QTextStream out(&file);
-          QStringList imageNames = control->requestImageNames();
-          foreach (QString imageSelected, imageNames) {
-            out<< imageSelected<< endl;}
-Returns all the shapes names in the dataset
 
-          
-         
-          int numShapes = control->requestNumberOfShapes();
-          out<<"The Number Of Shapes On The Image "<<numShapes<<endl;
-          */
-
-
-  /*
-    QString fileName= QFileDialog::getSaveFileName(this, "Save image", QCoreApplication::applicationDirPath(), "BMP Files (*.bmp);;JPEG (*.JPEG);;PNG (*.png)" );
-        if (!fileName.isNull())
-        {
-            QPixmap pixMap = this->ui->graphicsView->grab();
-            pixMap.save(fileName);
-        }*/
 
 void View::on_addClassButton_clicked(){
     ui->classifierList->blockSignals(true);
