@@ -63,6 +63,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="selectFolderButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -106,6 +109,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="sortButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Sort</string>
               </property>
@@ -183,6 +189,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="selectFileButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                 <horstretch>0</horstretch>
@@ -216,6 +225,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="sortButton2">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="text">
                <string>Sort</string>
               </property>
@@ -247,6 +259,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="addClassButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -260,6 +275,9 @@
             </item>
             <item>
              <widget class="QPushButton" name="removeClassButton">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
               <property name="sizePolicy">
                <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
                 <horstretch>0</horstretch>
@@ -311,14 +329,14 @@
             <item>
              <widget class="QPushButton" name="selectAnnotationFileButton">
               <property name="text">
-               <string>Select Ann FIle</string>
+               <string>Select a file</string>
               </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="createAnnotationFileButton">
               <property name="text">
-               <string>Create Ann File</string>
+               <string>Create a file</string>
               </property>
              </widget>
             </item>
@@ -393,6 +411,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="shapeDrawButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -406,6 +427,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="saveButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -419,6 +443,9 @@
         </item>
         <item>
          <widget class="QPushButton" name="shapeAssignButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
             <horstretch>0</horstretch>
@@ -561,7 +588,7 @@
      <x>0</x>
      <y>0</y>
      <width>1346</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

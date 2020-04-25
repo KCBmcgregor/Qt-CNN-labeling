@@ -74,17 +74,27 @@ void View::on_selectFolderButton_clicked()
 {
     QString path = control->requestFolderPath();
     ui->folderPathLabel->setText(path);
+    ui->sortButton->setEnabled(true);
+    ui->shapeDrawButton->setEnabled(true);
+
 }
 
 void View::on_selectFileButton_clicked()
 {
     QString path = control->requestFilePath();
     ui->classiferPathLabel->setText(path);
+    ui->sortButton2->setEnabled(true);
+    ui->shapeAssignButton->setEnabled(true);
+    ui->addClassButton->setEnabled(true);
+    ui->removeClassButton->setEnabled(true);
 }
 
 void View::on_selectAnnotationFileButton_clicked()
 {
     QString path = control->requestAnnotationPath();
+    ui->selectFolderButton->setEnabled(true);
+    ui->selectFileButton->setEnabled(true);
+    ui->saveButton->setEnabled(true);
     //ui->annotationPathLabel->setText(path);
 }
 
