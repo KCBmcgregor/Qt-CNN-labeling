@@ -147,7 +147,7 @@ void Image::loadImageData(QTextStream *read)
     {
         line = read->readLine();
         int classifierIndex = line.toInt();
-        QString classifierText = ""; //match the index too text
+        QString classifierText = QString::fromStdString((model->getClassifierNames())[classifierIndex]); //match the index too text
         std::pair<QString,int> classifier = {classifierText, classifierIndex};
 
         line = read->readLine();
